@@ -1,17 +1,17 @@
 <template>
   <div class="home">
-    <Maintenance msg="Welcome to Your Vue.js App" v-if="maintenance"/>
+    <maintenance msg="Welcome to Your Vue.js App" v-if="maintenance"/>
   </div>
 </template>
 
 <script>
-import Maintenance from '@/components/Maintenance.vue'
+import maintenance from '@/components/maintenance.vue'
 
 export default {
   name: 'home',
 
   components: {
-    Maintenance
+    maintenance
   },
 
 	data() {

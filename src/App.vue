@@ -1,18 +1,23 @@
 <template>
   <div id="app">
-		<!-- Global Nav Menu Component -->
-		<Menu/>
+		<!-- Global Nav Component -->
+		<navigation/>
 		<!-- Pages -->
+		<fade>
+        <router-view/>
+    </fade>
     <router-view/>
   </div>
 </template>
 
 <script>
-	import Menu from '@/components/Menu.vue'
+	import navigation from '@/components/navigation.vue';
+	import fade from '@/components/transitions/fade.vue';
 
 	export default {
 		components: {
-			Menu
+			navigation,
+			fade
 		}
 	}
 </script>
