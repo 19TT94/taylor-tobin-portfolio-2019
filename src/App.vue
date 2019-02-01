@@ -1,18 +1,24 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/featured">Featured</router-link> |
-			<router-link to="/projects">Projects</router-link> |
-			<router-link to="/about">About</router-link> |
-			<router-link to="/contact">Contact</router-link>
-    </div>
+		<!-- Global Nav Menu Component -->
+		<Menu/>
+		<!-- Pages -->
     <router-view/>
   </div>
 </template>
 
+<script>
+	import Menu from '@/components/Menu.vue'
+
+	export default {
+		components: {
+			Menu
+		}
+	}
+</script>
+
 <style lang="scss">
 
-@import '@/assets/scss/app.scss';
+	@import '@/assets/scss/app.scss';
 
 </style>
