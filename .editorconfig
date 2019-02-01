@@ -1,0 +1,19 @@
+root = true
+# Unix-style newlines with a newline ending every file
+[*]
+indent_style = tab
+indent_size = 2
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+# Tab indentation (no size specified)
+[Makefile]
+indent_style = tab
+# Indentation override for all JS under lib directory
+[lib/**.js]
+indent_style = tab
+indent_size = 2
+# Indentation override for all JS under .json
+[*.{json}]
+indent_size = 2
