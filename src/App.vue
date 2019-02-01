@@ -1,12 +1,12 @@
 <template>
   <div id="app">
 		<!-- Global Nav Component -->
-		<navigation/>
+		<navigation v-if="!maintenance"/>
 		<!-- Pages -->
 		<fade>
         <router-view/>
     </fade>
-    <router-view/>
+    <router-view :maintenance="maintenance"/>
   </div>
 </template>
 
@@ -18,6 +18,12 @@
 		components: {
 			navigation,
 			fade
+		},
+
+		data() {
+			return {
+				maintenance: false
+			};
 		}
 	}
 </script>

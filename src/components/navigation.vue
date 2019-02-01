@@ -26,6 +26,7 @@ export default {
 	position: absolute;
 	width: 100%;
 	height: $menuHeight;
+	text-align: center;
 }
 
 </style>
