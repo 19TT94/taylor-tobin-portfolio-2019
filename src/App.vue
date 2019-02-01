@@ -1,12 +1,13 @@
 <template>
   <div id="app">
+		<div class="noise" :style="{'background-image': 'url(' + require('@/assets/images/noise.gif') + ')'}"></div>
 		<!-- Global Nav Component -->
-		<navigation v-if="!maintenance"/>
+		<navigation v-if="!down"/>
 		<!-- Pages -->
 		<fade>
         <router-view/>
     </fade>
-    <router-view :maintenance="maintenance"/>
+    <router-view :down="down"/>
   </div>
 </template>
 
@@ -22,7 +23,7 @@
 
 		data() {
 			return {
-				maintenance: false
+				down: true
 			};
 		}
 	}

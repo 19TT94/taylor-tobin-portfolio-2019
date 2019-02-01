@@ -1,9 +1,7 @@
 <template>
   <div class="page home">
-		<maintenance msg="Welcome to Your Vue.js App" v-if="maintenance"/>
-		<div v-else>
-			<h1>Home</h1>
-		</div>
+		<maintenance v-if="down"/>
+		<h1>Home</h1>
   </div>
 </template>
 
@@ -14,7 +12,7 @@ export default {
   name: 'home',
 
 	props: {
-		maintenance: Boolean
+		down: Boolean
 	},
 
   components: {

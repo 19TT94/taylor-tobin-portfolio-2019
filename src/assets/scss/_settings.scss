@@ -24,11 +24,11 @@ p {
 
 a {
 	// reset color with variable
-	color: #2c3e50;
+	color: $gold;
 	text-decoration: none;
 	&.router-link-exact-active {
 		// reset color with variable
-		color: #42b983;
+		color: $gold;
 	}
 }
 
@@ -38,4 +38,6 @@ a {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+	overflow: hidden;
+	background: $white;
 }

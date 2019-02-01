@@ -9,9 +9,9 @@
 		</ul>
 
 		<ul class="links">
-			<li>Github: @19tt94</li>
-			<li>LinkedIn: @19tt94</li>
-			<li>Instagram: @19tt94</li>
+			<li><a href="#">Github: @19tt94</a></li>
+			<li><a href="#">LinkedIn: @19tt94</a></li>
+			<li><a href="#">Instagram: @19tt94</a></li>
 		</ul>
 
 		<p>New Site Comming Soon!</p>
@@ -20,10 +20,7 @@
 
 <script>
 export default {
-  name: 'Maintenance',
-  props: {
-    msg: String
-  }
+  name: 'Maintenance'
 }
 </script>
 
@@ -32,10 +29,17 @@ export default {
 @import "@/assets/scss/app.scss"; // global styles
 
 .maintenance {
+	position: fixed;
+	top: 0;
+	left: 0;
 	width: 100vw;
 	height: 100vh;
 	padding: 1rem;
-	background: slateblue;
+	background: $black;
+	color: $white;
+
+	&--title {
+	}
 }
 
 </style>
