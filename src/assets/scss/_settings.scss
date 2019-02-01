@@ -1,0 +1,40 @@
+/* Global Settings */
+
+// Tags
+body {
+	font-size: 16px; // base font size
+}
+
+h1 {
+	font-size: 2rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+}
+
+h3 {
+	font-size: 1.2rem;
+}
+
+p {
+	font-size: 1rem;
+}
+
+a {
+	// reset color with variable
+	color: #2c3e50;
+	text-decoration: none;
+	&.router-link-exact-active {
+		// reset color with variable
+		color: #42b983;
+	}
+}
+
+// Default Classes
+
+#app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
