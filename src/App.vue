@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+		<!-- <img class="palm" src="@/assets/images/palm.jpg"> -->
 		<div class="noise" :style="{'background-image': 'url(' + require('@/assets/images/film2.gif') + ')'}"></div>
 		<!-- Global Nav Component -->
 		<navigation v-if="!down"/>
@@ -31,6 +32,6 @@
 
 <style lang="scss">
 
-	@import '@/assets/scss/app.scss';
+@import '@/assets/scss/app.scss';
 
 </style>

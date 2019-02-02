@@ -26,7 +26,7 @@ export default {
 @import "@/assets/scss/app.scss"; // global styles
 
 .home {
-	background: goldenrod;
+	// background: goldenrod;
 }
 
 </style>
