@@ -37,7 +37,7 @@
 			</ul>
 		</section>
 
-		<customMap class="map" />
+		<!-- <customMap class="map" /> -->
 
 		<p class="note">New Site Coming Soon!</p>
   </div>
@@ -70,7 +70,7 @@ export default {
 
 .note {
 	position: absolute;
-	bottom: 35%;
+	bottom: 5%;
 	left: 0;
 	right: 0;
 	margin: 0 auto;
