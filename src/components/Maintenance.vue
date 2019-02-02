@@ -37,13 +37,20 @@
 			</ul>
 		</section>
 
-		<p class="note">New Site Comming Soon!</p>
+		<customMap class="map" />
+
+		<p class="note">New Site Coming Soon!</p>
   </div>
 </template>
 
 <script>
+import customMap from '@/components/custom-map.vue'
+
 export default {
-  name: 'Maintenance'
+  name: 'Maintenance',
+	components: {
+		customMap
+	}
 }
 </script>
 
@@ -63,13 +70,20 @@ export default {
 
 .note {
 	position: absolute;
-	bottom: 0;
+	bottom: 35%;
 	left: 0;
 	right: 0;
 	margin: 0 auto;
 	text-align: center;
 	color: $gold;
-	padding: 2rem;
+}
+
+.map {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 200px;
 }
 
 </style>
