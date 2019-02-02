@@ -9,9 +9,24 @@
 		</ul>
 
 		<ul class="links">
-			<li><a href="#">Github: @19tt94</a></li>
-			<li><a href="#">LinkedIn: @19tt94</a></li>
-			<li><a href="#">Instagram: @19tt94</a></li>
+			<li>
+				<a href="#">
+					<font-awesome-icon :icon="['fab', 'github-square']" />
+					@19tt94
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<font-awesome-icon :icon="['fab', 'linkedin']" />
+					@19tt94
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<font-awesome-icon :icon="['fab', 'instagram']" />
+					@19tt94
+				</a>
+			</li>
 		</ul>
 
 		<p>New Site Comming Soon!</p>
