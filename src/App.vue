@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-		<div class="noise" :style="{'background-image': 'url(' + require('@/assets/images/noise.gif') + ')'}"></div>
+		<div class="noise" :style="{'background-image': 'url(' + require('@/assets/images/film2.gif') + ')'}"></div>
 		<!-- Global Nav Component -->
 		<navigation v-if="!down"/>
 		<!-- Pages -->
