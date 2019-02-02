@@ -1,7 +1,12 @@
 <template>
   <div id="app">
-		<!-- <img class="palm" src="@/assets/images/palm.jpg"> -->
-		<div class="noise" :style="{'background-image': 'url(' + require('@/assets/images/film2.gif') + ')'}"></div>
+		<!-- TODO: possible make into a partial component if reused -->
+		<div class="palm">
+			<div class="palm--overlay"></div>
+			<img class="palm--img" src="@/assets/images/palm.jpg">
+		</div>
+		<!-- Noise -->
+		<div class="noise" :style="{'background-image': 'url(' + require('@/assets/images/film.gif') + ')'}"></div>
 		<!-- Global Nav Component -->
 		<navigation v-if="!down"/>
 		<!-- Pages -->

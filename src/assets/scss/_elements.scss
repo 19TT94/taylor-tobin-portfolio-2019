@@ -2,6 +2,7 @@
 	width: 100vw;
 	height: 100vh;
 	padding: $menuHeight 1rem 1rem;
+	z-index: $default;
 }
 
 .container {
@@ -11,7 +12,6 @@
 
 .noise {
   position: fixed;
-	// background-repeat: repeat;
 	background-repeat: no-repeat;
 	background-size: cover;
   width: 100%;
@@ -26,11 +26,12 @@
 
 .palm {
 	position: absolute;
-	width: calc(100% - 3rem);
+	top: 1rem;
+	left: 1rem;
+	width: calc(100% - 2rem);
 	height: calc(100% - 2rem);
-	padding: 1rem;
 	overflow: hidden;
-	z-index: -1;
+	z-index: $base;
 
 	&--img {
 		height: 100%;
