@@ -25,7 +25,7 @@
 				<li>
 					<a href="https://www.linkedin.com/in/taylor-tobin/">
 						<font-awesome-icon :icon="['fab', 'linkedin']" />
-						@19tt94
+						@taylor-tobin
 					</a>
 				</li>
 				<li>
@@ -37,7 +37,7 @@
 			</ul>
 		</section>
 
-		<!-- <customMap class="map" /> -->
+		<customMap class="map" />
 
 		<p class="note">New Site Coming Soon!</p>
   </div>
