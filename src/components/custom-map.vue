@@ -11,11 +11,13 @@ export default {
 	async mounted() {
     try {
       const google = await gmapsInit();
+			/* eslint-disable no-unused-vars */
       const map = new google.maps.Map(this.$el, {
 				center: {lat: 33.7838, lng: -118.1141},
 				zoom: 13,
 				styles: this.styles
 			});
+			/* eslint-disable no-unused-vars */
     } catch (error) {
       throw error;
     }
