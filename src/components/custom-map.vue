@@ -1,5 +1,5 @@
 <template>
-	<div id="custom-map"></div>
+	<div id="custom-map" v-if="!disabled"></div>
 </template>
 
 <script>
@@ -9,22 +9,27 @@ export default {
   name: 'custom-map',
 
 	async mounted() {
-    try {
-      const google = await gmapsInit();
-			/* eslint-disable no-unused-vars */
-      const map = new google.maps.Map(this.$el, {
-				center: {lat: 33.7838, lng: -118.1141},
-				zoom: 13,
-				styles: this.styles
-			});
-			/* eslint-disable no-unused-vars */
-    } catch (error) {
-      throw error;
+    if(!this.disabled) {
+			try {
+        const google = await gmapsInit();
+				/* eslint-disable no-unused-vars */
+        const map = new google.maps.Map(this.$el, {
+					center: {lat: 33.7838, lng: -118.1141},
+					zoom: 13,
+					controls: 0,
+					styles: this.styles
+				});
+				/* eslint-disable no-unused-vars */
+      } catch (error) {
+        throw error;
+      }
     }
   },
 
   data() {
 		return {
+			"limit": 900,
+			"disabled": true,
 			"styles" : [
 				{
 					"featureType": "all",
