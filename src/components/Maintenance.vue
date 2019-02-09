@@ -3,7 +3,7 @@
 
     <div class="palm" :style="{'background-image': 'url(' + require('@/assets/images/palm.jpg') + ')'}"></div>
 
-		<section class="container info">
+		<section class="container info hide" :class="{ 'show': show }">
 			<h1>Taylor Tobin</h1>
 			<h2>Developer</h2>
 
@@ -46,9 +46,22 @@ import customMap from '@/components/custom-map.vue'
 
 export default {
   name: 'Maintenance',
+
 	components: {
 		customMap
-	}
+	},
+
+  data() {
+    return {
+      show: false
+    }
+  },
+
+  mounted() {
+    setTimeout(()=> {
+      this.show = true;
+    }, 500);
+  }
 }
 </script>
 
