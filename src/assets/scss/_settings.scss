@@ -9,6 +9,8 @@ body {
 h1 {
 	font-size: 2rem;
 	padding: 0 0 1rem;
+  font-family: $asap;
+
 }
 
 h2 {
@@ -43,10 +45,15 @@ ul {
 	}
 }
 
+.svg-inline--fa {
+  color: $gold;
+  font-size: 1.4rem;
+}
+
 // Default Classes
 
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: $asap;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 	overflow: hidden;

@@ -248,7 +248,6 @@ export default {
 }
 
 .fa-map-marker {
-  color: $gold;
   z-index: $front;
   font-size: 2rem;
   margin: -10px;
