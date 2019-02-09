@@ -1,10 +1,7 @@
 <template>
   <div class="maintenance">
-		<!-- TODO: possible make into a partial component if reused -->
-		<div class="palm">
-			<div class="palm--overlay"></div>
-			<img class="palm--img" src="@/assets/images/palm.jpg">
-		</div>
+
+    <div class="palm" :style="{'background-image': 'url(' + require('@/assets/images/palm.jpg') + ')'}"></div>
 
 		<section class="container info">
 			<h1>Taylor Tobin</h1>
@@ -37,9 +34,10 @@
 			</ul>
 		</section>
 
-		<customMap class="map" />
+    <p class="note">New Site Coming Soon!</p>
 
-		<p class="note">New Site Coming Soon!</p>
+    <customMap class="map" />
+
   </div>
 </template>
 
@@ -70,7 +68,7 @@ export default {
 
 .note {
 	position: absolute;
-	bottom: 5%;
+	bottom: 30%;
 	left: 0;
 	right: 0;
 	margin: 0 auto;

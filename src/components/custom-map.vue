@@ -1,5 +1,8 @@
 <template>
 	<div id="custom-map" v-if="!disabled"></div>
+  <div class="map-image" :style="{'background-image': 'url(' + require('@/assets/images/map.png') + ')'}" v-else>
+    <font-awesome-icon class="marker" icon="map-marker" />
+  </div>
 </template>
 
 <script>
@@ -138,7 +141,7 @@ export default {
 				"elementType": "geometry.stroke",
 				"stylers": [
 						{
-							"color": "#000000"
+							"color": "rgb(238,232,170)"
 						},
 						{
 							"lightness": 29
@@ -207,26 +210,49 @@ export default {
 @import "@/assets/scss/app.scss"; // global styles
 
 .map-container {
-    position: relative;
-    padding-bottom: 54%;
-    height: 0;
-    overflow: hidden;
+  position: relative;
+  padding-bottom: 54%;
+  height: 0;
+  overflow: hidden;
 
-    @media (min-width: 375px) {
-        padding-bottom: 73%;
-    }
+  @media (min-width: 375px) {
+    padding-bottom: 73%;
+  }
 
-    @media (min-width: 414px) {
-        padding-bottom: 83%;
-    }
+  @media (min-width: 414px) {
+    padding-bottom: 83%;
+  }
 }
 
 .map-object {
-    position: absolute;
-    top:0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.map-image {
+  border-top: 1px solid $gold;
+  background-size: 200%;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+
+  @media #{$small} {
+    background-size: cover;
+  }
+}
+
+.fa-map-marker {
+  color: $gold;
+  z-index: $front;
+  font-size: 2rem;
+  margin: -10px;
+  transform: translateY(-25px);
 }
 
 </style>

@@ -1,10 +1,10 @@
 <template>
   <div id="app">
 		<!-- TODO: possible make into a partial component if reused -->
-		<div class="palm">
+		<!-- <div class="palm">
 			<div class="palm--overlay"></div>
 			<img class="palm--img" src="@/assets/images/palm.jpg">
-		</div>
+		</div> -->
 		<!-- Noise -->
 		<div class="noise" :style="{'background-image': 'url(' + require('@/assets/images/film.gif') + ')'}"></div>
 		<!-- Global Nav Component -->
