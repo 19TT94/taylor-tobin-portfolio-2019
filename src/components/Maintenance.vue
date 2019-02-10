@@ -1,7 +1,7 @@
 <template>
   <div class="maintenance">
 
-    <div class="palm" :style="{'background-image': 'url(' + require('@/assets/images/palm.jpg') + ')'}"></div>
+    <div class="palm-mn" :style="{'background-image': 'url(' + require('@/assets/images/palm.jpg') + ')'}"></div>
 
 		<section class="container info hide" :class="{ 'show': show }">
 			<h1>Taylor Tobin</h1>
