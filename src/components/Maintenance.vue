@@ -1,8 +1,6 @@
 <template>
   <div class="maintenance">
 
-    <div class="palm" :style="{ 'background-image': 'linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(' + require('@/assets/images/palm.jpg') + ')' }"></div>
-
 		<section class="container info hide" :class="{ 'show': show }">
 			<h1>Taylor Tobin</h1>
 			<h2>Developer</h2>
@@ -79,15 +77,9 @@ export default {
 	color: $white;
 }
 
-.info {
-	border: 2rem solid #101216;
-	width: calc(100% - 8rem);
-	height: calc(100% - 7.5rem);
-}
-
 .note {
 	position: absolute;
-	bottom: 35%;
+	bottom: 40%;
 	left: 0;
 	right: 0;
 	margin: 0 auto;
