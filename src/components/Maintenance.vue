@@ -30,11 +30,12 @@
 					</a>
 				</li>
 			</ul>
+
 		</section>
 
-    <p class="note">New Site Coming Soon!</p>
+    <p class="note" :class="{ 'hide': !intro }">New Site Coming Soon! Here's the basics for now.</p>
 
-    <customMap class="map" />
+    <customMap class="map" :class="{ 'move-up': show }" />
 
   </div>
 </template>
@@ -51,14 +52,20 @@ export default {
 
   data() {
     return {
+      intro: true,
       show: false
     }
   },
 
   mounted() {
     setTimeout(()=> {
-      this.show = true;
-    }, 500);
+      this.intro = false;
+
+      setTimeout(()=> {
+        this.show = true;
+      }, 500);
+
+    }, 2500);
   }
 }
 </script>
@@ -77,22 +84,30 @@ export default {
 	color: $white;
 }
 
-.note {
-	position: absolute;
-	bottom: 40%;
-	left: 0;
-	right: 0;
-	margin: 0 auto;
-	text-align: center;
-	color: $gold;
-}
-
 .map {
 	position: absolute;
 	bottom: 0;
 	left: 0;
 	width: 100%;
-	height: 200px;
+	height: 40%;
+  transform: translateY(100%);
+  transition: all ease 0.5s;
+}
+
+.move-up {
+  transform: translateY(0%);
+  transition: all 1s ease;
+}
+
+.note {
+	position: absolute;
+	bottom: 50%;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	text-align: center;
+	color: $gold;
+  max-width: 75%;
 }
 
 </style>

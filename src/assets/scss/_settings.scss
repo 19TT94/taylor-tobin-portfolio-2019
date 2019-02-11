@@ -9,21 +9,38 @@ body {
 h1 {
 	font-size: 2rem;
 	padding: 0 0 1rem;
-  	font-family: $asap;
+  font-family: $asap;
+
+  @media #{$small} {
+    font-size: 4rem;
+  }
 }
 
 h2 {
 	font-size: 1.5rem;
 	padding: 0 0 1rem;
+
+  @media #{$small} {
+    font-size: 3.5rem;
+  }
 }
 
 h3 {
 	font-size: 1.2rem;
 	padding: 0 0 1rem;
+
+  @media #{$small} {
+    font-size: 3rem;
+  }
 }
 
 p {
 	font-size: 1rem;
+  line-height: 1.4rem;
+
+  @media #{$small} {
+    font-size: 2rem;
+  }
 }
 
 a {
@@ -47,6 +64,11 @@ ul {
 .svg-inline--fa {
   color: $gold;
   font-size: 1.4rem;
+  padding-right: 0.5rem;
+
+  @media #{$small} {
+    font-size: 2rem;
+  }
 }
 
 // Default Classes
