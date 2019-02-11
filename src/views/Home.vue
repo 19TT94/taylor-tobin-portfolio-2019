@@ -1,5 +1,5 @@
 <template>
-  <div class="page home">
+  <div class="page home frame">
 		<maintenance v-if="down"/>
 		<h1>Home</h1>
   </div>

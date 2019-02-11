@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="palm" :style="{ 'background-image': 'url(' + require('@/assets/images/palm.jpg') + ')' }">
+    <div id="app" class="palm" :style="{ 'background-image': 'linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(' + require('@/assets/images/palm.jpg') + ')' }">
 		<!-- Noise -->
 		<div class="noise" :style="{'background-image': 'url(' + require('@/assets/images/film.gif') + ')'}"></div>
 		<!-- Global Nav Component -->
@@ -19,7 +19,7 @@
 
 		data() {
 			return {
-				down: false
+				down: true
 			};
 		}
 	}
