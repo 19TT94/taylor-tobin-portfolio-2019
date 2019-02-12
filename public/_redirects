@@ -1,2 +1,2 @@
-# Netlify settings for single-page application
-/*    /index.html   200
+# Redirect default Netlify subdomain to primary domain
+http://ttobin.netlify.com/* http://www.ttobin.com/:splat 301!
