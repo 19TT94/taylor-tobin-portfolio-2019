@@ -2,61 +2,83 @@
 
 // Tags
 body {
-	font-size: 16px; // base font size
-	font-family: $body-font;
-	overflow: hidden;
+  font-size: 16px; // base font size
+  font-family: $body-font;
+  overflow: hidden;
 }
 
 h1 {
-	font-size: 2rem;
-	padding: 0 0 1rem;
-	font-family: $title-font;
-	font-weight: 600;
+  font-size: 2rem;
+  padding: 0 0 1rem;
+  font-family: $title-font;
+  font-weight: 600;
+
+  @media #{$small} {
+    font-size: 4rem;
+  }
 }
 
 h2 {
-	font-size: 1.5rem;
-	padding: 0 0 1rem;
-	font-family: $title-font;
-	font-weight: 600;
+  font-size: 1.5rem;
+  padding: 0 0 1rem;
+  font-family: $title-font;
+  font-weight: 600;
+
+  @media #{$small} {
+    font-size: 3.5rem;
+  }
 }
 
 h3 {
-	font-size: 1.2rem;
-	padding: 0 0 1rem;
+  font-size: 1.2rem;
+  padding: 0 0 1rem;
+
+  @media #{$small} {
+    font-size: 3rem;
+  }
 }
 
 p {
-	font-size: 1rem;
+  font-size: 1rem;
+  line-height: 1.4rem;
+
+  @media #{$small} {
+    font-size: 2rem;
+  }
 }
 
 a {
+  // reset color with variable
+  color: $gold;
+  text-decoration: none;
+  &.router-link-exact-active {
 	// reset color with variable
 	color: $gold;
-	text-decoration: none;
-	&.router-link-exact-active {
-		// reset color with variable
-		color: $gold;
-	}
+  }
 }
 
 span {
-	font-family: $title-font;
-	font-weight: 600;
-	letter-spacing: 2px;
+  font-family: $title-font;
+  font-weight: 600;
+  letter-spacing: 2px;
 }
 
 ul {
-	padding: 0 0 1rem;
+  padding: 0 0 1rem;
 
-	li {
-		padding: 0 0 0.5rem;
-	}
+  li {
+    padding: 0 0 0.5rem;
+  }
 }
 
 .svg-inline--fa {
   color: $gold;
   font-size: 1.4rem;
+  padding-right: 0.5rem;
+
+  @media #{$small} {
+    font-size: 2rem;
+  }
 }
 
 // Default Classes
