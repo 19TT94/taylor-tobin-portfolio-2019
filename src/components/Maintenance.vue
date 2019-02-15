@@ -8,33 +8,33 @@
 			<h2>Developer</h2>
 
 			<ul class="contact">
-				<li>Email: 19tt94@gmail.com</li>
-				<li>Phone: (805) 434-7559</li>
+				<li><span>Email:</span> 19tt94@gmail.com</li>
+				<li><span>Phone:</span> (805) 434-7559</li>
 			</ul>
 
 			<ul class="links">
 				<li>
 					<a href="https://github.com/19TT94">
 						<font-awesome-icon :icon="['fab', 'github-square']" />
-						@19tt94
+						<span class="amp">@</span>19tt94
 					</a>
 				</li>
 				<li>
 					<a href="https://www.linkedin.com/in/taylor-tobin/">
 						<font-awesome-icon :icon="['fab', 'linkedin']" />
-						@taylor-tobin
+						<span class="amp">@</span>taylor-tobin
 					</a>
 				</li>
 				<li>
 					<a href="https://www.instagram.com/19tt94/">
 						<font-awesome-icon :icon="['fab', 'instagram']" />
-						@19tt94
+						<span class="amp">@</span>19tt94
 					</a>
 				</li>
 			</ul>
 		</section>
 
-    <p class="note">New Site Coming Soon!</p>
+    <p class="note special">New Site Coming Soon!</p>
 
     <customMap class="map" />
 
@@ -101,6 +101,10 @@ export default {
 	left: 0;
 	width: 100%;
 	height: 200px;
+}
+
+.amp {
+	padding-left: 0.5rem;
 }
 
 </style>

@@ -5,16 +5,20 @@
 		<!-- Global Nav Component -->
 		<navigation v-if="!down"/>
 		<!-- Pages -->
-    <router-view :down="down"/>
+    <router-view />
+		<!-- Maintenance -->
+		<maintenance v-if="down"/>
   </div>
 </template>
 
 <script>
 	import navigation from '@/components/navigation.vue';
+	import maintenance from '@/components/maintenance.vue';
 
 	export default {
 		components: {
-			navigation
+			navigation,
+			maintenance
 		},
 
 		data() {

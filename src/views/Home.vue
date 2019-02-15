@@ -1,23 +1,17 @@
 <template>
   <div class="page home frame">
-		<maintenance v-if="down"/>
 		<h1>Home</h1>
   </div>
 </template>
 
 <script>
-import maintenance from '@/components/maintenance.vue'
 
 export default {
   name: 'home',
 
 	props: {
 		down: Boolean
-	},
-
-  components: {
-    maintenance
-  }
+	}
 }
 </script>
 

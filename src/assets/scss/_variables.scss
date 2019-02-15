@@ -1,5 +1,10 @@
-$quicksand: 'Quicksand', sans-serif;
-$asap: 'Asap', sans-serif;
+$title-font: 'Megrim', sans-serif;
+$body-font: 'Asap', sans-serif;
+
+.special {
+  font-family: $title-font;
+  font-weight: 600;
+}
 
 // Component Heights
 $menuHeight: 40px;
