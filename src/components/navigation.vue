@@ -5,7 +5,7 @@
 			<div class="bar" :class="{ 'rotate': unlock }"></div>
 		</div>
 
-		<div class="menu-wrap" :class="{ 'show': open }">
+		<div class="menu-wrap" :class="{ 'visible': unlock, 'show': open }">
 			<router-link class="item" to="/">Home</router-link>
 			<router-link class="item" to="/featured">Featured</router-link>
 			<router-link class="item" to="/projects">Projects</router-link>
@@ -32,10 +32,10 @@ export default {
 	
 	methods: {
 		toggleNav() {
-			this.unlock = !this.unlock;			
+			this.unlock = !this.unlock;
 			setTimeout(()=> {
-				this.open = !this.open;			
-			}, 500)
+				this.open = !this.open;
+			}, 200)
 		}
 	}
 }
@@ -59,6 +59,7 @@ export default {
 		width: 35px;
 		height: 35px;
 		margin: 3rem 3rem;
+		z-index: $front;
 
 		.bar {
 			width: 100%;
@@ -69,18 +70,14 @@ export default {
 		}
 
 		.rotate {
+			background: $black;
+
 			&:first-child {
 				transform: rotate(45deg) translateX(6px);
-				// transform: rotate(45deg);
-				// margin-top: 0;
-				// transform-origin: 0 0;
 			}
 
 			&:last-child {
 				transform: rotate(-405deg) translateX(6px);
-				// transform: rotate(-45deg);
-				// margin-top: 0;
-				// transform-origin: 100% 100%;
 			}
 		}
 	}
@@ -95,7 +92,7 @@ export default {
 		background: $white;
 		opacity: 0;
 		visibility: hidden;
-		transition: all 1s ease;
+		transition: all 0.5s ease;
 
 		.item {
 			font-family: $title-font;
@@ -104,6 +101,14 @@ export default {
 			color: $black;
 			font-size: 2rem;
 		}
+	}
+
+	.visible {
+		visibility: visible;
+	}
+
+	.show {
+		opacity: 1;
 	}
 }
 </style>
