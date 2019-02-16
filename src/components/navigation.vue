@@ -6,11 +6,11 @@
 		</div>
 
 		<div class="menu-wrap" :class="{ 'visible': unlock, 'show': open }">
-			<router-link class="item" to="/">Home</router-link>
-			<router-link class="item" to="/featured">Featured</router-link>
-			<router-link class="item" to="/projects">Projects</router-link>
-			<router-link class="item" to="/about">About</router-link>
-			<router-link class="item" to="/contact">Contact</router-link>
+			<router-link @click.native="pageChange" class="item" to="/">Home</router-link>
+			<router-link @click.native="pageChange" class="item" to="/featured">Featured</router-link>
+			<router-link @click.native="pageChange" class="item" to="/projects">Projects</router-link>
+			<router-link @click.native="pageChange" class="item" to="/about">About</router-link>
+			<router-link @click.native="pageChange"class="item" to="/contact">Contact</router-link>
 		</div>
 	</div>
 </template>
@@ -31,11 +31,17 @@ export default {
 	},
 	
 	methods: {
+		/* toggles events for opening and closing the nav */
 		toggleNav() {
 			this.unlock = !this.unlock;
 			setTimeout(()=> {
 				this.open = !this.open;
 			}, 200)
+		},
+		/* handles route change event, resets data */
+		pageChange() {
+			this.unlock = false;
+			this.open = false;
 		}
 	}
 }
