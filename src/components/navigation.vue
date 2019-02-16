@@ -58,7 +58,7 @@ export default {
 		right: 0;
 		width: 35px;
 		height: 35px;
-		margin: 3rem 3rem;
+		margin: 2rem 2.4rem;
 		z-index: 99;
 
 		.bar {

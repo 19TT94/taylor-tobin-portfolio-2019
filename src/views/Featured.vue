@@ -17,8 +17,13 @@
 <script>
 export default {
   name: 'Featured',
-  props: {
-    msg: String
+  
+  data() {
+    return {
+      projects: [
+        ""
+      ]
+    }
   }
 }
 </script>
@@ -31,7 +36,8 @@ export default {
   color: $white;
 
   h1 {
-    padding: 6rem 2rem 1rem;
+    padding: 4.5rem 2rem 1rem;
+    text-align: center;
   }
 
   &-info {
