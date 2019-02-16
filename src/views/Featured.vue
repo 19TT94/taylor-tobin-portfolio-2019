@@ -2,14 +2,16 @@
   <div class="featured">
     <div class="section"></div>
 
-    <h1>Featured Projects</h1>
+    <h1>{{projects[0].name}}</h1>
 
     <div class="featured-slider">
 
     </div>
 
     <div class="featured-info">
-      <p>test</p>
+      <p v-if="projects[0].type">{{projects[0].type}}</p>
+      <p v-if="projects[0].name">{{projects[0].name}}</p>
+      <a :href="projects[0].link" v-if="projects[0].link">Visit</a>
     </div>
   </div>
 </template>
@@ -21,7 +23,26 @@ export default {
   data() {
     return {
       projects: [
-        ""
+        {
+          "name": "Dreamworks Animation",
+          "link": "https://dreamworks.com",
+          "type": "Vue/Laravel"
+        },
+        {
+          "name": "ReplaceHate.com",
+          "link": "https://replacehate.com",
+          "type": "Ember"
+        },
+        {
+          "name": "PXL White Elephant",
+          "link": "https://pxl-holiday.com",
+          "type": "Ember/Laravel"
+        },
+        {
+          "name": "Global Road",
+          "link": "",
+          "type": "Vue/Laravel"
+        }
       ]
     }
   }
