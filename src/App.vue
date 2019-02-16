@@ -5,7 +5,7 @@
 		<!-- Global Nav Component -->
 		<navigation v-if="!down"/>
 		<!-- Pages -->
-    <router-view />
+    <router-view v-if="!down"/>
 		<!-- Maintenance -->
 		<maintenance v-if="down"/>
   </div>
