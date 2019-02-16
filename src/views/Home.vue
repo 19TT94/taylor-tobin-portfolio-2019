@@ -17,8 +17,9 @@ export default {
 			
 			// animate button before transition
 			setTimeout(() => {
-				this.$route.router.go('/featured');
-			}, 100);
+				console.log("go");
+				this.$router.go(1)
+			}, 1000);
 		}
 	}
 }
