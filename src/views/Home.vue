@@ -2,24 +2,32 @@
   <div class="page home frame">
 		<h1 class="heading">TT</h1>
 		<h3 class="heading">Developer</h3>
-		<button @click="firstTransition" class="first-transition"></button>
+		<button class="first-transition"
+			@click="firstTransition" 
+			:class="{'transition': transition}">
+		</button>
   </div>
 </template>
 
 <script>
 
 export default {
-  name: 'home',
+	name: 'home',
+	
+	data() {
+		return {
+			transition: false
+		}
+	},
 
 	methods: {
-		firstTransition() {
-			console.log("hi");
-			
+		firstTransition() {	
+			this.transition = true;		
 			// animate button before transition
 			setTimeout(() => {
-				console.log("go");
-				this.$router.go(1)
-			}, 1000);
+				this.$router.push({ path: 'featured' });
+				this.transition = false;		
+			}, 2000);
 		}
 	}
 }
@@ -30,28 +38,42 @@ export default {
 @import "@/assets/scss/app.scss"; // global styles
 
 .home {
+	position: relative;
+
 	.heading {
 		color: $gold;
 	}
 
 	.first-transition {
 		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
+		top: calc(50% - 20px);
+		left: calc(50% - 20px);
+		border: 2px solid $gold;
+		border-radius: 50%;
+		background: transparent;
+		width: 40px;
+		height: 40px;
+		margin: 0 auto;
+		
 
 		&:before {
 			content: '';
-			width: 40px;
-			height: 40px;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			border: 2px solid $gold;
-			border-radius: 50%;
+			position: absolute;
+			top: 0;
+			left: 0;
 			margin: 0 auto;
+			border: 2px solid $white;
+			border-radius: 50%;
+			width: 80px;
+			height: 80px;
+			transition: all ease 0.5s;
 		}
+	}
+
+	.transition {
+		&:after {
+			transform: scale(0.2);
+		}	
 	}
 }
 

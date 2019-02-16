@@ -59,7 +59,7 @@ export default {
 		width: 35px;
 		height: 35px;
 		margin: 3rem 3rem;
-		z-index: $front;
+		z-index: 99;
 
 		.bar {
 			width: 100%;
@@ -93,6 +93,7 @@ export default {
 		background: $white;
 		opacity: 0;
 		visibility: hidden;
+		z-index: $back;
 		transition: all 0.5s ease;
 
 		.item {
@@ -106,6 +107,7 @@ export default {
 
 	.visible {
 		visibility: visible;
+		z-index: $front;
 	}
 
 	.show {

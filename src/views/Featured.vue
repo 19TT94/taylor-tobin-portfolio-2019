@@ -1,5 +1,5 @@
 <template>
-  <div class="page featured">
+  <div class="featured">
     <div class="section"></div>
 
     <h1>Featured Projects</h1>
@@ -28,19 +28,23 @@ export default {
 @import "@/assets/scss/app.scss"; // global styles
 
 .featured {
-  color: $black;
-  padding-left: 0;
-  
+  color: $white;
+
+  h1 {
+    padding: 6rem 2rem 1rem;
+  }
+
   &-info {
     width: 100%;
     height: 50%;
+    padding: 0 2rem;
   }
 
   .section {
     position: absolute;
     width: 100%;
     height: 50%;
-    background: $white;
+    background: $black;
     z-index: -1;
   }
 }
