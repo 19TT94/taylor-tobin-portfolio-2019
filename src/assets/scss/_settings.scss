@@ -65,14 +65,14 @@ span {
   letter-spacing: 2px;
 }
 
-button {
+.button {
 	font-size: 1.2rem;
 	font-family: $title-font;
 	font-weight: 600;
 	padding: 0.5rem 2rem;
 	border: 1px solid $gold;
 	color: $gold;
-	background: $black;
+	background: transparent;
 }
 
 ul {
