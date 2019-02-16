@@ -10,7 +10,7 @@
 			<router-link @click.native="pageChange" class="item" to="/featured">Featured</router-link>
 			<router-link @click.native="pageChange" class="item" to="/projects">Projects</router-link>
 			<router-link @click.native="pageChange" class="item" to="/about">About</router-link>
-			<router-link @click.native="pageChange"class="item" to="/contact">Contact</router-link>
+			<router-link @click.native="pageChange" class="item" to="/contact">Contact</router-link>
 		</div>
 	</div>
 </template>
@@ -52,12 +52,6 @@ export default {
 @import "@/assets/scss/app.scss"; // global styles
 
 #menu {
-	position: fixed;
-	width: 100%;
-	height: 100%;
-	text-align: center;
-	z-index: $front;
-
 	.toggle {
 		position: absolute;
 		top: 0;
@@ -89,6 +83,7 @@ export default {
 	}
 
 	.menu-wrap {
+		position: fixed;
 		width: 100%;
 		height: 100%;
 		display: flex;
