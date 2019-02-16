@@ -1,6 +1,7 @@
 <template>
   <div class="page home frame">
-		<h1>Home</h1>
+		<h1 class="heading">TT</h1>
+		<h3 class="heading">Developer</h3>
   </div>
 </template>
 
@@ -20,7 +21,9 @@ export default {
 @import "@/assets/scss/app.scss"; // global styles
 
 .home {
-	// background: goldenrod;
+	.heading {
+		color: $gold;
+	}
 }
 
 </style>

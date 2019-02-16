@@ -1,6 +1,16 @@
 <template>
   <div class="page featured">
+    <div class="section"></div>
+
     <h1>Featured Projects</h1>
+
+    <div class="featured-slider">
+
+    </div>
+
+    <div class="featured-info">
+      <p>test</p>
+    </div>
   </div>
 </template>
 
@@ -18,7 +28,21 @@ export default {
 @import "@/assets/scss/app.scss"; // global styles
 
 .featured {
-	background: darkslategray;
+  color: $black;
+  padding-left: 0;
+  
+  &-info {
+    width: 100%;
+    height: 50%;
+  }
+
+  .section {
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    background: $white;
+    z-index: -1;
+  }
 }
 
 </style>
