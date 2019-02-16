@@ -25,16 +25,18 @@ h2 {
   font-weight: 600;
 
   @media #{$small} {
-    font-size: 3.5rem;
+    font-size: 3rem;
   }
 }
 
 h3 {
   font-size: 1.2rem;
   padding: 0 0 1rem;
+  font-family: $title-font;
+  font-weight: 600;
 
   @media #{$small} {
-    font-size: 3rem;
+    font-size: 2rem;
   }
 }
 
@@ -63,6 +65,16 @@ span {
   letter-spacing: 2px;
 }
 
+button {
+	font-size: 1.2rem;
+	font-family: $title-font;
+	font-weight: 600;
+	padding: 0.5rem 2rem;
+	border: 1px solid $gold;
+	color: $gold;
+	background: $black;
+}
+
 ul {
   padding: 0 0 1rem;
 
@@ -77,7 +89,7 @@ ul {
   padding-right: 0.5rem;
 
   @media #{$small} {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 }
 

@@ -3,7 +3,7 @@
 
 		<section class="container info hide" :class="{ 'show': show }">
 			<h1>Taylor Tobin</h1>
-			<h2>Developer</h2>
+			<h3>Developer</h3>
 
 			<ul class="contact">
 				<li><span>Email:</span> 19tt94@gmail.com</li>
@@ -30,6 +30,8 @@
 					</a>
 				</li>
 			</ul>
+
+			<button><a class="button resume" :href="require('@/assets/images/resume.jpg')" download="resume.jpg">Resume</a></button>
 
 		</section>
 
@@ -89,9 +91,13 @@ export default {
 	bottom: 0;
 	left: 0;
 	width: 100%;
-	height: 40%;
+	height: 45%;
   transform: translateY(100%);
-  transition: all ease 0.5s;
+	transition: all ease 0.5s;
+	
+	@media #{$small} {
+   	height: 35%;
+  }
 }
 
 .move-up {
