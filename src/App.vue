@@ -23,7 +23,8 @@
 
 		data() {
 			return {
-				down: false
+				// reference state from store
+				down: this.$store.state.down
 			};
 		}
 	}

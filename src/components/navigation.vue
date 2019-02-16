@@ -1,5 +1,5 @@
 <template>
-	<div id="menu">
+	<div id="menu" v-if="!down">
 		<div class="toggle" @click="toggleNav">
 			<div class="bar" :class="{ 'rotate': unlock }"></div>
 			<div class="bar" :class="{ 'rotate': unlock }"></div>
@@ -25,6 +25,8 @@ export default {
 
 	data() {
 		return {
+			// reference state from store
+			down: this.$store.state.down,
 			unlock: false,
 			open: false
 		}
