@@ -91,13 +91,9 @@ export default {
 	bottom: 0;
 	left: 0;
 	width: 100%;
-	height: 45%;
+  height: 35%;
   transform: translateY(100%);
 	transition: all ease 0.5s;
-	
-	@media #{$small} {
-   	height: 35%;
-  }
 }
 
 .move-up {
