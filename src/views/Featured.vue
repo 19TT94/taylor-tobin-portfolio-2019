@@ -2,16 +2,15 @@
   <div class="featured">
     <div class="section"></div>
 
-    <h1>{{projects[0].name}}</h1>
-
-    <div class="featured-slider">
-
-    </div>
-
     <div class="featured-info">
+      <h1>{{projects[0].name}}</h1>
       <p v-if="projects[0].type">{{projects[0].type}}</p>
       <p v-if="projects[0].name">{{projects[0].name}}</p>
       <a :href="projects[0].link" v-if="projects[0].link">Visit</a>
+    </div>
+
+    <div class="featured-slider">
+      <img :src="projects[0].slides[0]">
     </div>
   </div>
 </template>
@@ -26,22 +25,47 @@ export default {
         {
           "name": "Dreamworks Animation",
           "link": "https://dreamworks.com",
-          "type": "Vue/Laravel"
+          "description": "",
+          "type": "Vue/Laravel",
+          "slides": [
+            "http://placehold.it/200x200",
+            "http://placehold.it/200x200",
+            "http://placehold.it/200x200"
+
+          ]
         },
         {
           "name": "ReplaceHate.com",
           "link": "https://replacehate.com",
-          "type": "Ember"
+          "description": "",
+          "type": "Ember",
+          "slides": [
+            "http://placehold.it/200x200",
+            "http://placehold.it/200x200",
+            "http://placehold.it/200x200"
+          ]
         },
         {
           "name": "PXL White Elephant",
           "link": "https://pxl-holiday.com",
-          "type": "Ember/Laravel"
+          "description": "",
+          "type": "Ember/Laravel",
+          "slides": [
+            "http://placehold.it/200x200",
+            "http://placehold.it/200x200",
+            "http://placehold.it/200x200"
+          ]
         },
         {
           "name": "Global Road",
           "link": "",
-          "type": "Vue/Laravel"
+          "description": "",
+          "type": "Vue/Laravel",
+          "slides": [
+            "http://placehold.it/200x200",
+            "http://placehold.it/200x200",
+            "http://placehold.it/200x200"
+          ]
         }
       ]
     }
@@ -55,16 +79,40 @@ export default {
 
 .featured {
   color: $white;
-
-  h1 {
-    padding: 4.5rem 2rem 1rem;
-    text-align: center;
-  }
+  position: relative;
+  width: 100%;
+  height: 100%;
 
   &-info {
     width: 100%;
     height: 50%;
-    padding: 0 2rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    h1 {
+      padding: 4.5rem 0 1rem;
+      text-align: center;
+    }
+
+    p {
+      padding: 0 1rem;
+    }
+
+    a {
+      margin: 1rem;
+    }
+  }
+
+  &-slider {
+    width: 100%;
+    height: 50%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .section {
