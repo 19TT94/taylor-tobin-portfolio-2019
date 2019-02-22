@@ -85,10 +85,20 @@ export default {
           ]
         },
         {
-          "name": "Global Road",
-          "link": "",
+          "name": "Global Road Entertainment",
           "description": "",
           "type": "Vue/Laravel",
+          "slides": [
+            "http://placehold.it/200x200",
+            "http://placehold.it/200x200",
+            "http://placehold.it/200x200"
+          ]
+        },
+        {
+          "name": "Paramount Sticker Packs",
+          "link": "",
+          "description": "",
+          "type": "Android/IOS",
           "slides": [
             "http://placehold.it/200x200",
             "http://placehold.it/200x200",

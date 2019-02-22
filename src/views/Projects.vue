@@ -2,8 +2,8 @@
   <div class="projects">
     <div class="bar"></div>
     <div class="grid">
-      <div class="block" v-for="item in items" :key="item">
-        <img :src="item">
+      <div class="block" v-for="project in projects" :key="project.id">
+        <a href="">{{project.name}}</a>
       </div>
     </div>
   </div>
@@ -14,13 +14,41 @@ export default {
   name: 'Projects',
   data() {
     return {
-      items : [
-        "http://placehold.it/200x200",
-        "http://placehold.it/200x200",
-        "http://placehold.it/200x200",
-        "http://placehold.it/200x200",
-        "http://placehold.it/200x200",
-        "http://placehold.it/200x200"
+      projects : [
+        {
+          "name": "PXL Website",
+          "link": "https://pxlagency.com",
+          "type": "Ember/Laravel",
+          "image": ""
+        },
+        {
+          "name": "Selfie Booth",
+          "type": "Ember/Cordova/Laravel",
+          "image": ""
+        },
+        {
+          "name": "Universal Platform",
+          "link": "https://universalpictures.com",
+          "type": "Vue/Laravel",
+          "image": ""
+        },
+        {
+          "name": "Fathom Events",
+          "link": "https://dreamworks.com",
+          "type": "Ember/Laravel",
+          "image": ""
+        },
+        {
+          "name": "Global Road",
+          "link": "https://dreamworks.com",
+          "type": "Vue/Laravel",
+          "image": ""
+        },
+        {
+          "name": "PXL Platform",
+          "type": "Ember",
+          "image": ""
+        }
       ]
     }
   }
@@ -52,8 +80,13 @@ export default {
     flex-wrap: wrap;
 
     .block {
+      position: relative;
       width: 50%;
+      height: 33.33%;
       line-height: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
       img {
         border: 1px solid $gold;
