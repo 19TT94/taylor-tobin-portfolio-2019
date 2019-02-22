@@ -126,7 +126,7 @@ export default {
     padding: 0 1rem;
     position: absolute;
     width: 100%;
-    z-index: $front;
+    z-index: $default;
   }
 
   &-info {
