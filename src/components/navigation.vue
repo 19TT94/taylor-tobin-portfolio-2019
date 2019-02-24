@@ -19,10 +19,6 @@
 export default {
   name: 'Menu',
 
-  props: {
-    msg: String
-	},
-
 	data() {
 		return {
 			// reference state from store
@@ -31,7 +27,7 @@ export default {
 			open: false
 		}
 	},
-	
+
 	methods: {
 		/* toggles events for opening and closing the nav */
 		toggleNav() {

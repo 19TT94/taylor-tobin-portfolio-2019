@@ -248,7 +248,7 @@ export default {
 }
 
 .fa-map-marker {
-  z-index: $front;
+  z-index: $default;
   font-size: 2rem;
   margin: -10px;
   transform: translateY(-25px);

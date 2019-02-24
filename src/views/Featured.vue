@@ -3,24 +3,28 @@
     <div class="section"></div>
     <div class="featured-wrapper">
       <button class="next-project" @click="next()">Next</button>
-      
+
       <div class="featured-info">
         <h1>{{current_project.name}}</h1>
         <p v-if="current_project.type">{{current_project.type}}</p>
         <p v-if="current_project.name">{{current_project.name}}</p>
         <a :href="current_project.link" v-if="current_project.link">Visit</a>
-      </div>     
-
-      <div class="featured-slider">
-        <img :src="projects[0].slides[0]">
       </div>
+
+      <slider class="featured-slider" :slides=current_project.slides />
     </div>
   </div>
 </template>
 
 <script>
+import slider from '@/components/slider.vue'
+
 export default {
   name: 'Featured',
+
+  components: {
+    slider
+  },
 
   computed: {
     /** @returns index of selected project if it doesn't exceed the length */
@@ -35,7 +39,7 @@ export default {
 
   methods: {
     /** @increments current project */
-    next() {      
+    next() {
       if(this.project_index === (this.length - 1)) {
         // reset index
         this.project_index = 0;
@@ -44,7 +48,7 @@ export default {
       }
     }
   },
-  
+
   data() {
     return {
       show: false,
@@ -169,6 +173,7 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: $base;
   }
 
   .section {
