@@ -10,30 +10,31 @@
 </template>
 
 <script>
+import preloader from "@/components/preloader.vue";
 
 export default {
 	name: 'home',
-	
+
 	data() {
 		return {
-			expand: false
+      expand: false
 		}
 	},
 
 	methods: {
-		start() {				
+		start() {
 			this.expand = true;
 			// animate button before transition
 			setTimeout(() => {
 				this.$router.push({ path: 'featured' });
-				this.transition = false;		
+				this.transition = false;
 			}, 2000);
 		},
 		go() {
 			// animate button before transition
 			setTimeout(() => {
 				this.$router.push({ path: 'featured' });
-				this.transition = false;		
+				this.transition = false;
 			}, 2000);
 		}
 	}
@@ -62,7 +63,7 @@ export default {
 		width: 40px;
 		height: 40px;
 		margin: 0 auto;
-		
+
 
 		&:before {
 			content: '';
@@ -83,7 +84,7 @@ export default {
 	.transition {
 		&:before {
 			transform: scale(3);
-		}	
+		}
 	}
 }
 

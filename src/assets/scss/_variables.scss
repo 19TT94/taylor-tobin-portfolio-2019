@@ -25,6 +25,10 @@ $back: -1;
   z-index: 1;
 }
 
+.remove {
+  display: none !important;
+}
+
 // Mixins
 @mixin absolute-cover() {
   // assume it's a block-level element

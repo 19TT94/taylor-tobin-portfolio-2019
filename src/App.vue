@@ -2,6 +2,11 @@
     <div id="app" class="palm" :style="{ 'background-image': 'linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(' + require('@/assets/images/palm.jpg') + ')' }">
 		<!-- Noise -->
 		<div class="noise" :style="{'background-image': 'url(' + require('@/assets/images/film.gif') + ')'}"></div>
+    <!-- preloader -->
+    <preloader :class="{
+      'hide'   : hide,
+      'remove' : remove
+    }"/>
 		<!-- Global Nav Component -->
 		<navigation v-if="!down"/>
 		<!-- Pages -->
@@ -14,17 +19,30 @@
 <script>
 	import navigation from '@/components/navigation.vue';
 	import maintenance from '@/components/maintenance.vue';
+  import preloader from "@/components/preloader.vue";
 
 	export default {
 		components: {
+      preloader,
 			navigation,
 			maintenance
 		},
 
+    mounted() {
+      setTimeout(()=> {
+        this.hide = true;
+        setTimeout(()=> {
+          this.remove = true;
+        }, 500);
+      }, 2500);
+    },
+
 		data() {
 			return {
 				// reference state from store
-				down: this.$store.state.down
+				down: this.$store.state.down,
+        hide: false,
+        remove: false
 			};
 		}
 	}
