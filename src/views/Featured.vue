@@ -4,14 +4,20 @@
     <div class="featured-wrapper">
       <button class="next-project" @click="next()">Next</button>
 
-      <div class="featured-info">
-        <h1>{{current_project.name}}</h1>
-        <p v-if="current_project.type">{{current_project.type}}</p>
-        <p v-if="current_project.name">{{current_project.name}}</p>
-        <a :href="current_project.link" v-if="current_project.link">Visit</a>
-      </div>
+      <section class="featured-info hide" :class="{'show' : show}">
+        <div class="content">
+          <h1>{{current_project.name}}</h1>
+          <p v-if="current_project.type">
+            {{current_project.type}}
+          </p>
+          <p v-if="current_project.name">
+            {{current_project.name}}
+          </p>
+          <a :href="current_project.link" v-if="current_project.link">Visit</a>
+        </div>
+      </section>
 
-      <slider class="featured-slider" :slides=current_project.slides />
+      <slider class="featured-slider hide" :class="{'show' : show}" :slides=current_project.slides />
     </div>
   </div>
 </template>
@@ -24,6 +30,12 @@ export default {
 
   components: {
     slider
+  },
+
+  mounted() {
+    setTimeout(()=> {
+      this.show = true;
+    }, 1000);
   },
 
   computed: {
@@ -40,12 +52,16 @@ export default {
   methods: {
     /** @increments current project */
     next() {
-      if(this.project_index === (this.length - 1)) {
-        // reset index
-        this.project_index = 0;
-      } else {
-        this.project_index = this.project_index + 1;
-      }
+      this.show = false;
+      setTimeout(()=> {
+        this.show = true;
+        if(this.project_index === (this.length - 1)) {
+          // reset index
+          this.project_index = 0;
+        } else {
+          this.project_index = this.project_index + 1;
+        }
+      }, 500);
     }
   },
 
@@ -146,9 +162,15 @@ export default {
   &-info {
     width: 100%;
     height: 50%;
+    margin: 0 auto;
     position: absolute;
     top: 0;
     left: 0;
+
+    .content {
+      max-width: 90%;
+      margin: 0 auto;
+    }
 
     h1 {
       padding: 4.5rem 0 1rem;
@@ -174,6 +196,7 @@ export default {
     align-items: center;
     justify-content: center;
     z-index: $base;
+    transition-delay: 0.5s;
   }
 
   .section {
