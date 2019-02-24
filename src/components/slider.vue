@@ -151,29 +151,27 @@ export default {
     .content {
       opacity: 0; // also hide this -
       transform: translate(0, 10px); // and move it up a bit for fun
-      transition: .2s; // animation duration
+      transition: 0.5s; // animation duration
       margin: 0 auto;
     }
 
     &.active { // when the frame that is chosen appears...
       opacity: 1;
-      z-index: 5;
+      z-index: $base;
       pointer-events: initial; // let users interact with buttons etc.
       .content {
         opacity: 1; // setup additional CSS animations
         //
         // delays are brittle compared to gsap -
         // but also fun / and sometimes do the trick
-        transition-delay: 1s;
+        transition-delay: 0.5s;
         transform: translate(0, 0); // set it back to 'normal' layout
       }
     }
   }
 
-  .pagination { // no class? $shame -or ok?
-    z-index: 5;
-    // high enough / but given enough room that if you need to set 3 or 4 etc
-    // - that you can. 0, 5, 10, 15, 20 should always be enough
+  .pagination {
+    z-index: $base;
   }
 
   .button, .menu {
