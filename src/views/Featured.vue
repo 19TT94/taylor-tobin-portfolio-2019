@@ -1,6 +1,6 @@
 <template>
   <div class="featured">
-    <div class="section"></div>
+    <div class="section" :class="{'move-down' : down}"></div>
     <div class="featured-wrapper">
       <button class="next-project" @click="next()">Next</button>
 
@@ -33,6 +33,9 @@ export default {
   },
 
   mounted() {
+    setTimeout(()=> {
+      this.down = true;
+    }, 500);
     setTimeout(()=> {
       this.show = true;
     }, 1000);
@@ -68,6 +71,7 @@ export default {
   data() {
     return {
       show: false,
+      down: false,
       project_index: 0,
       projects: [
         {
@@ -205,7 +209,12 @@ export default {
     height: 50%;
     background: $black;
     z-index: -1;
+    transform: translateY(-100%);
+  }
+
+  .move-down {
+    transform: translateY(0);
+    transition: all ease 0.5s;
   }
 }
-
 </style>

@@ -10,14 +10,12 @@
 </template>
 
 <script>
-import preloader from "@/components/preloader.vue";
-
 export default {
 	name: 'home',
 
 	data() {
 		return {
-      expand: false
+			expand: false
 		}
 	},
 
