@@ -1,11 +1,11 @@
 <template>
   <div class="page home frame">
-		<h1 class="heading">TT</h1>
+		<h1 class="heading">Taylor Tobin</h1>
 		<h3 class="heading">Developer</h3>
-		<button class="first-transition"
+		<!-- <button class="first-transition"
 			@touchstart="start"
 			:class="{'transition': expand}">
-		</button>
+		</button> -->
   </div>
 </template>
 
