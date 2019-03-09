@@ -1,6 +1,5 @@
 <template>
   <div class="preloader">
-		<h1 class="anim-typewriter">Taylor Tobin</h1>
     <div class="loader hide" :class="{'show' : show}">
       <img src="@/assets/images/loader.svg">
       <img src="@/assets/images/loader.svg">
@@ -39,7 +38,7 @@ export default {
 	height: 100vh;
 	background: $black;
 	color: $white;
-  z-index: 4;
+  z-index: 999;
   display: flex;
   flex-direction: column;
   align-items: center;

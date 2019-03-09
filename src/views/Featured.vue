@@ -160,7 +160,7 @@ export default {
     padding: 0 1rem;
     position: absolute;
     width: 100%;
-    z-index: $default;
+    z-index: $front;
   }
 
   &-info {

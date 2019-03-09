@@ -1,5 +1,9 @@
 <template>
 	<div id="menu" v-if="!down">
+		<router-link @click.native="pageChange" to="/">
+			<img class="home-button" src="@/assets/images/tobin.png">
+		</router-link>
+
 		<div class="toggle" @click="toggleNav">
 			<div class="bar" :class="{ 'rotate': unlock }"></div>
 			<div class="bar" :class="{ 'rotate': unlock }"></div>
@@ -24,7 +28,7 @@ export default {
 			// reference state from store
 			down: this.$store.state.down,
 			unlock: false,
-			open: false
+			open: false,
 		}
 	},
 
@@ -50,6 +54,15 @@ export default {
 @import "@/assets/scss/app.scss"; // global styles
 
 #menu {
+	.home-button {
+		position: absolute;
+		top: 0;
+		left: 0;
+		max-width: 45px;
+		margin: 2rem 2.4rem;
+		z-index: 99;
+	}
+
 	.toggle {
 		position: absolute;
 		top: 0;
@@ -105,7 +118,7 @@ export default {
 
 	.visible {
 		visibility: visible;
-		z-index: $front;
+		z-index: $menu;
 	}
 
 	.show {

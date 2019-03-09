@@ -1,11 +1,12 @@
 <template>
   <div class="page home frame">
-		<h1 class="heading">Taylor Tobin</h1>
-		<h3 class="heading">Developer</h3>
-		<!-- <button class="first-transition"
-			@touchstart="start"
-			:class="{'transition': expand}">
-		</button> -->
+	<h1 class="heading">Taylor Tobin</h1>
+	<h3 class="heading-sub">Developer</h3>
+	<!-- <button class="first-transition"
+		@touchstart="start"
+		:class="{'transition': expand}">
+	</button> -->
+	<router-link class="item view-work" to="/featured">View Work</router-link>
   </div>
 </template>
 
@@ -45,9 +46,31 @@ export default {
 
 .home {
 	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 
 	.heading {
 		color: $gold;
+		padding-top: 2rem;
+		font-size: 3rem;
+
+		&-sub {
+			font-size: 2rem;
+			color: $white;
+		}
+	}
+
+	.view-work {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0; 
+		margin: 0 auto;
+		width: 150px;
+		padding: 1rem;
+		text-align: center;
 	}
 
 	.first-transition {
