@@ -17,7 +17,7 @@
         </div>
       </section>
 
-      <slider class="featured-slider hide" :class="{'show' : show}" :slides=current_project.slides />
+      <slider class="featured-slider hide" :class="{'show' : show}" :slides="current_project.slides" />
     </div>
   </div>
 </template>
@@ -80,7 +80,7 @@ export default {
           "description": "",
           "type": "Vue/Laravel",
           "slides": [
-            "http://placehold.it/200x200",
+            require("@/assets/images/projects/replace-hate.png"),
             "http://placehold.it/200x200",
             "http://placehold.it/200x200"
 
@@ -92,7 +92,7 @@ export default {
           "description": "",
           "type": "Ember",
           "slides": [
-            "http://placehold.it/200x200",
+            require("@/assets/images/projects/replace-hate.png"),
             "http://placehold.it/200x200",
             "http://placehold.it/200x200"
           ]
@@ -103,7 +103,7 @@ export default {
           "description": "",
           "type": "Ember/Laravel",
           "slides": [
-            "http://placehold.it/200x200",
+            require("@/assets/images/projects/white-elephant.png"),
             "http://placehold.it/200x200",
             "http://placehold.it/200x200"
           ]
@@ -113,7 +113,7 @@ export default {
           "description": "",
           "type": "Vue/Laravel",
           "slides": [
-            "http://placehold.it/200x200",
+            require("@/assets/images/projects/global-road.png"),
             "http://placehold.it/200x200",
             "http://placehold.it/200x200"
           ]

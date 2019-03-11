@@ -13,6 +13,8 @@
           >
           <div class="content">
             <img :src="item">
+            <!-- <img src="@/assets/images/projects/replace-hate.png"> -->
+            <!-- <img src="@/assets/images/projects/replace-hate.png"> -->
           </div>
         </li>
       </ul>
@@ -153,6 +155,10 @@ export default {
       transform: translate(0, 10px); // and move it up a bit for fun
       transition: 0.5s; // animation duration
       margin: 0 auto;
+
+      img {
+        max-width: 200px;
+      }
     }
 
     &.active { // when the frame that is chosen appears...
