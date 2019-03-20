@@ -7,7 +7,7 @@
 
       <ul class="slider">
         <li class="slide"
-          v-for='(item, index) in items'
+          v-for='(item, index) in slides'
           :class='[item.name, {active: currentIndex === index}]'
           :key='`x-${index}`'
           >
@@ -65,7 +65,6 @@ export default {
   data() {
     return {
       // the 'reactive' properties in this scope
-      items: this.slides,
       currentIndex: null,
       navigation: true, // what is this type of 'nav' called?
       dots: true, // better name for this? - yes...
