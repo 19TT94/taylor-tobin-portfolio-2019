@@ -11,7 +11,7 @@
             {{current_project.type}}
           </p>
           <p v-if="current_project.name">
-            {{current_project.name}}
+            {{current_project.description}}
           </p>
           <a :href="current_project.link" v-if="current_project.link">Visit</a>
         </div>
@@ -77,7 +77,7 @@ export default {
         {
           "name": "Dreamworks Animation",
           "link": "https://dreamworks.com",
-          "description": "",
+          "description": "Frontend Development on Dreamworks Animation's new website.",
           "type": "Vue/Laravel",
           "slides": [
             require("@/assets/images/projects/replace-hate.png"),
@@ -89,7 +89,7 @@ export default {
         {
           "name": "ReplaceHate.com",
           "link": "https://replacehate.com",
-          "description": "",
+          "description": "Frontend developement on #ReplaceHate social campaign site that genrates share assets to promote the film.",
           "type": "Ember",
           "slides": [
             require("@/assets/images/projects/replace-hate.png"),
@@ -100,7 +100,7 @@ export default {
         {
           "name": "PXL White Elephant",
           "link": "https://pxl-holiday.com",
-          "description": "",
+          "description": "Lead Developer on White Elephant website given to PXL's Clients along with thier Holiday Cards. The site allowed users to randomly select a gift, then we were notified of their choice and the gift was sent to them. This project was featured in Adweek.",
           "type": "Ember/Laravel",
           "slides": [
             require("@/assets/images/projects/white-elephant.png"),
@@ -110,7 +110,7 @@ export default {
         },
         {
           "name": "Global Road Entertainment",
-          "description": "",
+          "description": "Frontend Development on new site for the Rebranded Open Road, i.e. Global Road that went live right before they went out of business.",
           "type": "Vue/Laravel",
           "slides": [
             require("@/assets/images/projects/global-road.png"),
@@ -120,7 +120,7 @@ export default {
         },
         {
           "name": "Paramount Sticker Packs",
-          "link": "",
+          "link": "Developed an Android App for Paramount Sticker Packs that made their stickers available for Gboard through Google Play.",
           "description": "",
           "type": "Android/IOS",
           "slides": [
