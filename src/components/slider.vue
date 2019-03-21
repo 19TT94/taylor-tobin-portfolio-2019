@@ -13,8 +13,6 @@
           >
           <div class="content">
             <img :src="item">
-            <!-- <img src="@/assets/images/projects/replace-hate.png"> -->
-            <!-- <img src="@/assets/images/projects/replace-hate.png"> -->
           </div>
         </li>
       </ul>
@@ -31,7 +29,7 @@
       <div class="pagination" v-if='dots'>
         <ul class="item-list">
           <li class="item"
-            v-for='(item, index) in items'
+            v-for='(item, index) in slides'
             :class='[item.slug, {active: currentIndex === index}]'
             :key='`y-${index}`'
             >
@@ -76,7 +74,7 @@ export default {
   computed: {
     itemsLength() {
       // [...whatever] builds an array and fills it in with 'whatever'
-      return [...this.items].length - 1;
+      return [...this.slides].length - 1;
       // 'spreads' the items into and array: "spread syntax"
     },
     previousIndex() {
@@ -97,9 +95,9 @@ export default {
     },
     currentItem() { // not really using this yet... because our needs are actually more simple than that
       if (this.currentIndex > this.itemsLength) {
-        return [...this.items][0];
+        return [...this.slides][0];
       } else {
-        return [...this.items][this.currentIndex];
+        return [...this.slides][this.currentIndex];
       }
     },
     visualIndex() {
