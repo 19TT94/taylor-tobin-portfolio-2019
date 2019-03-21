@@ -13,7 +13,7 @@
           <p v-if="current_project.name">
             {{current_project.description}}
           </p>
-          <a :href="current_project.link" v-if="current_project.link">Visit</a>
+          <a :href="current_project.link" target="_blank" v-if="current_project.link">Visit</a>
         </div>
       </section>
 
@@ -120,8 +120,8 @@ export default {
         },
         {
           "name": "Paramount Sticker Packs",
-          "link": "Developed an Android App for Paramount Sticker Packs that made their stickers available for Gboard through Google Play.",
-          "description": "",
+          "link": "https://www.pxlagency.com/our-work/bumblebee-sticker-pack",
+          "description": "Developed an Android App for Paramount Sticker Packs that made thier stickers designed by PXL available for Gboard through Google Play.",
           "type": "Android/IOS",
           "slides": [
             "http://placehold.it/200x200",
