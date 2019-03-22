@@ -10,9 +10,7 @@
           <p v-if="current_project.type">
             {{current_project.type}}
           </p>
-          <p v-if="current_project.name">
-            {{current_project.description}}
-          </p>
+          <p v-if="current_project.name" v-html="current_project.description"></p>
           <a :href="current_project.link" target="_blank" v-if="current_project.link">Visit</a>
         </div>
       </section>
@@ -100,7 +98,7 @@ export default {
         {
           "name": "PXL White Elephant",
           "link": "https://pxl-holiday.com",
-          "description": "Lead Developer on White Elephant website given to PXL's Clients along with thier Holiday Cards. The site allowed users to randomly select a gift, then we were notified of their choice and the gift was sent to them. This project was featured in Adweek.",
+          "description": "Lead Developer on White Elephant website given to PXL's Clients along with thier Holiday Cards. The site allowed users to randomly select a gift, then we were notified of their choice and the gift was sent to them. Not only was this a fun way to wish our clients a happy holiday, but the project was featured in <a href=\"https://www.adweek.com/agencies/agency-holiday-cards-2018-inventive-and-creative-send-offs-to-the-year/?utm_content=position_4&utm_source=sailthru&utm_medium=email&utm_term=AWK_Agencies&utm_campaign=Agencies_Newsletter_2018122114&s_id=5b75d55320122e18f4031361\">Adweek</a>.",
           "type": "Ember/Laravel",
           "slides": [
             require("@/assets/images/projects/white-elephant/white-elephant-1.png"),
@@ -110,27 +108,27 @@ export default {
             require("@/assets/images/projects/white-elephant/white-elephant-5.png")
           ]
         },
-        {
-          "name": "Global Road Entertainment",
-          "description": "Frontend Development on new site for the Rebranded Open Road, i.e. Global Road that went live right before they went out of business.",
-          "type": "Vue/Laravel",
-          "slides": [
-            require("@/assets/images/projects/global-road.png"),
-            "http://placehold.it/200x200",
-            "http://placehold.it/200x200"
-          ]
-        },
-        {
-          "name": "Paramount Sticker Packs",
-          "link": "https://www.pxlagency.com/our-work/bumblebee-sticker-pack",
-          "description": "Developed an Android App for Paramount Sticker Packs that made thier stickers designed by PXL available for Gboard through Google Play.",
-          "type": "Android/IOS",
-          "slides": [
-            "http://placehold.it/200x200",
-            "http://placehold.it/200x200",
-            "http://placehold.it/200x200"
-          ]
-        }
+        // {
+        //   "name": "Global Road Entertainment",
+        //   "description": "Frontend Development on new site for the Rebranded Open Road, i.e. Global Road that went live right before they went out of business.",
+        //   "type": "Vue/Laravel",
+        //   "slides": [
+        //     require("@/assets/images/projects/global-road.png"),
+        //     "http://placehold.it/200x200",
+        //     "http://placehold.it/200x200"
+        //   ]
+        // },
+        // {
+        //   "name": "Paramount Sticker Packs",
+        //   "link": "https://www.pxlagency.com/our-work/bumblebee-sticker-pack",
+        //   "description": "Developed an Android App for Paramount Sticker Packs that made thier stickers designed by PXL available for Gboard through Google Play.",
+        //   "type": "Android/IOS",
+        //   "slides": [
+        //     "http://placehold.it/200x200",
+        //     "http://placehold.it/200x200",
+        //     "http://placehold.it/200x200"
+        //   ]
+        // }
       ]
     }
   }
@@ -210,6 +208,7 @@ export default {
     background: $black;
     z-index: -1;
     transform: translateY(-100%);
+    box-shadow: 15px 15px 15px rgba(0,0,0,0.8);
 
     @media #{$small} {
       width: 35%;

@@ -57,6 +57,10 @@ export default {
 		padding-top: 2rem;
 		font-size: 3rem;
 
+    @media #{$small} {
+      font-size: 5rem;
+    }
+
 		&-sub {
 			font-size: 2rem;
 			color: $white;

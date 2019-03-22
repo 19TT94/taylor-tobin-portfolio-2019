@@ -141,6 +141,7 @@ export default {
 
       img {
         max-width: 200px;
+        box-shadow: 0px 15px 15px rgba(0,0,0,0.8);
 
         @media #{$small} {
           max-width: 450px;

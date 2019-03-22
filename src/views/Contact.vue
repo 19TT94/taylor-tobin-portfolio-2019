@@ -73,10 +73,12 @@ export default {
     width: 100%;
     height: 65%;
     background: $black;
-    z-index: -1;
+    z-index: $default;
     transform: translateY(-100%);
+    box-shadow: 15px 15px 15px rgba(0,0,0,0.6);
 
     @media #{$small} {
+      transform: translateX(-100%);
       width: 50%;
       height: 100%;
       display: flex;
@@ -104,6 +106,7 @@ export default {
     transition: all ease 0.5s;
 
     @media #{$small} {
+      transform: translateX(100%);
       width: 50%;
       height: 100%;
       left: auto;
