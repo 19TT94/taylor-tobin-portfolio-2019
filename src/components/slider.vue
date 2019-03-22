@@ -145,6 +145,10 @@ export default {
         @media #{$small} {
           max-width: 450px;
         }
+
+        @media #{$medium} {
+          max-width: 600px;
+        }
       }
     }
 

@@ -80,10 +80,9 @@ export default {
           "description": "Frontend Development on Dreamworks Animation's new website.",
           "type": "Vue/Laravel",
           "slides": [
-            require("@/assets/images/projects/replace-hate.png"),
-            "http://placehold.it/200x200",
-            "http://placehold.it/200x200"
-
+            require("@/assets/images/projects/dreamworks/dreamworks-1.png"),
+            require("@/assets/images/projects/dreamworks/dreamworks-2.png"),
+            require("@/assets/images/projects/dreamworks/dreamworks-3.png")
           ]
         },
         {
@@ -92,9 +91,10 @@ export default {
           "description": "Frontend developement on #ReplaceHate social campaign site that genrates share assets to promote the film.",
           "type": "Ember",
           "slides": [
-            require("@/assets/images/projects/replace-hate.png"),
-            "http://placehold.it/200x200",
-            "http://placehold.it/200x200"
+            require("@/assets/images/projects/replace-hate/replace-1.jpg"),
+            require("@/assets/images/projects/replace-hate/replace-2.jpg"),
+            require("@/assets/images/projects/replace-hate/replace-3.jpg"),
+            require("@/assets/images/projects/replace-hate/replace-4.png")
           ]
         },
         {
@@ -103,9 +103,11 @@ export default {
           "description": "Lead Developer on White Elephant website given to PXL's Clients along with thier Holiday Cards. The site allowed users to randomly select a gift, then we were notified of their choice and the gift was sent to them. This project was featured in Adweek.",
           "type": "Ember/Laravel",
           "slides": [
-            require("@/assets/images/projects/white-elephant.png"),
-            "http://placehold.it/200x200",
-            "http://placehold.it/200x200"
+            require("@/assets/images/projects/white-elephant/white-elephant-1.png"),
+            require("@/assets/images/projects/white-elephant/white-elephant-2.png"),
+            require("@/assets/images/projects/white-elephant/white-elephant-3.png"),
+            require("@/assets/images/projects/white-elephant/white-elephant-4.png"),
+            require("@/assets/images/projects/white-elephant/white-elephant-5.png")
           ]
         },
         {
