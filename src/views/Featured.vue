@@ -176,7 +176,7 @@ export default {
     left: 0;
 
     @media #{$small} {
-      width: 50%;
+      width: 35%;
       height: 100%;
     }
 
@@ -188,7 +188,6 @@ export default {
       height: 80%;
 
       h1 {
-        // text-align: center;
         padding: 1rem 2rem;
       }
 
@@ -199,6 +198,21 @@ export default {
       a {
         padding: 0 2rem;;
       }
+    }
+  }
+
+  .section {
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    background: $black;
+    z-index: -1;
+    transform: translateY(-100%);
+
+    @media #{$small} {
+      width: 35%;
+      height: 100%;
+      transform: translateX(-100%);
     }
   }
 
@@ -215,25 +229,10 @@ export default {
     transition-delay: 0.5s;
 
     @media #{$small} {
-      width: 50%;
+      width: 65%;
       height: 100%;
       right: 0;
       left: auto;
-    }
-  }
-
-  .section {
-    position: absolute;
-    width: 100%;
-    height: 50%;
-    background: $black;
-    z-index: -1;
-    transform: translateY(-100%);
-
-    @media #{$small} {
-      width: 50%;
-      height: 100%;
-      transform: translateX(-100%);
     }
   }
 

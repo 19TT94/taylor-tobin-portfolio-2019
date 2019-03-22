@@ -141,6 +141,10 @@ export default {
 
       img {
         max-width: 200px;
+
+        @media #{$small} {
+          max-width: 450px;
+        }
       }
     }
 

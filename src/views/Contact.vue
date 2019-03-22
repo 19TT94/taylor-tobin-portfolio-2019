@@ -79,11 +79,18 @@ export default {
     @media #{$small} {
       width: 50%;
       height: 100%;
-      transform: translateX(-100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .info {
       padding: 25% 1rem 0;
+
+      @media #{$small} {
+        padding: 0;
+        width: 50%;
+      }
     }
   }
 
@@ -95,11 +102,22 @@ export default {
     height: 35%;
     transform: translateY(100%);
     transition: all ease 0.5s;
+
+    @media #{$small} {
+      width: 50%;
+      height: 100%;
+      left: auto;
+      right: 0;
+    }
   }
 
   .move {
     transform: translateY(0%);
     transition: all 1s ease;
+
+    @media #{$small} {
+      transform: translateX(0%);
+    }
   }
 
   .amp {
