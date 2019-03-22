@@ -50,6 +50,7 @@ export default {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+  padding: 1rem;
 
 	.heading {
 		color: $gold;
@@ -66,7 +67,7 @@ export default {
 		position: absolute;
 		bottom: 0;
 		left: 0;
-		right: 0; 
+		right: 0;
 		margin: 0 auto;
 		width: 150px;
 		padding: 1rem;

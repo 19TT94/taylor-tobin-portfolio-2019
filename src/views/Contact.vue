@@ -1,37 +1,39 @@
 <template>
   <div class="page contact">
-    <section class="info hide" :class="{ 'show': show }">
-      <h2>Get In Touch</h2>
-      <ul>
-        <li><span>Email:</span> 19tt94@gmail.com</li>
-        <li><span>Phone:</span> (805) 434-7559</li>
-      </ul>
+    <section class="section" :class="{ 'move': show }">
+      <div class="info">
+        <h2>Get In Touch</h2>
+        <ul>
+          <li><span>Email:</span> 19tt94@gmail.com</li>
+          <li><span>Phone:</span> (805) 434-7559</li>
+        </ul>
 
-      <ul class="links">
-        <li>
-          <a href="https://github.com/19TT94">
-            <font-awesome-icon :icon="['fab', 'github-square']" />
-            <span class="amp">@</span>19tt94
-          </a>
-        </li>
-        <li>
-          <a href="https://www.linkedin.com/in/taylor-tobin/">
-            <font-awesome-icon :icon="['fab', 'linkedin']" />
-            <span class="amp">@</span>taylor-tobin
-          </a>
-        </li>
-        <li>
-          <a href="https://www.instagram.com/19tt94/">
-            <font-awesome-icon :icon="['fab', 'instagram']" />
-            <span class="amp">@</span>19tt94
-          </a>
-        </li>
-      </ul>
+        <ul class="links">
+          <li>
+            <a href="https://github.com/19TT94">
+              <font-awesome-icon :icon="['fab', 'github-square']" />
+              <span class="amp">@</span>19tt94
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/taylor-tobin/">
+              <font-awesome-icon :icon="['fab', 'linkedin']" />
+              <span class="amp">@</span>taylor-tobin
+            </a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/19tt94/">
+              <font-awesome-icon :icon="['fab', 'instagram']" />
+              <span class="amp">@</span>19tt94
+            </a>
+          </li>
+        </ul>
 
-      <button><a class="button resume" :href="require('@/assets/images/resume.jpg')" download="resume.jpg">Resume</a></button>
+        <button><a class="button resume" :href="require('@/assets/images/resume.jpg')" download="resume.jpg">Resume</a></button>
+      </div>
     </section>
 
-    <customMap class="map" :class="{ 'move-up': show }" />
+    <customMap class="map" :class="{ 'move': show }" />
   </div>
 </template>
 
@@ -44,7 +46,7 @@ export default {
   components: {
 		customMap
 	},
-  
+
   data() {
     return {
       show: false
@@ -66,6 +68,25 @@ export default {
 .contact {
   color: $white;
 
+  .section {
+    position: absolute;
+    width: 100%;
+    height: 65%;
+    background: $black;
+    z-index: -1;
+    transform: translateY(-100%);
+
+    @media #{$small} {
+      width: 50%;
+      height: 100%;
+      transform: translateX(-100%);
+    }
+
+    .info {
+      padding: 25% 1rem 0;
+    }
+  }
+
 	.map {
     position: absolute;
     bottom: 0;
@@ -76,7 +97,7 @@ export default {
     transition: all ease 0.5s;
   }
 
-  .move-up {
+  .move {
     transform: translateY(0%);
     transition: all 1s ease;
   }

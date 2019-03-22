@@ -2,7 +2,7 @@
   <div class="featured">
     <div class="section" :class="{'move' : down}"></div>
     <div class="featured-wrapper">
-      <button class="next-project" @click="next()">Next</button>
+      <button class="next-project hide" :class="{'show' : down}" @click="next()">Next</button>
 
       <section class="featured-info hide" :class="{'show' : show}">
         <div class="content">
@@ -64,7 +64,7 @@ export default {
         } else {
           this.project_index = this.project_index + 1;
         }
-      }, 500);
+      }, 900);
     }
   },
 
@@ -181,21 +181,24 @@ export default {
     }
 
     .content {
-      max-width: 90%;
       margin: 0 auto;
-    }
+      bottom: 0;
+      position: absolute;
+      width: 100%;
+      height: 80%;
 
-    h1 {
-      padding: 4.5rem 0 1rem;
-      text-align: center;
-    }
+      h1 {
+        // text-align: center;
+        padding: 1rem 2rem;
+      }
 
-    p {
-      padding: 0 1rem;
-    }
+      p {
+        padding: 0 2rem 1rem;
+      }
 
-    a {
-      margin: 1rem;
+      a {
+        padding: 0 2rem;;
+      }
     }
   }
 
