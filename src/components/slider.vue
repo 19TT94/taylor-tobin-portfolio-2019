@@ -81,10 +81,10 @@ export default {
       return (this.currentIndex - 1) < 0 ? this.itemsLength : this.currentIndex - 1;
     },
     nextIndex() {
-      return (this.currentItem + 1) > this.itemsLength ? 0 : this.currentItem + 1;
+      return (this.currentIndex + 1) > this.itemsLength ? 0 : this.currentIndex + 1;
     },
-    currentItem() { 
-      return (this.currentIndex > this.itemsLength) ? [...this.slides][0]: [...this.slides][this.currentIndex];
+    currentItem() {
+      return (this.currentIndex > this.itemsLength) ? [...this.slides][0] : [...this.slides][this.currentIndex];
     },
     visualIndex() {
       return this.currentIndex + 1;
@@ -194,6 +194,10 @@ export default {
     position: absolute;
     bottom: 1rem;
     width: 100%;
+
+    @media #{$small} {
+      bottom: 4rem;
+    }
 
     .item-list {
       margin: 0;

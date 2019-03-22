@@ -1,6 +1,6 @@
 <template>
   <div class="featured">
-    <div class="section" :class="{'move-down' : down}"></div>
+    <div class="section" :class="{'move' : down}"></div>
     <div class="featured-wrapper">
       <button class="next-project" @click="next()">Next</button>
 
@@ -161,6 +161,10 @@ export default {
     position: absolute;
     width: 100%;
     z-index: $front;
+
+    @media #{$small} {
+      bottom: 0;
+    }
   }
 
   &-info {
@@ -170,6 +174,11 @@ export default {
     position: absolute;
     top: 0;
     left: 0;
+
+    @media #{$small} {
+      width: 50%;
+      height: 100%;
+    }
 
     .content {
       max-width: 90%;
@@ -201,6 +210,13 @@ export default {
     justify-content: center;
     z-index: $base;
     transition-delay: 0.5s;
+
+    @media #{$small} {
+      width: 50%;
+      height: 100%;
+      right: 0;
+      left: auto;
+    }
   }
 
   .section {
@@ -210,11 +226,22 @@ export default {
     background: $black;
     z-index: -1;
     transform: translateY(-100%);
+
+    @media #{$small} {
+      width: 50%;
+      height: 100%;
+      transform: translateX(-100%);
+    }
   }
 
-  .move-down {
+  .move {
     transform: translateY(0);
     transition: all ease 0.5s;
+
+    @media #{$small} {
+      transform: translateX(0);
+      transition: all ease 0.5s;
+    }
   }
 }
 </style>

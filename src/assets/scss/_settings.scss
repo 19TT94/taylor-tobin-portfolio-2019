@@ -14,7 +14,7 @@ h1 {
   font-weight: 600;
 
   @media #{$small} {
-    font-size: 4rem;
+    font-size: 3rem;
   }
 }
 
@@ -25,7 +25,7 @@ h2 {
   font-weight: 600;
 
   @media #{$small} {
-    font-size: 3rem;
+    font-size: 2rem;
   }
 }
 
@@ -36,7 +36,7 @@ h3 {
   font-weight: 600;
 
   @media #{$small} {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 }
 
@@ -45,7 +45,7 @@ p {
   line-height: 1.4rem;
 
   @media #{$small} {
-    font-size: 2rem;
+    font-size: 1.2rem;
     line-height: 3rem;
   }
 }
