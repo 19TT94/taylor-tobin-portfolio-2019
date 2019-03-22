@@ -73,32 +73,18 @@ export default {
 
   computed: {
     itemsLength() {
-      // [...whatever] builds an array and fills it in with 'whatever'
+      // [...{variable}] builds an array and fills it in with 'whatever'
       return [...this.slides].length - 1;
       // 'spreads' the items into and array: "spread syntax"
     },
     previousIndex() {
-      let previous = this.currentIndex - 1;
-      if (previous < 0) {
-        return this.itemsLength;
-      } else { // I could write this in shorthand - but I don't
-        return previous;
-      }
+      return (this.currentIndex - 1) < 0 ? this.itemsLength : this.currentIndex - 1;
     },
     nextIndex() {
-      let next = this.currentIndex + 1;
-      if (next > this.itemsLength) {
-        return 0;
-      } else {
-        return next;
-      }
+      return (this.currentItem + 1) > this.itemsLength ? 0 : this.currentItem + 1;
     },
-    currentItem() { // not really using this yet... because our needs are actually more simple than that
-      if (this.currentIndex > this.itemsLength) {
-        return [...this.slides][0];
-      } else {
-        return [...this.slides][this.currentIndex];
-      }
+    currentItem() { 
+      return (this.currentIndex > this.itemsLength) ? [...this.slides][0]: [...this.slides][this.currentIndex];
     },
     visualIndex() {
       return this.currentIndex + 1;
