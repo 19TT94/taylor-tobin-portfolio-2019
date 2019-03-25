@@ -2,15 +2,16 @@
   <div class="featured">
     <div class="section" :class="{'move' : down}"></div>
     <div class="featured-wrapper">
-      <button class="next-project hide" :class="{'show' : down}" @click="next()">Next</button>
 
       <section class="featured-info hide" :class="{'show' : show}">
+        <button class="next-project hide" :class="{'show' : down}" @click="next()">Next</button>
+
         <div class="content">
           <h1>{{current_project.name}}</h1>
           <p v-if="current_project.type">
             {{current_project.type}}
           </p>
-          <p v-if="current_project.name" v-html="current_project.description"></p>
+          <p class="description" v-if="current_project.name" v-html="current_project.description"></p>
           <a class="project-link" :href="current_project.link" target="_blank" v-if="current_project.link">Visit</a>
         </div>
       </section>
@@ -86,7 +87,7 @@ export default {
         {
           "name": "ReplaceHate.com",
           "link": "https://replacehate.com",
-          "description": "Frontend developement on #ReplaceHate social campaign site. This site was built for Fox Movies and allows users to generate #replacehate posters to share on social media. This promotion for the movie lived mostly on Instagram and was a fun way for fans to get involved. The biggest challenge was trying to make the process of creating the share assets as easy in fast as possible for the user. Despite the changing requirements from the client and the challenges of creating the assets in a web app, the app was a success.",
+          "description": "Frontend developement on <a href=\"https://www.instagram.com/explore/tags/replacehate/\">#ReplaceHate</a> social campaign site. This site was built for Fox Movies and allows users to generate #replacehate posters to share on social media. This promotion for the movie lived mostly on Instagram and was a fun way for fans to get involved. The biggest challenge was trying to make the process of creating the share assets as easy in fast as possible for the user. Despite the changing requirements from the client and the challenges of creating the assets in a web app, the app was a success.",
           "type": "Ember",
           "slides": [
             require("@/assets/images/projects/replace-hate/replace-1.jpg"),
@@ -161,10 +162,7 @@ export default {
     position: absolute;
     width: 100%;
     z-index: $front;
-
-    @media #{$small} {
-      bottom: 0;
-    }
+    bottom: 0;
   }
 
   &-info {
@@ -197,6 +195,14 @@ export default {
 
       a {
         padding: 0 2rem;;
+      }
+
+      .description {
+        display: none;
+
+        @media #{$small} {
+          display: block;
+        }
       }
 
       // .project-link {
