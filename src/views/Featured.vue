@@ -11,7 +11,7 @@
             {{current_project.type}}
           </p>
           <p v-if="current_project.name" v-html="current_project.description"></p>
-          <a :href="current_project.link" target="_blank" v-if="current_project.link">Visit</a>
+          <a class="project-link" :href="current_project.link" target="_blank" v-if="current_project.link">Visit</a>
         </div>
       </section>
 
@@ -75,7 +75,7 @@ export default {
         {
           "name": "Dreamworks Animation",
           "link": "https://dreamworks.com",
-          "description": "Frontend Development on Dreamworks Animation's new website.",
+          "description": "Frontend Development on Dreamworks Animation's new website. The biggest challenge during my work on this site was working to build a slider that had performant fullpage background videos for each slide. These needed to be responsive and hide on mobile devices that didn't allow for autoplay. They also had to work with slide transitions and respond to changes of status in the viewport. Each slide also contained a iframe with the full video that added an aditional state that could cause overhead in the background.",
           "type": "Vue/Laravel",
           "slides": [
             require("@/assets/images/projects/dreamworks/dreamworks-1.png"),
@@ -86,7 +86,7 @@ export default {
         {
           "name": "ReplaceHate.com",
           "link": "https://replacehate.com",
-          "description": "Frontend developement on #ReplaceHate social campaign site that genrates share assets to promote the film.",
+          "description": "Frontend developement on #ReplaceHate social campaign site. This site was built for Fox Movies and allows users to generate #replacehate posters to share on social media. This promotion for the movie lived mostly on Instagram and was a fun way for fans to get involved. The biggest challenge was trying to make the process of creating the share assets as easy in fast as possible for the user. Despite the changing requirements from the client and the challenges of creating the assets in a web app, the app was a success.",
           "type": "Ember",
           "slides": [
             require("@/assets/images/projects/replace-hate/replace-1.jpg"),
@@ -98,7 +98,7 @@ export default {
         {
           "name": "PXL White Elephant",
           "link": "https://pxl-holiday.com",
-          "description": "Lead Developer on White Elephant website given to PXL's Clients along with thier Holiday Cards. The site allowed users to randomly select a gift, then we were notified of their choice and the gift was sent to them. Not only was this a fun way to wish our clients a happy holiday, but the project was featured in <a href=\"https://www.adweek.com/agencies/agency-holiday-cards-2018-inventive-and-creative-send-offs-to-the-year/?utm_content=position_4&utm_source=sailthru&utm_medium=email&utm_term=AWK_Agencies&utm_campaign=Agencies_Newsletter_2018122114&s_id=5b75d55320122e18f4031361\">Adweek</a>.",
+          "description": "Lead Developer on the White Elephant website. PXL's Clients were given Holiday Cards with a code to recieve a gift from PXL and a link to the White Elephant Party. These codes generate a randomly selected gag gift, which is then sent to them for the holidays. Not only was this a fun way to wish our clients a happy holiday, but the project was featured in <a href=\"https://www.adweek.com/agencies/agency-holiday-cards-2018-inventive-and-creative-send-offs-to-the-year/?utm_content=position_4&utm_source=sailthru&utm_medium=email&utm_term=AWK_Agencies&utm_campaign=Agencies_Newsletter_2018122114&s_id=5b75d55320122e18f4031361\">Adweek</a>. It also gave me my first experience leading a project with both a backend and fronted component. This site featured analytics and user generation that made the site a good learning experience.",
           "type": "Ember/Laravel",
           "slides": [
             require("@/assets/images/projects/white-elephant/white-elephant-1.png"),
@@ -198,6 +198,12 @@ export default {
       a {
         padding: 0 2rem;;
       }
+
+      // .project-link {
+      //   background: $gold;
+      //   color: $black;
+      //   margin: 0 auto;
+      // }
     }
   }
 
