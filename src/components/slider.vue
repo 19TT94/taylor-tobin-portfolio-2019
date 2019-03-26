@@ -140,7 +140,8 @@ export default {
       margin: 0 auto;
 
       img {
-        max-width: 200px;
+        max-width: 90%;
+        margin: 0 1rem;
         box-shadow: 0px 15px 15px rgba(0,0,0,0.8);
 
         @media #{$small} {
@@ -192,10 +193,20 @@ export default {
 
     &.forward {
       right: 1rem;
+      display: none;
+
+      @media #{$small} {
+        display: block;
+      }
     }
 
     &.backward {
       left: 1rem;
+      display: none;
+
+      @media #{$small} {
+        display: block;
+      }
     }
   }
 

@@ -55,7 +55,7 @@ export default {
 	.heading {
 		color: $gold;
 		padding-top: 2rem;
-		font-size: 3rem;
+		font-size: 2.5rem;
 
     @media #{$small} {
       font-size: 5rem;

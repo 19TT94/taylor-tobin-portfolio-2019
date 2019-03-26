@@ -2,7 +2,6 @@
   <div class="featured">
     <div class="section" :class="{'move' : down}"></div>
     <div class="featured-wrapper">
-      <button class="next-project hide" :class="{'show' : down}" @click="next()">Next</button>
 
       <section class="featured-info hide" :class="{'show' : show}">
         <div class="content">
@@ -10,9 +9,10 @@
           <p v-if="current_project.type">
             {{current_project.type}}
           </p>
-          <p v-if="current_project.name" v-html="current_project.description"></p>
+          <p class="description" v-if="current_project.name" v-html="current_project.description"></p>
           <a :href="current_project.link" target="_blank" v-if="current_project.link">Visit</a>
         </div>
+        <button class="next-project hide" :class="{'show' : down}" @click="next()">Next Project</button>
       </section>
 
       <slider class="featured-slider hide" :class="{'show' : show}" :slides="current_project.slides" />
@@ -161,6 +161,7 @@ export default {
     position: absolute;
     width: 100%;
     z-index: $front;
+    bottom: 0;
 
     @media #{$small} {
       bottom: 0;
@@ -169,7 +170,7 @@ export default {
 
   &-info {
     width: 100%;
-    height: 50%;
+    height: 45%;
     margin: 0 auto;
     position: absolute;
     top: 0;
@@ -188,11 +189,19 @@ export default {
       height: 80%;
 
       h1 {
-        padding: 1rem 2rem;
+        padding: 2rem 2rem 1rem;
       }
 
       p {
         padding: 0 2rem 1rem;
+      }
+
+      .description {
+        display: none;
+
+        @media #{$small} {
+          display: block;
+        }
       }
 
       a {
@@ -204,7 +213,7 @@ export default {
   .section {
     position: absolute;
     width: 100%;
-    height: 50%;
+    height: 45%;
     background: $black;
     z-index: -1;
     transform: translateY(-100%);
@@ -219,7 +228,7 @@ export default {
 
   &-slider {
     width: 100%;
-    height: 50%;
+    height: 55%;
     position: absolute;
     bottom: 0;
     left: 0;
