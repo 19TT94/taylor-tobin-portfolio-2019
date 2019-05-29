@@ -35,7 +35,12 @@
       </div>
     </section>
 
-    <customMap class="map" :class="{ 'move': show }" />
+    <div class="map" :class="{ 'move': show }">
+      <div class="map-image" :style="{'background-image': 'url(' + require('@/assets/images/map.png') + ')'}">
+        <font-awesome-icon class="marker" icon="map-marker" />
+      </div>
+    </div>
+
   </div>
 </template>
 
@@ -93,7 +98,7 @@ export default {
     }
   }
 
-	.map {
+  .map {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -108,6 +113,37 @@ export default {
       height: 100%;
       left: auto;
       right: 0;
+    }
+
+    .map-object {
+      position: absolute;
+      top:0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .map-image {
+      border-top: 1px solid $gold;
+      background-size: 200%;
+      background-position: center;
+      background-repeat: no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+
+      @media #{$small} {
+        background-size: cover;
+      }
+    }
+
+    .fa-map-marker {
+      z-index: $default;
+      font-size: 2rem;
+      margin: -10px;
+      transform: translateY(-25px)
     }
   }
 
