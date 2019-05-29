@@ -4,8 +4,10 @@
       <div class="info">
         <h2>Get In Touch</h2>
         <ul>
-          <li><span>Email:</span> 19tt94@gmail.com</li>
-          <li><span>Phone:</span> (805) 434-7559</li>
+          <li><span>Email:</span> <a href="mailto:19tt94@gmail.com">19tt94@gmail.com</a></li>
+          <li>
+            <span>Phone:</span> <a class="mobile" href="tel:805-434-7559">(805) 434-7559</a> <span class="desktop">(805) 434-7559</span>
+          </li>
         </ul>
 
         <ul class="links">
@@ -120,6 +122,20 @@ export default {
 
   .amp {
     padding-left: 0.5rem;
+  }
+}
+
+.mobile {
+  @media #{$small} {
+    display: none;
+  }
+}
+
+.desktop {
+  display: none;
+
+  @media #{$small} {
+    display: inline-block;
   }
 }
 
