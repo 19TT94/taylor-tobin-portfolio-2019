@@ -75,16 +75,37 @@ export default {
       project_index: 0,
       projects: [
         {
-          "name": "Dreamworks Animation",
-          "link": "https://dreamworks.com",
-          "description": "Frontend Development on Dreamworks Animation's new website. The biggest challenge during my work on this site was working to build a slider that had performant fullpage background videos for each slide. These needed to be responsive and hide on mobile devices that didn't allow for autoplay. They also had to work with slide transitions and respond to changes of status in the viewport. Each slide also contained a iframe with the full video that added an aditional state that could cause overhead in the background.",
-          "type": "Vue/Laravel",
+          "name": "New Regency",
+          "description": "I lead development on the relaunch and revamp of <a href=\"http://newregency.com\">newregency.com</a>. It involved some visual upgrades, new content, and new functionality for internationalization. New Regency was looking for a way to promote their new international team. I was in charge of implementing a solution that allowed for custom pages and analytics for their international teams. In the cms international team members could generate pages for their clients with specific movies for their region.",
+          "type": "Laravel",
           "slides": [
-            require("@/assets/images/projects/dreamworks/dreamworks-1.png"),
-            require("@/assets/images/projects/dreamworks/dreamworks-2.png"),
-            require("@/assets/images/projects/dreamworks/dreamworks-3.png")
+            require("@/assets/images/projects/new-regency/new-regency-1.png"),
+            require("@/assets/images/projects/new-regency/new-regency-2.png"),
+            require("@/assets/images/projects/new-regency/new-regency-3.png"),
+            require("@/assets/images/projects/new-regency/new-regency-4.png")
           ]
         },
+        // {
+        //   "name": "Dreamworks Animation",
+        //   "link": "https://dreamworks.com",
+        //   "description": "Frontend Development on Dreamworks Animation's new website. The biggest challenge during my work on this site was working to build a slider that had performant fullpage background videos for each slide. These needed to be responsive and hide on mobile devices that didn't allow for autoplay. They also had to work with slide transitions and respond to changes of status in the viewport. Each slide also contained a iframe with the full video that added an aditional state that could cause overhead in the background.",
+        //   "type": "Vue/Laravel",
+        //   "slides": [
+        //     require("@/assets/images/projects/dreamworks/dreamworks-1.png"),
+        //     require("@/assets/images/projects/dreamworks/dreamworks-2.png"),
+        //     require("@/assets/images/projects/dreamworks/dreamworks-3.png")
+        //   ]
+        // },
+        // {
+        //   "name": "Global Road Entertainment",
+        //   "description": "Frontend Development on new site for the Rebranded Open Road, i.e. Global Road that went live right before they went out of business.",
+        //   "type": "Vue/Laravel",
+        //   "slides": [
+        //     require("@/assets/images/projects/global-road.png"),
+        //     "http://placehold.it/200x200",
+        //     "http://placehold.it/200x200"
+        //   ]
+        // },
         {
           "name": "ReplaceHate.com",
           "link": "https://replacehate.com",
@@ -110,16 +131,17 @@ export default {
             require("@/assets/images/projects/white-elephant/white-elephant-5.png")
           ]
         },
-        // {
-        //   "name": "Global Road Entertainment",
-        //   "description": "Frontend Development on new site for the Rebranded Open Road, i.e. Global Road that went live right before they went out of business.",
-        //   "type": "Vue/Laravel",
-        //   "slides": [
-        //     require("@/assets/images/projects/global-road.png"),
-        //     "http://placehold.it/200x200",
-        //     "http://placehold.it/200x200"
-        //   ]
-        // },
+        {
+          "name": "PXL Agency",
+          "description": "Assisted in the development of <a href=\"https://www.pxlagency.com\">pxlagency.com</a> during the brand relaunch at PXL Agency. Then was the lead developer on maintenance updates.",
+          "type": "Ember",
+          "slides": [
+            require("@/assets/images/projects/pxl-agency/pxl-1.png"),
+            require("@/assets/images/projects/pxl-agency/pxl-2.png"),
+            require("@/assets/images/projects/pxl-agency/pxl-3.png"),
+            require("@/assets/images/projects/pxl-agency/pxl-4.png")
+          ]
+        },
         // {
         //   "name": "Paramount Sticker Packs",
         //   "link": "https://www.pxlagency.com/our-work/bumblebee-sticker-pack",
