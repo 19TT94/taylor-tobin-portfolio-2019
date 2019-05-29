@@ -20,8 +20,8 @@ export default {
 
   mounted() {
     setTimeout(()=> {
-      this.show = true;
-    }, 500);
+      this.show = true
+    }, 500)
   }
 }
 </script>
@@ -31,13 +31,13 @@ export default {
 @import "@/assets/scss/app.scss"; // global styles
 
 .preloader {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100vw;
-	height: 100vh;
-	background: $black;
-	color: $white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: $black;
+  color: $white;
   z-index: 999;
   display: flex;
   flex-direction: column;

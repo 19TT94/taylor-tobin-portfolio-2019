@@ -38,14 +38,9 @@
 </template>
 
 <script>
-import customMap from '@/components/custom-map.vue'
 
 export default {
   name: 'Contact',
-
-  components: {
-		customMap
-	},
 
   data() {
     return {
@@ -55,8 +50,8 @@ export default {
 
   mounted() {
     setTimeout(()=> {
-        this.show = true;
-      }, 500);
+      this.show = true
+    }, 500)
   }
 }
 </script>

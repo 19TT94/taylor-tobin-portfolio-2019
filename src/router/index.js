@@ -19,25 +19,25 @@ export default new Router({
       name: 'home',
       component: Home
     },
-		{
+    {
       path: '/featured',
       name: 'featured',
       component: Featured
     },
-		{
+    {
       path: '/projects',
       name: 'projects',
       component: Projects
     },
-		{
-			path: '/about',
-			name: 'about',
-			component: About
-		},
-		{
-			path: '/contact',
-			name: 'contact',
-			component: Contact
+    {
+      path: '/about',
+      name: 'about',
+      component: About
+    },
+    {
+      path: '/contact',
+      name: 'contact',
+      component: Contact
     },
     {
       // will match everything

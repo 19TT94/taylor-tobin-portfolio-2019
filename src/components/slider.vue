@@ -57,7 +57,7 @@ export default {
   },
 
   mounted() {
-    this.initialize();
+    this.initialize()
   },
 
   data() {
@@ -67,50 +67,50 @@ export default {
       navigation: true, // what is this type of 'nav' called?
       dots: true, // better name for this? - yes...
       dotText: false,
-      setupFinished: false,
-    };
+      setupFinished: false
+    }
   },
 
   computed: {
     itemsLength() {
       // [...{variable}] builds an array and fills it in with 'whatever'
-      return [...this.slides].length - 1;
+      return [...this.slides].length - 1
       // 'spreads' the items into and array: "spread syntax"
     },
     previousIndex() {
-      return (this.currentIndex - 1) < 0 ? this.itemsLength : this.currentIndex - 1;
+      return (this.currentIndex - 1) < 0 ? this.itemsLength : this.currentIndex - 1
     },
     nextIndex() {
-      return (this.currentIndex + 1) > this.itemsLength ? 0 : this.currentIndex + 1;
+      return (this.currentIndex + 1) > this.itemsLength ? 0 : this.currentIndex + 1
     },
     currentItem() {
-      return (this.currentIndex > this.itemsLength) ? [...this.slides][0] : [...this.slides][this.currentIndex];
+      return (this.currentIndex > this.itemsLength) ? [...this.slides][0] : [...this.slides][this.currentIndex]
     },
     visualIndex() {
-      return this.currentIndex + 1;
+      return this.currentIndex + 1
     },
     visualTotal() {
-      return this.itemsLength + 1;
-    },
+      return this.itemsLength + 1
+    }
   },
 
   methods: {
     initialize() {
-      setTimeout( ()=> {
-        this.currentIndex = 0;
-        this.setupFinished = true;
-      }, 0);
+      setTimeout(()=> {
+        this.currentIndex = 0
+        this.setupFinished = true
+      }, 0)
     },
     setItem(index) {
-      this.currentIndex = index;
+      this.currentIndex = index
     },
     forward() {
-      this.currentIndex = this.nextIndex;
+      this.currentIndex = this.nextIndex
     },
     backward() {
-      this.currentIndex = this.previousIndex;
-    },
-  },
+      this.currentIndex = this.previousIndex
+    }
+  }
 }
 </script>
 

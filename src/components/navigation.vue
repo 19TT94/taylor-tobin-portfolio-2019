@@ -28,24 +28,24 @@ export default {
 			// reference state from store
 			down: this.$store.state.down,
 			unlock: false,
-			open: false,
+			open: false
 		}
 	},
 
-	methods: {
-		/* toggles events for opening and closing the nav */
-		toggleNav() {
-			this.unlock = !this.unlock;
-			setTimeout(()=> {
-				this.open = !this.open;
-			}, 200)
-		},
-		/* handles route change event, resets data */
-		pageChange() {
-			this.unlock = false;
-			this.open = false;
-		}
-	}
+  methods: {
+    /* toggles events for opening and closing the nav */
+    toggleNav() {
+      this.unlock = !this.unlock
+      setTimeout(()=> {
+        this.open = !this.open
+      }, 200)
+    },
+    /* handles route change event, resets data */
+    pageChange() {
+			this.unlock = false
+			this.open = false
+    }
+  }
 }
 </script>
 
@@ -121,8 +121,8 @@ export default {
 		z-index: $menu;
 	}
 
-	.show {
-		opacity: 1;
-	}
+  .show {
+    opacity: 1;
+  }
 }
 </style>
