@@ -49,6 +49,8 @@
 </template>
 
 <script>
+import Utils from '@/utils/index.js'
+
 export default {
   name: 'Slider',
 
@@ -109,6 +111,9 @@ export default {
     },
     backward() {
       this.currentIndex = this.previousIndex
+    },
+    swipe() {
+      console.log(Utils.isMobileSize())
     }
   }
 }
