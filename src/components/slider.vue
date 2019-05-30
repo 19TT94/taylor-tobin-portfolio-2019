@@ -1,15 +1,15 @@
 <template>
     <section
       class="wrapper"
-      ref='theater'
-      :class='{"loading": !setupFinished}'
+      ref="theater"
+      :class="{'loading': !setupFinished}"
       >
 
       <ul class="slider">
         <li class="slide"
-          v-for='(item, index) in slides'
-          :class='[item.name, {active: currentIndex === index}]'
-          :key='`x-${index}`'
+          v-for="(item, index) in slides"
+          :class="[item.name, {active: currentIndex === index}]"
+          :key="`x-${index}`"
           >
           <div class="content">
             <img :src="item">
@@ -18,23 +18,23 @@
       </ul>
 
       <!-- optional stuff -->
-      <div class="button backward" v-if='navigation'>
-        <button class="next" @click='backward'>←</button>
+      <div class="button backward" v-if="navigation">
+        <button class="next" @click="backward">←</button>
       </div>
 
-      <div class="button forward" v-if='navigation'>
-        <button class="next" @click='forward'>→</button>
+      <div class="button forward" v-if="navigation">
+        <button class="next" @click="forward">→</button>
       </div>
 
-      <div class="pagination" v-if='dots'>
+      <div class="pagination" v-if="dots">
         <ul class="item-list">
           <li class="item"
-            v-for='(item, index) in slides'
-            :class='[item.slug, {active: currentIndex === index}]'
-            :key='`y-${index}`'
+            v-for="(item, index) in slides"
+            :class="[item.slug, {active: currentIndex === index}]"
+            :key="`y-${index}`"
             >
-            <button @click='setItem(index)'>
-              <span v-if='dotText'>
+            <button @click="setItem(index)">
+              <span v-if="dotText">
                 {{item.title}}
               </span>
               <span else>
@@ -57,7 +57,7 @@ export default {
   },
 
   mounted() {
-    this.initialize();
+    this.initialize()
   },
 
   data() {
@@ -67,50 +67,50 @@ export default {
       navigation: true, // what is this type of 'nav' called?
       dots: true, // better name for this? - yes...
       dotText: false,
-      setupFinished: false,
-    };
+      setupFinished: false
+    }
   },
 
   computed: {
     itemsLength() {
       // [...{variable}] builds an array and fills it in with 'whatever'
-      return [...this.slides].length - 1;
+      return [...this.slides].length - 1
       // 'spreads' the items into and array: "spread syntax"
     },
     previousIndex() {
-      return (this.currentIndex - 1) < 0 ? this.itemsLength : this.currentIndex - 1;
+      return (this.currentIndex - 1) < 0 ? this.itemsLength : this.currentIndex - 1
     },
     nextIndex() {
-      return (this.currentIndex + 1) > this.itemsLength ? 0 : this.currentIndex + 1;
+      return (this.currentIndex + 1) > this.itemsLength ? 0 : this.currentIndex + 1
     },
     currentItem() {
-      return (this.currentIndex > this.itemsLength) ? [...this.slides][0] : [...this.slides][this.currentIndex];
+      return (this.currentIndex > this.itemsLength) ? [...this.slides][0] : [...this.slides][this.currentIndex]
     },
     visualIndex() {
-      return this.currentIndex + 1;
+      return this.currentIndex + 1
     },
     visualTotal() {
-      return this.itemsLength + 1;
-    },
+      return this.itemsLength + 1
+    }
   },
 
   methods: {
     initialize() {
-      setTimeout( ()=> {
-        this.currentIndex = 0;
-        this.setupFinished = true;
-      }, 0);
+      setTimeout(()=> {
+        this.currentIndex = 0
+        this.setupFinished = true
+      }, 0)
     },
     setItem(index) {
-      this.currentIndex = index;
+      this.currentIndex = index
     },
     forward() {
-      this.currentIndex = this.nextIndex;
+      this.currentIndex = this.nextIndex
     },
     backward() {
-      this.currentIndex = this.previousIndex;
-    },
-  },
+      this.currentIndex = this.previousIndex
+    }
+  }
 }
 </script>
 
@@ -138,18 +138,28 @@ export default {
       transform: translate(0, 10px); // and move it up a bit for fun
       transition: 0.5s; // animation duration
       margin: 0 auto;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
 
       img {
-        max-width: 90%;
-        margin: 0 1rem;
+        max-width: 80%;
+        margin: 0 auto;
         box-shadow: 0px 15px 15px rgba(0,0,0,0.8);
 
         @media #{$small} {
-          max-width: 450px;
+          max-width: 400px;
         }
 
         @media #{$medium} {
-          max-width: 600px;
+          max-width: 500px;
+        }
+
+        @media #{$large} {
+          max-width: 700px;
         }
       }
     }
@@ -171,6 +181,15 @@ export default {
 
   .pagination {
     z-index: $base;
+
+    span {
+      padding: 1.5rem;
+      text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.8);
+
+      @media #{$small} {
+        font-size: 2rem;
+      }
+    }
   }
 
   .button, .menu {
@@ -189,6 +208,12 @@ export default {
 
     .next {
       color: $gold;
+      padding: 2rem 1rem;
+      text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.8);
+
+      @media #{$small} {
+        font-size: 2rem;
+      }
     }
 
     &.forward {

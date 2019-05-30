@@ -3,9 +3,12 @@
     <section class="section" :class="{ 'move': show }">
       <div class="info">
         <h2>Get In Touch</h2>
+        <h3 class="subtitle">I'm a full stack developer with an interest in great visual design and quality responsive user experiences. You can find me online at the links below or in the water most mornings in Huntington Beach. Contact me for inquieries. Cheers!</h3>
         <ul>
-          <li><span>Email:</span> 19tt94@gmail.com</li>
-          <li><span>Phone:</span> (805) 434-7559</li>
+          <li><span>Email:</span> <a href="mailto:19tt94@gmail.com">19tt94@gmail.com</a></li>
+          <li>
+            <span>Phone:</span> <a class="mobile" href="tel:805-434-7559">(805) 434-7559</a> <span class="desktop">(805) 434-7559</span>
+          </li>
         </ul>
 
         <ul class="links">
@@ -29,23 +32,23 @@
           </li>
         </ul>
 
-        <button><a class="button resume" :href="require('@/assets/images/resume.jpg')" download="resume.jpg">Resume</a></button>
+        <button><a class="button resume" :href="require('@/assets/images/TTresume-2019.pdf')" download="resume.pdf">Resume</a></button>
       </div>
     </section>
 
-    <customMap class="map" :class="{ 'move': show }" />
+    <div class="map" :class="{ 'move': show }">
+      <div class="map-image" :style="{'background-image': 'url(' + require('@/assets/images/map.png') + ')'}">
+        <font-awesome-icon class="marker" icon="map-marker" />
+      </div>
+    </div>
+
   </div>
 </template>
 
 <script>
-import customMap from '@/components/custom-map.vue'
 
 export default {
   name: 'Contact',
-
-  components: {
-		customMap
-	},
 
   data() {
     return {
@@ -55,8 +58,8 @@ export default {
 
   mounted() {
     setTimeout(()=> {
-        this.show = true;
-      }, 500);
+      this.show = true
+    }, 500)
   }
 }
 </script>
@@ -91,12 +94,20 @@ export default {
 
       @media #{$small} {
         padding: 0;
-        width: 50%;
+        width: 80%;
+      }
+
+      .subtitle {
+        display: none;
+
+        @media #{$small} {
+          display: block;
+        }
       }
     }
   }
 
-	.map {
+  .map {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -108,9 +119,43 @@ export default {
     @media #{$small} {
       transform: translateX(100%);
       width: 50%;
-      height: 100%;
+      height: 110%;
       left: auto;
       right: 0;
+      top: 0;
+      bottom: auto;
+    }
+
+    .map-object {
+      position: absolute;
+      top:0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .map-image {
+      border-top: 1px solid $gold;
+      background-size: 200%;
+      background-position: center;
+      background-repeat: no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+
+      @media #{$small} {
+        border-top: 0;
+        background-size: cover;
+      }
+    }
+
+    .fa-map-marker {
+      z-index: $default;
+      font-size: 2rem;
+      margin: -10px;
+      transform: translateY(-25px)
     }
   }
 
@@ -125,6 +170,20 @@ export default {
 
   .amp {
     padding-left: 0.5rem;
+  }
+}
+
+.mobile {
+  @media #{$small} {
+    display: none;
+  }
+}
+
+.desktop {
+  display: none;
+
+  @media #{$small} {
+    display: inline-block;
   }
 }
 

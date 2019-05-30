@@ -12,42 +12,43 @@
 <script>
 export default {
   name: 'Projects',
+
   data() {
     return {
-      projects : [
+      projects: [
         {
-          "name": "PXL Website",
-          "link": "https://pxlagency.com",
-          "type": "Ember/Laravel",
-          "image": ""
+          'name': 'PXL Website',
+          'link': 'https://pxlagency.com',
+          'type': 'Ember/Laravel',
+          'image': ''
         },
         {
-          "name": "Selfie Booth",
-          "type": "Ember/Cordova/Laravel",
-          "image": ""
+          'name': 'Selfie Booth',
+          'type': 'Ember/Cordova/Laravel',
+          'image': ''
         },
         {
-          "name": "Universal Platform",
-          "link": "https://universalpictures.com",
-          "type": "Vue/Laravel",
-          "image": ""
+          'name': 'Universal Platform',
+          'link': 'https://universalpictures.com',
+          'type': 'Vue/Laravel',
+          'image': ''
         },
         {
-          "name": "Fathom Events",
-          "link": "https://dreamworks.com",
-          "type": "Ember/Laravel",
-          "image": ""
+          'name': 'Fathom Events',
+          'link': 'https://dreamworks.com',
+          'type': 'Ember/Laravel',
+          'image': ''
         },
         {
-          "name": "Global Road",
-          "link": "https://dreamworks.com",
-          "type": "Vue/Laravel",
-          "image": ""
+          'name': 'Global Road',
+          'link': 'https://dreamworks.com',
+          'type': 'Vue/Laravel',
+          'image': ''
         },
         {
-          "name": "PXL Platform",
-          "type": "Ember",
-          "image": ""
+          'name': 'PXL Platform',
+          'type': 'Ember',
+          'image': ''
         }
       ]
     }
@@ -57,7 +58,7 @@ export default {
 
 <style scoped lang="scss">
 
-@import "@/assets/scss/app.scss"; // global styles
+@import '@/assets/scss/app.scss'; // global styles
 
 .projects {
   background: transparent;

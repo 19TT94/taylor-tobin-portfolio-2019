@@ -11,10 +11,28 @@
 
 		<div class="menu-wrap" :class="{ 'visible': unlock, 'show': open }">
 			<router-link @click.native="pageChange" class="item" to="/">Home</router-link>
-			<router-link @click.native="pageChange" class="item" to="/featured">Featured</router-link>
+			<router-link @click.native="pageChange" class="item" to="/featured">Work</router-link>
 			<!-- <router-link @click.native="pageChange" class="item" to="/projects">Projects</router-link> -->
 			<!-- <router-link @click.native="pageChange" class="item" to="/about">About</router-link> -->
 			<router-link @click.native="pageChange" class="item" to="/contact">Contact</router-link>
+
+      <ul class="social">
+        <li>
+          <a href="https://github.com/19TT94">
+            <font-awesome-icon :icon="['fab', 'github-square']" />
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/taylor-tobin/">
+            <font-awesome-icon :icon="['fab', 'linkedin']" />
+          </a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/19tt94/">
+            <font-awesome-icon :icon="['fab', 'instagram']" />
+          </a>
+        </li>
+      </ul>
 		</div>
 	</div>
 </template>
@@ -28,24 +46,24 @@ export default {
 			// reference state from store
 			down: this.$store.state.down,
 			unlock: false,
-			open: false,
+			open: false
 		}
 	},
 
-	methods: {
-		/* toggles events for opening and closing the nav */
-		toggleNav() {
-			this.unlock = !this.unlock;
-			setTimeout(()=> {
-				this.open = !this.open;
-			}, 200)
-		},
-		/* handles route change event, resets data */
-		pageChange() {
-			this.unlock = false;
-			this.open = false;
-		}
-	}
+  methods: {
+    /* toggles events for opening and closing the nav */
+    toggleNav() {
+      this.unlock = !this.unlock
+      setTimeout(()=> {
+        this.open = !this.open
+      }, 200)
+    },
+    /* handles route change event, resets data */
+    pageChange() {
+			this.unlock = false
+			this.open = false
+    }
+  }
 }
 </script>
 
@@ -116,13 +134,21 @@ export default {
 		}
 	}
 
+  .social {
+    display: inline-flex;
+
+    li {
+      padding: 2rem;
+    }
+  }
+
 	.visible {
 		visibility: visible;
 		z-index: $menu;
 	}
 
-	.show {
-		opacity: 1;
-	}
+  .show {
+    opacity: 1;
+  }
 }
 </style>
