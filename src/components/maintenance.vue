@@ -6,8 +6,8 @@
       <h3>Developer</h3>
 
       <ul class="contact">
-        <li><span>Email:</span> 19tt94@gmail.com</li>
-        <li><span>Phone:</span> (805) 434-7559</li>
+        <li><span>Email:</span> <a href="mailto:19tt94@gmail.com">19tt94@gmail.com</a></li>
+        <span>Phone:</span> <a class="mobile" href="tel:805-434-7559">(805) 434-7559</a> <span class="desktop">(805) 434-7559</span>
       </ul>
 
       <ul class="links">
@@ -31,13 +31,17 @@
         </li>
       </ul>
 
-      <button><a class="button resume" :href="require('@/assets/images/resume.jpg')" download="resume.jpg">Resume</a></button>
+      <button><a class="button resume" :href="require('@/assets/images/TTresume-2019.pdf')" download="resume.pdf">Resume</a></button>
 
     </section>
 
-    <p class="note special" :class="{ 'hide': !intro }">New Site Coming Soon! Here's the basics for now.</p>
+    <p class="note special" :class="{ 'hide': !intro }">Down for maintenance! Here's the basics for now.</p>
 
-    <customMap class="map" :class="{ 'move-up': show }" />
+    <div class="map" :class="{ 'move-up': show }">
+      <div class="map-image" :style="{'background-image': 'url(' + require('@/assets/images/map.png') + ')'}">
+        <font-awesome-icon class="marker" icon="map-marker" />
+      </div>
+    </div>
 
   </div>
 </template>
@@ -87,6 +91,38 @@ export default {
   height: 35%;
   transform: translateY(100%);
   transition: all ease 0.5s;
+
+  @media #{$small} {
+    transform: translateX(100%);
+    width: 50%;
+    height: 100%;
+    left: auto;
+    right: 0;
+  }
+
+  .map-object {
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .map-image {
+    border-top: 1px solid $gold;
+    background-size: 200%;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+
+    @media #{$small} {
+      background-size: cover;
+    }
+  }
 }
 
 .move-up {
@@ -107,6 +143,20 @@ export default {
 
 .amp {
   padding-left: 0.5rem;
+}
+
+.mobile {
+  @media #{$small} {
+    display: none;
+  }
+}
+
+.desktop {
+  display: none;
+
+  @media #{$small} {
+    display: inline-block;
+  }
 }
 
 </style>

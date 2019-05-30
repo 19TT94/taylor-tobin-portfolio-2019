@@ -6,7 +6,7 @@
     <preloader :class="{
       'hide'   : hide,
       'remove' : remove
-    }"/>
+    }" v-if="!down" />
     <!-- Global Nav Component -->
     <navigation v-if="!down"/>
     <!-- Pages -->

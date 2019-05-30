@@ -28,7 +28,7 @@ export default {
 
 <style scoped lang="scss">
 
-@import "@/assets/scss/app.scss"; // global styles
+@import '@/assets/scss/app.scss'; // global styles
 
 .preloader {
   position: fixed;

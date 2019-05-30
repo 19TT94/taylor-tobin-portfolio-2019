@@ -76,6 +76,7 @@ export default {
       projects: [
         {
           'name': 'New Regency',
+          'link': 'http://newregency.com',
           'description': 'I lead development on the relaunch and revamp of <a href=\"http://newregency.com\">newregency.com</a>. It involved some visual upgrades, new content, and new functionality for internationalization. New Regency was looking for a way to promote their new international team. I was in charge of implementing a solution that allowed for custom pages and analytics for their international teams. In the cms international team members could generate pages for their clients with specific movies for their region.',
           'type': 'Laravel',
           'slides': [
@@ -159,9 +160,9 @@ export default {
 }
 </script>
 
-<style scoped lang='scss'>
+<style scoped lang="scss">
 
-@import '@/assets/scss/app.scss'; // global styles
+@import "@/assets/scss/app.scss"; // global styles
 
 .featured {
   color: $white;
@@ -210,6 +211,10 @@ export default {
 
       h1 {
         padding: 2rem 2rem 1rem;
+
+        @media #{$small} {
+          padding: 0 2rem 1rem;
+        }
       }
 
       p {
@@ -235,12 +240,6 @@ export default {
           display: block;
         }
       }
-
-      // .project-link {
-      //   background: $gold;
-      //   color: $black;
-      //   margin: 0 auto;
-      // }
     }
   }
 
@@ -261,9 +260,9 @@ export default {
   }
 
   &-slider {
-    width: 100%;
-    height: 55%;
-    position: absolute;
+    width: 100% !important;
+    height: 55% !important;
+    position: absolute !important;
     bottom: 0;
     left: 0;
     display: flex;
@@ -273,8 +272,8 @@ export default {
     transition-delay: 0.5s;
 
     @media #{$small} {
-      width: 65%;
-      height: 100%;
+      width: 65% !important;
+      height: 100% !important;
       right: 0;
       left: auto;
     }

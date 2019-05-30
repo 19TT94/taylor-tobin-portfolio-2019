@@ -138,18 +138,28 @@ export default {
       transform: translate(0, 10px); // and move it up a bit for fun
       transition: 0.5s; // animation duration
       margin: 0 auto;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
 
       img {
-        max-width: 90%;
-        margin: 0 1rem;
+        max-width: 80%;
+        margin: 0 auto;
         box-shadow: 0px 15px 15px rgba(0,0,0,0.8);
 
         @media #{$small} {
-          max-width: 450px;
+          max-width: 400px;
         }
 
         @media #{$medium} {
-          max-width: 600px;
+          max-width: 500px;
+        }
+
+        @media #{$large} {
+          max-width: 700px;
         }
       }
     }
