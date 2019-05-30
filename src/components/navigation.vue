@@ -1,5 +1,9 @@
 <template>
 	<div id="menu" v-if="!down">
+		<router-link @click.native="pageChange" to="/" :class="{ 'hide' : open }">
+			<img class="home-button" src="@/assets/images/tobin.png">
+		</router-link>
+
 		<div class="toggle" @click="toggleNav">
 			<div class="bar" :class="{ 'rotate': unlock }"></div>
 			<div class="bar" :class="{ 'rotate': unlock }"></div>
@@ -7,10 +11,28 @@
 
 		<div class="menu-wrap" :class="{ 'visible': unlock, 'show': open }">
 			<router-link @click.native="pageChange" class="item" to="/">Home</router-link>
-			<router-link @click.native="pageChange" class="item" to="/featured">Featured</router-link>
-			<router-link @click.native="pageChange" class="item" to="/projects">Projects</router-link>
-			<router-link @click.native="pageChange" class="item" to="/about">About</router-link>
+			<router-link @click.native="pageChange" class="item" to="/featured">Work</router-link>
+			<!-- <router-link @click.native="pageChange" class="item" to="/projects">Projects</router-link> -->
+			<!-- <router-link @click.native="pageChange" class="item" to="/about">About</router-link> -->
 			<router-link @click.native="pageChange" class="item" to="/contact">Contact</router-link>
+
+      <ul class="social">
+        <li>
+          <a href="https://github.com/19TT94">
+            <font-awesome-icon :icon="['fab', 'github-square']" />
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/taylor-tobin/">
+            <font-awesome-icon :icon="['fab', 'linkedin']" />
+          </a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/19tt94/">
+            <font-awesome-icon :icon="['fab', 'instagram']" />
+          </a>
+        </li>
+      </ul>
 		</div>
 	</div>
 </template>
@@ -18,10 +40,6 @@
 <script>
 export default {
   name: 'Menu',
-
-  props: {
-    msg: String
-	},
 
 	data() {
 		return {
@@ -31,21 +49,21 @@ export default {
 			open: false
 		}
 	},
-	
-	methods: {
-		/* toggles events for opening and closing the nav */
-		toggleNav() {
-			this.unlock = !this.unlock;
-			setTimeout(()=> {
-				this.open = !this.open;
-			}, 200)
-		},
-		/* handles route change event, resets data */
-		pageChange() {
-			this.unlock = false;
-			this.open = false;
-		}
-	}
+
+  methods: {
+    /* toggles events for opening and closing the nav */
+    toggleNav() {
+      this.unlock = !this.unlock
+      setTimeout(()=> {
+        this.open = !this.open
+      }, 200)
+    },
+    /* handles route change event, resets data */
+    pageChange() {
+			this.unlock = false
+			this.open = false
+    }
+  }
 }
 </script>
 
@@ -54,6 +72,15 @@ export default {
 @import "@/assets/scss/app.scss"; // global styles
 
 #menu {
+	.home-button {
+		position: absolute;
+		top: 0;
+		left: 0;
+		max-width: 35px;
+		margin: 2rem 2.4rem;
+		z-index: 99;
+	}
+
 	.toggle {
 		position: absolute;
 		top: 0;
@@ -107,13 +134,25 @@ export default {
 		}
 	}
 
+  .social {
+    display: inline-flex;
+
+    li {
+      padding: 2rem;
+
+      .svg-inline--fa {
+        color: $black;
+      }
+    }
+  }
+
 	.visible {
 		visibility: visible;
-		z-index: $front;
+		z-index: $menu;
 	}
 
-	.show {
-		opacity: 1;
-	}
+  .show {
+    opacity: 1;
+  }
 }
 </style>
