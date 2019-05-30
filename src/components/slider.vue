@@ -13,6 +13,7 @@
           >
           <div class="content">
             <img :src="item">
+            <div class="swipe" v-hammer:swipe="onSwipe"></div>
           </div>
         </li>
       </ul>
@@ -112,8 +113,18 @@ export default {
     backward() {
       this.currentIndex = this.previousIndex
     },
-    swipe() {
-      console.log(Utils.isMobileSize())
+    onSwipe(e) {
+      // if mobile device
+      if (Utils.isMobileSize() && Utils.isMobileDevice()) {
+        // swipe left
+        if (e.direction === 2) {
+          this.currentIndex = this.nextIndex
+        }
+        // swipe right
+        if (e.direction === 4) {
+          this.currentIndex = this.previousIndex
+        }
+      }
     }
   }
 }
@@ -280,6 +291,15 @@ export default {
       transition: 2s;
     }
   }
+}
+
+.swipe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: $front;
 }
 
 </style>

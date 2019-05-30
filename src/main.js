@@ -9,6 +9,8 @@ import { faMapMarker } from '@fortawesome/free-solid-svg-icons'
 import { faGithubSquare, faLinkedin, faInstagram } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
+import { VueHammer } from 'vue2-hammer'
+
 library.add(
   faMapMarker,
 	faGithubSquare,
@@ -17,6 +19,8 @@ library.add(
 )
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
+
+Vue.use(VueHammer)
 
 Vue.config.productionTip = false
 
