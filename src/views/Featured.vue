@@ -17,7 +17,7 @@
         <button class="next-project hide" :class="{'show' : down}" @click="next()">Next Project</button>
       </section>
 
-      <slider class="featured-slider hide" :class="{'show' : show}" :slides="current_project.slides" />
+      <slider ref="slider" class="featured-slider hide" :class="{'show' : show}" :slides="current_project.slides" />
     </div>
   </div>
 </template>
@@ -55,6 +55,8 @@ export default {
   methods: {
     /** @increments current project */
     next() {
+      // reset current index on project change
+      this.$refs.slider.currentIndex = 0
       this.show = false
       setTimeout(()=> {
         this.show = true

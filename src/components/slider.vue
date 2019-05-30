@@ -1,15 +1,15 @@
 <template>
     <section
       class="wrapper"
-      ref='theater'
-      :class='{"loading": !setupFinished}'
+      ref="theater"
+      :class="{'loading': !setupFinished}"
       >
 
       <ul class="slider">
         <li class="slide"
-          v-for='(item, index) in slides'
-          :class='[item.name, {active: currentIndex === index}]'
-          :key='`x-${index}`'
+          v-for="(item, index) in slides"
+          :class="[item.name, {active: currentIndex === index}]"
+          :key="`x-${index}`"
           >
           <div class="content">
             <img :src="item">
@@ -18,23 +18,23 @@
       </ul>
 
       <!-- optional stuff -->
-      <div class="button backward" v-if='navigation'>
-        <button class="next" @click='backward'>←</button>
+      <div class="button backward" v-if="navigation">
+        <button class="next" @click="backward">←</button>
       </div>
 
-      <div class="button forward" v-if='navigation'>
-        <button class="next" @click='forward'>→</button>
+      <div class="button forward" v-if="navigation">
+        <button class="next" @click="forward">→</button>
       </div>
 
-      <div class="pagination" v-if='dots'>
+      <div class="pagination" v-if="dots">
         <ul class="item-list">
           <li class="item"
-            v-for='(item, index) in slides'
-            :class='[item.slug, {active: currentIndex === index}]'
-            :key='`y-${index}`'
+            v-for="(item, index) in slides"
+            :class="[item.slug, {active: currentIndex === index}]"
+            :key="`y-${index}`"
             >
-            <button @click='setItem(index)'>
-              <span v-if='dotText'>
+            <button @click="setItem(index)">
+              <span v-if="dotText">
                 {{item.title}}
               </span>
               <span else>
