@@ -12,7 +12,7 @@
             {{current_project.type}}
           </p>
           <p class="description" v-if="current_project.name" v-html="current_project.description"></p>
-          <a class="project-link" :href="current_project.link" target="_blank" v-if="current_project.link">Visit</a>
+          <a class="button project-link" :href="current_project.link" target="_blank" v-if="current_project.link">Visit Site</a>
         </div>
         <button class="next-project hide" :class="{'show' : down}" @click="next()">Next Project</button>
       </section>
@@ -134,6 +134,7 @@ export default {
         },
         {
           'name': 'PXL Agency',
+          'link': 'https://pxlagency.com',
           'description': 'Assisted in the development of <a href=\"https://www.pxlagency.com\">pxlagency.com</a> during the brand relaunch at PXL Agency. Then was the lead developer on maintenance updates.',
           'type': 'Ember',
           'slides': [
@@ -219,18 +220,25 @@ export default {
 
       p {
         padding: 0 2rem 1rem;
+        margin-bottom: 1rem;
+
+        @media #{$small} {
+          margin-bottom: 0;
+        }
       }
 
       .description {
         display: none;
+        margin-bottom: 1rem;
 
         @media #{$small} {
           display: block;
         }
       }
 
-      a {
-        padding: 0 2rem;;
+      .project-link {
+        padding: 0.5rem 1rem;
+        margin: 1rem 2rem;
       }
 
       .description {

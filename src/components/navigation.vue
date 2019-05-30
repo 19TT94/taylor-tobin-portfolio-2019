@@ -15,6 +15,24 @@
 			<!-- <router-link @click.native="pageChange" class="item" to="/projects">Projects</router-link> -->
 			<!-- <router-link @click.native="pageChange" class="item" to="/about">About</router-link> -->
 			<router-link @click.native="pageChange" class="item" to="/contact">Contact</router-link>
+
+      <ul class="social">
+        <li>
+          <a href="https://github.com/19TT94">
+            <font-awesome-icon :icon="['fab', 'github-square']" />
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/taylor-tobin/">
+            <font-awesome-icon :icon="['fab', 'linkedin']" />
+          </a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/19tt94/">
+            <font-awesome-icon :icon="['fab', 'instagram']" />
+          </a>
+        </li>
+      </ul>
 		</div>
 	</div>
 </template>
@@ -115,6 +133,14 @@ export default {
 			font-size: 2rem;
 		}
 	}
+
+  .social {
+    display: inline-flex;
+
+    li {
+      padding: 2rem;
+    }
+  }
 
 	.visible {
 		visibility: visible;

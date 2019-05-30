@@ -3,6 +3,7 @@
     <section class="section" :class="{ 'move': show }">
       <div class="info">
         <h2>Get In Touch</h2>
+        <h3 class="subtitle">I'm a full stack developer with an interest in great visual design and quality responsive user experiences. You can find me online at the links below or in the water most mornings in Huntington Beach. Contact me for inquieries. Cheers!</h3>
         <ul>
           <li><span>Email:</span> <a href="mailto:19tt94@gmail.com">19tt94@gmail.com</a></li>
           <li>
@@ -93,7 +94,15 @@ export default {
 
       @media #{$small} {
         padding: 0;
-        width: 50%;
+        width: 80%;
+      }
+
+      .subtitle {
+        display: none;
+
+        @media #{$small} {
+          display: block;
+        }
       }
     }
   }
@@ -110,9 +119,11 @@ export default {
     @media #{$small} {
       transform: translateX(100%);
       width: 50%;
-      height: 100%;
+      height: 110%;
       left: auto;
       right: 0;
+      top: 0;
+      bottom: auto;
     }
 
     .map-object {
@@ -135,6 +146,7 @@ export default {
       height: 100%;
 
       @media #{$small} {
+        border-top: 0;
         background-size: cover;
       }
     }
