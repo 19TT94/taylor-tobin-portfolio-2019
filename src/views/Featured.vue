@@ -205,7 +205,7 @@ export default {
 
   &-info {
     width: 100%;
-    height: 45%;
+    height: 50%;
     margin: 0 auto;
     position: absolute;
     top: 0;
@@ -267,7 +267,7 @@ export default {
   .section {
     position: absolute;
     width: 100%;
-    height: 45%;
+    height: 50%;
     background: $black;
     z-index: -1;
     transform: translateY(-100%);
@@ -282,7 +282,7 @@ export default {
 
   &-slider {
     width: 100% !important;
-    height: 55% !important;
+    height: 50% !important;
     position: absolute !important;
     bottom: 0;
     left: 0;
