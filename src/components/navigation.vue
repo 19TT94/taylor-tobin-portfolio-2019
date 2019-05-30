@@ -139,6 +139,10 @@ export default {
 
     li {
       padding: 2rem;
+
+      .svg-inline--fa {
+        color: $black;
+      }
     }
   }
 

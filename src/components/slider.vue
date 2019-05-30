@@ -146,20 +146,12 @@ export default {
       justify-content: center;
 
       img {
-        max-width: 80%;
+        max-width: 70%;
         margin: 0 auto;
         box-shadow: 0px 15px 15px rgba(0,0,0,0.8);
 
         @media #{$small} {
-          max-width: 400px;
-        }
-
-        @media #{$medium} {
-          max-width: 500px;
-        }
-
-        @media #{$large} {
-          max-width: 700px;
+          max-width: 80%;
         }
       }
     }
@@ -208,7 +200,7 @@ export default {
 
     .next {
       color: $gold;
-      padding: 2rem 1rem;
+      padding: 1.5rem 1rem;
       text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.8);
 
       @media #{$small} {
@@ -217,7 +209,8 @@ export default {
     }
 
     &.forward {
-      right: 1rem;
+      right: 0;
+      padding: 0;
       display: none;
 
       @media #{$small} {
@@ -226,7 +219,8 @@ export default {
     }
 
     &.backward {
-      left: 1rem;
+      left: 0;
+      padding: 0;
       display: none;
 
       @media #{$small} {
