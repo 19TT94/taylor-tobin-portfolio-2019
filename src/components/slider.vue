@@ -181,6 +181,15 @@ export default {
 
   .pagination {
     z-index: $base;
+
+    span {
+      padding: 1.5rem;
+      text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.8);
+
+      @media #{$small} {
+        font-size: 2rem;
+      }
+    }
   }
 
   .button, .menu {
@@ -199,6 +208,12 @@ export default {
 
     .next {
       color: $gold;
+      padding: 2rem 1rem;
+      text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.8);
+
+      @media #{$small} {
+        font-size: 2rem;
+      }
     }
 
     &.forward {
