@@ -111,7 +111,7 @@ export default {
         // },
         {
           'name': 'ReplaceHate.com',
-          'link': 'https://replacehate.com',
+          'link': 'https://pxlagency.com/our-work/replace-hate',
           'description': 'Frontend developement on <a href=\"https://www.instagram.com/explore/tags/replacehate/\">#ReplaceHate</a> social campaign site. This site was built for Fox Movies and allows users to generate #replacehate posters to share on social media. This promotion for the movie lived mostly on Instagram and was a fun way for fans to get involved. The biggest challenge was trying to make the process of creating the share assets as easy in fast as possible for the user. Despite the changing requirements from the client and the challenges of creating the assets in a web app, the app was a success.',
           'type': 'Ember',
           'slides': [
