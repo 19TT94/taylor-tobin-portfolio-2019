@@ -148,7 +148,7 @@ export default {
         {
           'name': 'Ted Tobin\'s Portfolio',
           'link': 'https://tedtobin.com',
-          'description': 'This project was a portfolio website for Creative Director, Consultant, and Copy Writer Ted Tobin. During his transition to freelance work he needed a simple site that would showcase his skills and experience as a writer. In order to do this I designed and built a site where his words are the focus. The slider is built with a vanilla js and inspired by word scramble code pens.',
+          'description': 'This project was a portfolio website for Creative Director, Consultant, and Copy Writer Ted Tobin. During his transition to freelance work he needed a simple site that would showcase his skills and experience as a writer. In order to do this I designed and built a site where his words are the focus. The slider is built with vanilla js and inspired by word scramble code pens.',
           'type': 'Vue',
           'slides': [
             require('@/assets/images/projects/ted/ted-1.png'),
