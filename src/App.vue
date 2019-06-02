@@ -6,7 +6,7 @@
     <preloader :class="{
       'hide'   : hide,
       'remove' : remove
-    }" v-if="!down" />
+    }" v-if="!down && currentPage === 'home' || currentPage === 'featured'" />
     <!-- Global Nav Component -->
     <navigation v-if="!down"/>
     <!-- Pages -->
@@ -40,6 +40,8 @@ export default {
 
   data() {
     return {
+      // current page reference
+      currentPage: this.$router.currentRoute.name,
       // reference state from store
       down: this.$store.state.down,
       hide: false,
