@@ -118,8 +118,6 @@ export default {
   }
 }
 
-
-
 .mobile {
   @media #{$small} {
     display: none;

@@ -34,12 +34,6 @@ export default {
     card
   },
 
-  computed: {
-    landscape() {
-      return Utils.isMobileDevice() && Utils.isMobileSize() && window.orientation === 90
-    }
-  },
-
   mounted() {
     setTimeout(()=> {
       this.hide = true
@@ -48,9 +42,20 @@ export default {
       }, 500)
     }, 2500)
 
-    if(this.landscape) {
-      console.log('landscape');
+    // intial orientation check
+    if (Utils.isMobileDevice() && Utils.isMobileSize() && window.orientation === 90) {
+      this.landscape = true
     }
+
+    // set landscape state on orientation change
+    let self = this
+    window.addEventListener('orientationchange', function() {
+      if (Utils.isMobileDevice() && Utils.isMobileSize() && window.orientation === 90) {
+        self.landscape = true
+      } else {
+        self.landscape = false
+      }
+    })
   },
 
   data() {
@@ -60,7 +65,8 @@ export default {
       // reference state from store
       down: this.$store.state.down,
       hide: false,
-      remove: false
+      remove: false,
+      landscape: false
     }
   }
 }
