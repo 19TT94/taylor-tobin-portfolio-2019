@@ -32,7 +32,7 @@
           </li>
         </ul>
 
-        <button><a class="button resume" :href="require('@/assets/images/TTresume-2019.pdf')" download="resume.pdf">Resume</a></button>
+        <button><a class="button resume" :href="require('@/assets/TTResume.pdf')" download="resume.pdf">Resume</a></button>
       </div>
     </section>
 

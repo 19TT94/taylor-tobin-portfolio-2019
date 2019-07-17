@@ -8,11 +8,13 @@
       'remove' : remove
     }" v-if="!down && currentPage === 'home' || currentPage === 'featured'" />
     <!-- Global Nav Component -->
-    <navigation v-if="!down"/>
+    <navigation v-if="!down && !landscape"/>
     <!-- Pages -->
-    <router-view v-if="!down"/>
+    <router-view v-if="!down && !landscape"/>
     <!-- Maintenance -->
     <maintenance v-if="down"/>
+    <!-- Landscape Device -->
+    <card v-if="landscape"/>
   </div>
 </template>
 
@@ -21,12 +23,21 @@
 import navigation from '@/components/navigation.vue'
 import maintenance from '@/components/maintenance.vue'
 import preloader from '@/components/preloader.vue'
+import card from '@/components/card.vue'
+import Utils from '@/utils/index.js'
 
 export default {
   components: {
     preloader,
     navigation,
-    maintenance
+    maintenance,
+    card
+  },
+
+  computed: {
+    landscape() {
+      return Utils.isMobileDevice() && Utils.isMobileSize() && window.orientation === 90
+    }
   },
 
   mounted() {
@@ -36,6 +47,10 @@ export default {
         this.remove = true
       }, 500)
     }, 2500)
+
+    if(this.landscape) {
+      console.log('landscape');
+    }
   },
 
   data() {
