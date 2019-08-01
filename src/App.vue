@@ -43,14 +43,14 @@ export default {
     }, 2500)
 
     // intial orientation check
-    if (Utils.isMobileDevice() && Utils.isMobileSize() && window.orientation === 90) {
+    if (Utils.isMobileDevice() && Utils.isMobileSize() && window.orientation === 90 || window.orientation === -90) {
       this.landscape = true
     }
 
     // set landscape state on orientation change
     let self = this
     window.addEventListener('orientationchange', function() {
-      if (Utils.isMobileDevice() && Utils.isMobileSize() && window.orientation === 90) {
+      if (Utils.isMobileDevice() && Utils.isMobileSize() && window.orientation === 90 || window.orientation === -90) {
         self.landscape = true
       } else {
         self.landscape = false
