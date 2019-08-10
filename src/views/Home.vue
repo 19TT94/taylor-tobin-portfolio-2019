@@ -1,12 +1,14 @@
 <template>
   <div class="page home frame">
-    <h1 class="heading">Taylor Tobin</h1>
-    <h3 class="heading-sub">Developer</h3>
+    <h1 class="heading" :class="{'show': show}">Taylor Tobin</h1>
+    <h3 class="heading-sub" :class="{'show': show}">Developer</h3>
     <!-- <button class="first-transition"
       @touchstart="start"
       :class="{'transition': expand}">
     </button> -->
-    <router-link class="item view-work" to="/featured">View Work</router-link>
+    <router-link class="item view-work" to="/featured" :style="{
+      'cursor': 'url(' + require('@/assets/images/cursor.svg') + ')'
+    }">View Work</router-link>
   </div>
 </template>
 
@@ -14,9 +16,16 @@
 export default {
   name: 'home',
 
+  mounted() {
+    setTimeout(()=> {
+      this.show = true
+    }, 3000)
+  },
+
   data() {
     return {
-      expand: false
+      expand: false,
+      show: false,
     }
   },
 
@@ -56,12 +65,14 @@ export default {
     color: $gold;
     padding-top: 2rem;
     font-size: 2.5rem;
+    opacity: 0;
 
     @media #{$small} {
       font-size: 5rem;
     }
 
     &-sub {
+      opacity: 0;
       font-size: 2rem;
       color: $white;
     }
@@ -110,6 +121,10 @@ export default {
     &:before {
       transform: scale(3);
     }
+  }
+
+  .show {
+    opacity: 1;
   }
 }
 

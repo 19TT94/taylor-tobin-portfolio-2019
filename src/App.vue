@@ -1,5 +1,13 @@
 <template>
-  <div id="app" class="palm" :style="{ 'background-image': 'linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(' + require('@/assets/images/palm.jpg') + ')' }">
+  <div
+    id="app"
+    class="palm"
+    :style="{
+      'background-image': 'linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(' + require('@/assets/images/palm.jpg') + ')',
+      'cursor': 'url(' + require('@/assets/images/cursor.svg') + ')'
+    }">
+    <!-- Cursor -->
+    <bolt />
     <!-- Noise -->
     <div class="noise" :style="{'background-image': 'url(' + require('@/assets/images/film.gif') + ')'}"></div>
     <!-- preloader -->
@@ -8,13 +16,13 @@
       'remove' : remove
     }" v-if="!down && currentPage === 'home' || currentPage === 'featured'" />
     <!-- Global Nav Component -->
-    <navigation v-if="!down && !landscape"/>
+    <navigation v-if="!down && !landscape" />
     <!-- Pages -->
-    <router-view v-if="!down && !landscape"/>
+    <router-view v-if="!down && !landscape" />
     <!-- Maintenance -->
-    <maintenance v-if="down"/>
+    <maintenance v-if="down" />
     <!-- Landscape Device -->
-    <card v-if="landscape"/>
+    <card v-if="landscape" />
   </div>
 </template>
 
@@ -23,12 +31,14 @@
 import navigation from '@/components/navigation.vue'
 import maintenance from '@/components/maintenance.vue'
 import preloader from '@/components/preloader.vue'
+import bolt from '@/components/bolt.vue'
 import card from '@/components/card.vue'
 import Utils from '@/utils/index.js'
 
 export default {
   components: {
     preloader,
+    bolt,
     navigation,
     maintenance,
     card
