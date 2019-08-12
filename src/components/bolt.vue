@@ -11,41 +11,67 @@
 export default {
   name: 'bolt',
 
+  data() {
+    return {
+      selectors: null
+    }
+  },
+
+  methods: {
+    setCursor() {
+      let dot = document.getElementById('dot')
+      let box = document.getElementById('box')
+      let diamond = document.getElementById('diamond')
+
+      // get mouse move events to set custom cursor
+      window.addEventListener('mousemove', (e)=> {
+        dot.style.top = e.clientY + 'px'
+        dot.style.left = e.clientX + 'px'
+        setTimeout(()=> {
+          box.style.top = e.clientY + 'px'
+          box.style.left = e.clientX + 'px'
+        }, 100)
+        setTimeout(()=> {
+          diamond.style.top = e.clientY + 'px'
+          diamond.style.left = e.clientX + 'px'
+        }, 150)
+      })
+
+      // get all anchors and buttons
+      this.selectors = document.querySelectorAll('a,button')
+      // iterate over elements to hijack mouse events
+      for(var i=0; i < this.selectors.length; i++) {
+        // add classes on mouse enter
+        this.selectors[i].onmouseenter = ()=> {
+          dot.classList.add('grow')
+          box.classList.add('hide')
+          diamond.classList.add('hide')
+        }
+        // remove classes on mouse leave
+        this.selectors[i].onmouseleave = ()=> {
+          dot.classList.remove('grow')
+          box.classList.remove('hide')
+          diamond.classList.remove('hide')
+        }
+        // remove classes on mouse click
+        this.selectors[i].onmousedown = ()=> {
+          dot.classList.remove('grow')
+          box.classList.remove('hide')
+          diamond.classList.remove('hide')
+        }
+      }
+    }
+  },
+
   mounted() {
-    let dot = document.getElementById('dot')
-    let box = document.getElementById('box')
-    let diamond = document.getElementById('diamond')
+    // intial cursor state
+    this.setCursor()
+  },
 
-    // get mouse move events to set custom cursor
-    window.addEventListener('mousemove', (e)=> {
-      dot.style.top = e.clientY + 'px'
-      dot.style.left = e.clientX + 'px'
-      setTimeout(()=> {
-        box.style.top = e.clientY + 'px'
-        box.style.left = e.clientX + 'px'
-      }, 100)
-      setTimeout(()=> {
-        diamond.style.top = e.clientY + 'px'
-        diamond.style.left = e.clientX + 'px'
-      }, 150)
-    })
-
-    // get all anchors and buttons
-    let elements = document.querySelectorAll('a,button')
-    // iterate over elements to hijack mouse events
-    for(var i=0; i < elements.length; i++) {
-      // add classes on mouse enter
-      elements[i].onmouseenter = ()=> {
-        dot.classList.add('grow')
-        box.classList.add('hide')
-        diamond.classList.add('hide')
-      }
-      // remove classes on mouse leave
-      elements[i].onmouseleave = ()=> {
-        dot.classList.remove('grow')
-        box.classList.remove('hide')
-        diamond.classList.remove('hide')
-      }
+  watch: {
+    '$route' (to, from) {
+      // react to route changes...
+      this.setCursor()
     }
   }
 }
@@ -97,6 +123,7 @@ export default {
     transition: all 0.3s, top 0s, left 0s;
     pointer-events: none;
     animation: spin 5s linear infinite;
+    mix-blend-mode: difference;
     z-index: 10;
   }
 }
