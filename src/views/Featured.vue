@@ -71,7 +71,7 @@ export default {
         if (check !== this.project_index) {
           this.show = true
         }
-      }, 1000)
+      }, 1500)
     }
   },
 
@@ -93,27 +93,32 @@ export default {
             require('@/assets/images/projects/new-regency/new-regency-4.png')
           ]
         },
-        // {
-        //   'name': 'Dreamworks Animation',
-        //   'link': 'https://dreamworks.com',
-        //   'description': 'Frontend Development on Dreamworks Animation's new website. The biggest challenge during my work on this site was working to build a slider that had performant fullpage background videos for each slide. These needed to be responsive and hide on mobile devices that didn't allow for autoplay. They also had to work with slide transitions and respond to changes of status in the viewport. Each slide also contained a iframe with the full video that added an aditional state that could cause overhead in the background.',
-        //   'type': 'Vue/Laravel',
-        //   'slides': [
-        //     require('@/assets/images/projects/dreamworks/dreamworks-1.png'),
-        //     require('@/assets/images/projects/dreamworks/dreamworks-2.png'),
-        //     require('@/assets/images/projects/dreamworks/dreamworks-3.png')
-        //   ]
-        // },
-        // {
-        //   'name': 'Global Road Entertainment',
-        //   'description': 'Frontend Development on new site for the Rebranded Open Road, i.e. Global Road that went live right before they went out of business.',
-        //   'type': 'Vue/Laravel',
-        //   'slides': [
-        //     require('@/assets/images/projects/global-road.png'),
-        //     'http://placehold.it/200x200',
-        //     'http://placehold.it/200x200'
-        //   ]
-        // },
+        {
+          'name': 'Paramount',
+          'description': 'I led frontend Development on Parmount\'s new website. This site leverages a large archive of movies with a user friendly and responsive sort and filter menu. I also assisted in api and database design/development, utilizing a Laravel (PHP) backend and a Vue (JS) frontend.',
+          'type': 'Vue/Laravel',
+          'link': 'https://paramountmovies.com',
+          'slides': [
+            require('@/assets/images/projects/paramount/paramount1.png'),
+            require('@/assets/images/projects/paramount/paramount2.png'),
+            require('@/assets/images/projects/paramount/paramount3.png'),
+            require('@/assets/images/projects/paramount/paramount4.png'),
+            require('@/assets/images/projects/paramount/paramount5.png')
+          ]
+        },
+        {
+          'name': 'Dreamworks Animation',
+          'link': 'https://dreamworks.com',
+          'description': 'I worked the team that built Dreamworks Animation. I helped to build a custom Swiper.io slider with a responsive fullscreen video background, full screen video model for each featured movie, and custom slide transitions. I also contributed to the promotional movie pages and contact forms throughout the site.',
+          'type': 'Vue/Laravel',
+          'slides': [
+            require('@/assets/images/projects/dreamworks/dreamworks-1.png'),
+            require('@/assets/images/projects/dreamworks/dreamworks-2.png'),
+            require('@/assets/images/projects/dreamworks/dreamworks-3.png'),
+            require('@/assets/images/projects/dreamworks/dreamworks-4.png'),
+            require('@/assets/images/projects/dreamworks/dreamworks-5.png')
+          ]
+        },
         {
           'name': 'ReplaceHate.com',
           'link': 'https://pxlagency.com/our-work/replace-hate',
@@ -161,17 +166,6 @@ export default {
             require('@/assets/images/projects/ted/ted-3.png')
           ]
         }
-        // {
-        //   'name': 'Paramount Sticker Packs',
-        //   'link': 'https://www.pxlagency.com/our-work/bumblebee-sticker-pack',
-        //   'description': 'Developed an Android App for Paramount Sticker Packs that made thier stickers designed by PXL available for Gboard through Google Play.',
-        //   'type': 'Android/IOS',
-        //   'slides': [
-        //     'http://placehold.it/200x200',
-        //     'http://placehold.it/200x200',
-        //     'http://placehold.it/200x200'
-        //   ]
-        // }
       ]
     }
   }

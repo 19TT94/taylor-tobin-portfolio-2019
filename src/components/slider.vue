@@ -163,6 +163,7 @@ export default {
 
       img {
         max-width: 70%;
+        max-height: 60%;
         margin: 0 auto;
         box-shadow: 0px 15px 15px rgba(0,0,0,0.8);
 
