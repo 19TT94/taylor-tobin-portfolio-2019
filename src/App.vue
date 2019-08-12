@@ -6,11 +6,11 @@
     <preloader :class="{
       'hide'   : hide,
       'remove' : remove
-    }" v-if="!down && currentPage === 'home' || currentPage === 'featured'" />
+    }" v-if="!down && !preload && currentPage === 'home' || currentPage === 'featured'" />
     <!-- Global Nav Component -->
     <navigation v-if="!down && !landscape"/>
     <!-- Pages -->
-    <router-view v-if="!down && !landscape"/>
+    <router-view :preloaded="preload" v-if="!down && !landscape"/>
     <!-- Maintenance -->
     <maintenance v-if="down"/>
     <!-- Landscape Device -->
@@ -39,6 +39,7 @@ export default {
       this.hide = true
       setTimeout(()=> {
         this.remove = true
+        this.$store.state.preloaded = true
       }, 500)
     }, 2500)
 
@@ -63,6 +64,7 @@ export default {
       // current page reference
       currentPage: this.$router.currentRoute.name,
       // reference state from store
+      preload: this.$store.state.preloaded,
       down: this.$store.state.down,
       hide: false,
       remove: false,

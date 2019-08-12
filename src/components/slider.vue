@@ -151,7 +151,7 @@ export default {
 
     .content {
       opacity: 0; // also hide this -
-      transform: translate(0, 10px); // and move it up a bit for fun
+      transform: translate(0, 10px);
       transition: 0.5s; // animation duration
       margin: 0 auto;
       width: 100%;
