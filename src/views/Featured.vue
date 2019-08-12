@@ -251,14 +251,6 @@ export default {
         padding: 0.5rem 1rem;
         margin: 1rem 2rem;
       }
-
-      .description {
-        display: none;
-
-        @media #{$small} {
-          display: block;
-        }
-      }
     }
   }
 
