@@ -58,15 +58,20 @@ export default {
       // reset current index on project change
       this.$refs.slider.currentIndex = 0
       this.show = false
+      let check = this.project_index
       setTimeout(()=> {
-        this.show = true
+        // this.show = true
         if (this.project_index === (this.length - 1)) {
           // reset index
           this.project_index = 0
         } else {
           this.project_index = this.project_index + 1
         }
-      }, 900)
+        // this.show = true
+        if (check !== this.project_index) {
+          this.show = true
+        }
+      }, 1000)
     }
   },
 

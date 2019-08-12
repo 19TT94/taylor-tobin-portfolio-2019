@@ -10,7 +10,9 @@
     <!-- Global Nav Component -->
     <navigation v-if="!down && !landscape"/>
     <!-- Pages -->
-    <router-view :preloaded="preload" v-if="!down && !landscape"/>
+    <transition :name="transitionName">
+      <router-view :preloaded="preload" v-if="!down && !landscape"/>
+    </transition>
     <!-- Maintenance -->
     <maintenance v-if="down"/>
     <!-- Landscape Device -->
@@ -26,12 +28,22 @@ import preloader from '@/components/preloader.vue'
 import card from '@/components/card.vue'
 import Utils from '@/utils/index.js'
 
+const DEFAULT_TRANSITION = 'fade'
+
 export default {
   components: {
     preloader,
     navigation,
     maintenance,
     card
+  },
+
+  created() {
+    this.$router.beforeEach((to, from, next) => {
+      let transitionName = to.meta.transitionName || from.meta.transitionName
+      this.transitionName = transitionName || DEFAULT_TRANSITION
+      next()
+    })
   },
 
   mounted() {
@@ -68,7 +80,8 @@ export default {
       down: this.$store.state.down,
       hide: false,
       remove: false,
-      landscape: false
+      landscape: false,
+      transitionName: DEFAULT_TRANSITION
     }
   }
 }
@@ -78,5 +91,34 @@ export default {
 <style lang="scss">
 
 @import '@/assets/scss/app.scss';
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+
+.zoom-enter-active,
+.zoom-leave-active {
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+  animation-name: zoom;
+}
+
+.zoom-leave-active {
+  animation-direction: reverse;
+}
+
+@keyframes zoom {
+  from {
+    opacity: 0;
+    transform: scale3d(1.2, 1.2, 1.2);
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
 
 </style>
