@@ -1,11 +1,7 @@
 <template>
   <div class="page home frame">
-    <h1 class="heading" :class="{'show': show}">Taylor Tobin</h1>
-    <h3 class="heading-sub" :class="{'show': show}">Developer</h3>
-    <!-- <button class="first-transition"
-      @touchstart="start"
-      :class="{'transition': expand}">
-    </button> -->
+    <h1 class="heading">Taylor Tobin</h1>
+    <h3 class="heading-sub">Developer</h3>
     <router-link class="item view-work" to="/featured" :style="{
       'cursor': 'url(' + require('@/assets/images/cursor.svg') + ')'
     }">View Work</router-link>
@@ -15,12 +11,6 @@
 <script>
 export default {
   name: 'home',
-
-  mounted() {
-    setTimeout(()=> {
-      this.show = true
-    }, 3000)
-  },
 
   data() {
     return {
@@ -65,14 +55,12 @@ export default {
     color: $gold;
     padding-top: 2rem;
     font-size: 2.5rem;
-    opacity: 0;
 
     @media #{$small} {
       font-size: 5rem;
     }
 
     &-sub {
-      opacity: 0;
       font-size: 2rem;
       color: $white;
     }
@@ -87,44 +75,6 @@ export default {
     width: 150px;
     padding: 1rem;
     text-align: center;
-  }
-
-  .first-transition {
-    position: absolute;
-    top: calc(50% - 20px);
-    left: 0;
-    right: 0;
-    border: 2px solid $gold;
-    border-radius: 50%;
-    background: transparent;
-    width: 40px;
-    height: 40px;
-    margin: 0 auto;
-
-    &:before {
-      content: '';
-      position: absolute;
-      top: -2px;
-      left: -2px;
-      right: 0;
-      margin: 0 auto;
-      border: 2px solid $white;
-      border-radius: 50%;
-      width: 100%;
-      height: 100%;
-      transform: scale(0);
-      transition: all ease 2.5s;
-    }
-  }
-
-  .transition {
-    &:before {
-      transform: scale(3);
-    }
-  }
-
-  .show {
-    opacity: 1;
   }
 }
 
