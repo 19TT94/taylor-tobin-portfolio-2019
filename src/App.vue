@@ -14,11 +14,13 @@
     <preloader :class="{
       'hide'   : hide,
       'remove' : remove
-    }" v-if="!down && currentPage === 'home' || currentPage === 'featured'" />
+    }" v-if="!down && !preload && currentPage === 'home' || currentPage === 'featured'" />
     <!-- Global Nav Component -->
     <navigation v-if="!down && !landscape" />
     <!-- Pages -->
-    <router-view v-if="!down && !landscape" />
+    <transition :name="transitionName">
+      <router-view :preloaded="preload" v-if="!down && !landscape"/>
+    </transition>
     <!-- Maintenance -->
     <maintenance v-if="down" />
     <!-- Landscape Device -->
@@ -35,6 +37,8 @@ import bolt from '@/components/bolt.vue'
 import card from '@/components/card.vue'
 import Utils from '@/utils/index.js'
 
+const DEFAULT_TRANSITION = 'fade'
+
 export default {
   components: {
     preloader,
@@ -44,11 +48,20 @@ export default {
     card
   },
 
+  created() {
+    this.$router.beforeEach((to, from, next) => {
+      let transitionName = to.meta.transitionName || from.meta.transitionName
+      this.transitionName = transitionName || DEFAULT_TRANSITION
+      next()
+    })
+  },
+
   mounted() {
     setTimeout(()=> {
       this.hide = true
       setTimeout(()=> {
         this.remove = true
+        this.$store.state.preloaded = true
       }, 500)
     }, 2500)
 
@@ -73,10 +86,12 @@ export default {
       // current page reference
       currentPage: this.$router.currentRoute.name,
       // reference state from store
+      preload: this.$store.state.preloaded,
       down: this.$store.state.down,
       hide: false,
       remove: false,
-      landscape: false
+      landscape: false,
+      transitionName: DEFAULT_TRANSITION
     }
   }
 }
@@ -86,5 +101,34 @@ export default {
 <style lang="scss">
 
 @import '@/assets/scss/app.scss';
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+
+.zoom-enter-active,
+.zoom-leave-active {
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+  animation-name: zoom;
+}
+
+.zoom-leave-active {
+  animation-direction: reverse;
+}
+
+@keyframes zoom {
+  from {
+    opacity: 0;
+    transform: scale3d(1.2, 1.2, 1.2);
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
 
 </style>

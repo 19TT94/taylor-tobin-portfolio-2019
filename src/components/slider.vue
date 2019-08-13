@@ -151,7 +151,7 @@ export default {
 
     .content {
       opacity: 0; // also hide this -
-      transform: translate(0, 10px); // and move it up a bit for fun
+      transform: translate(0, 10px);
       transition: 0.5s; // animation duration
       margin: 0 auto;
       width: 100%;
@@ -163,6 +163,7 @@ export default {
 
       img {
         max-width: 70%;
+        max-height: 60%;
         margin: 0 auto;
         box-shadow: 0px 15px 15px rgba(0,0,0,0.8);
 

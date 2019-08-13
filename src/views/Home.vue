@@ -1,10 +1,8 @@
 <template>
   <div class="page home frame">
-    <h1 class="heading">Taylor Tobin</h1>
-    <h3 class="heading-sub">Developer</h3>
-    <router-link class="item view-work" to="/featured" :style="{
-      'cursor': 'url(' + require('@/assets/images/cursor.svg') + ')'
-    }">View Work</router-link>
+    <h1 class="heading" :class="{'show': loaded}">Taylor Tobin</h1>
+    <h3 class="heading-sub" :class="{'show': loaded}">Developer</h3>
+    <router-link class="item view-work" to="/featured">View Work</router-link>
   </div>
 </template>
 
@@ -16,6 +14,12 @@ export default {
     return {
       expand: false,
       show: false,
+    }
+  },
+
+  computed: {
+    loaded() {
+      return this.$store.state.preloaded
     }
   },
 
@@ -52,6 +56,7 @@ export default {
   padding: 1rem;
 
   .heading {
+    opacity: 0;
     color: $gold;
     padding-top: 2rem;
     font-size: 2.5rem;
@@ -61,6 +66,7 @@ export default {
     }
 
     &-sub {
+      opacity: 0;
       font-size: 2rem;
       color: $white;
     }
@@ -75,6 +81,10 @@ export default {
     width: 150px;
     padding: 1rem;
     text-align: center;
+  }
+
+  .show {
+    opacity: 1;
   }
 }
 
