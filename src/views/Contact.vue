@@ -2,45 +2,81 @@
   <div class="page contact">
     <section class="section" :class="{ 'move': show }">
       <div class="info">
+        <h2>What I can do for you</h2>
+        <h3 class="subtitle">I'm a full stack developer with an interest in great visual design and quality responsive user experiences. You can find me online or in the ocean most mornings. Contact me for inquieries. Cheers!</h3>
+        <div class="services">
+          <ul>
+            <li>
+              Websites
+            </li>
+            <li>
+              Web Apps
+            </li>
+            <li>
+              UI / UX
+            </li>
+            <li>
+              Mobile Apps
+            </li>
+          </ul>
+        </div>
+
         <h2>Get In Touch</h2>
-        <h3 class="subtitle">I'm a full stack developer with an interest in great visual design and quality responsive user experiences. You can find me online at the links below or in the water most mornings in Huntington Beach. Contact me for inquieries. Cheers!</h3>
-        <ul>
-          <li><span>Email:</span> <a href="mailto:19tt94@gmail.com">19tt94@gmail.com</a></li>
+
+        <ul id="form">
           <li>
-            <span>Phone:</span> <a class="mobile" href="tel:805-434-7559">(805) 434-7559</a> <span class="desktop">(805) 434-7559</span>
+            <input placeholder="name" />
+          </li>
+          <li>
+            <input placeholder="inquiry" />
+          </li>
+          <li>
+            <button type="submit" @click="submit()">Submit</button>
           </li>
         </ul>
 
-        <ul class="links">
-          <li>
-            <a href="https://github.com/19TT94">
-              <font-awesome-icon :icon="['fab', 'github-square']" />
-              <span class="amp">@</span>19tt94
-            </a>
-          </li>
-          <li>
-            <a href="https://www.linkedin.com/in/taylor-tobin/">
-              <font-awesome-icon :icon="['fab', 'linkedin']" />
-              <span class="amp">@</span>taylor-tobin
-            </a>
-          </li>
-          <li>
-            <a href="https://www.instagram.com/19tt94/">
-              <font-awesome-icon :icon="['fab', 'instagram']" />
-              <span class="amp">@</span>19tt94
-            </a>
-          </li>
-        </ul>
-
-        <button><a class="button resume" :href="require('@/assets/TTResume.pdf')" download="resume.pdf">Resume</a></button>
       </div>
     </section>
 
-    <div class="map" :class="{ 'move': show }">
-      <div class="map-image" :style="{'background-image': 'url(' + require('@/assets/images/map.png') + ')'}">
-        <font-awesome-icon class="marker" icon="map-marker" />
-      </div>
-    </div>
+    <section class="clients">
+      <ul>
+        <li>
+          Paramount Pictures
+        </li>
+        <li>
+          Fox Movies
+        </li>
+        <li>
+          Universal
+        </li>
+        <li>
+          Fathom Events
+        </li>
+      </ul>
+    </section>
+
+    <section class="footer">
+      <ul>
+        <li><span>Email:</span> <a href="mailto:19tt94@gmail.com">19tt94@gmail.com</a></li>
+        <li>
+          <span>Phone:</span> <a class="mobile" href="tel:805-434-7559">(805) 434-7559</a> <span class="desktop">(805) 434-7559</span>
+        </li>
+        <li>
+          <button><a class="button resume" :href="require('@/assets/TTResume.pdf')" download="resume.pdf">Resume</a></button>
+        </li>
+      </ul>
+      <ul class="links">
+        <li>
+          <a href="https://github.com/19TT94"><font-awesome-icon :icon="['fab', 'github-square']" /></a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/taylor-tobin/"><font-awesome-icon :icon="['fab', 'linkedin']" />  </a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/19tt94/"><font-awesome-icon :icon="['fab', 'instagram']" /></a>
+        </li>
+      </ul>
+    </section>
 
   </div>
 </template>
@@ -60,6 +96,12 @@ export default {
     setTimeout(()=> {
       this.show = true
     }, 500)
+  },
+
+  methods: {
+    submit() {
+      console.log("submit");
+    }
   }
 }
 </script>
@@ -72,9 +114,7 @@ export default {
   color: $white;
 
   .section {
-    position: absolute;
     width: 100%;
-    height: 65%;
     background: $black;
     z-index: $default;
     transform: translateY(-100%);
@@ -90,73 +130,31 @@ export default {
     }
 
     .info {
+      text-align: center;
       padding: 25% 1rem 0;
 
       @media #{$small} {
+        text-align: center;
         padding: 0;
         width: 80%;
       }
 
       .subtitle {
-        display: none;
+        text-align: center;
 
         @media #{$small} {
-          display: block;
+          text-align: left;
         }
       }
     }
   }
 
-  .map {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 35%;
-    transform: translateY(100%);
-    transition: all ease 0.5s;
+  .clients {
 
-    @media #{$small} {
-      transform: translateX(100%);
-      width: 50%;
-      height: 110%;
-      left: auto;
-      right: 0;
-      top: 0;
-      bottom: auto;
-    }
+  }
 
-    .map-object {
-      position: absolute;
-      top:0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
-
-    .map-image {
-      border-top: 1px solid $gold;
-      background-size: 200%;
-      background-position: center;
-      background-repeat: no-repeat;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      height: 100%;
-
-      @media #{$small} {
-        border-top: 0;
-        background-size: cover;
-      }
-    }
-
-    .fa-map-marker {
-      z-index: $default;
-      font-size: 2rem;
-      margin: -10px;
-      transform: translateY(-25px)
-    }
+  .footer {
+    background: $black;
   }
 
   .move {
