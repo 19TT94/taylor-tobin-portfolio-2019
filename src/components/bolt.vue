@@ -8,6 +8,8 @@
 
 <script>
 
+import Utils from '@/utils/index.js'
+
 export default {
   name: 'bolt',
 
@@ -65,13 +67,17 @@ export default {
 
   mounted() {
     // intial cursor state
-    this.setCursor()
+    if (!Utils.isMobileDevice()) {
+      this.setCursor()
+    }
   },
 
   watch: {
     '$route' (to, from) {
       // react to route changes...
-      this.setCursor()
+      if (!Utils.isMobileDevice()) {
+        this.setCursor()
+      }
     }
   }
 }
