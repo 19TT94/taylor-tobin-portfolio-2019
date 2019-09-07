@@ -3,68 +3,30 @@
     <section class="section" :class="{ 'move': show }">
       <div class="info">
         <h2>What I can do for you</h2>
-        <h3 class="subtitle">I'm a full stack developer with an interest in great visual design and quality responsive user experiences. You can find me online or in the ocean most mornings. Contact me for inquieries. Cheers!</h3>
-        <div class="services">
-          <ul>
-            <li>
-              Websites
-            </li>
-            <li>
-              Web Apps
-            </li>
-            <li>
-              UI / UX
-            </li>
-            <li>
-              Mobile Apps
-            </li>
-          </ul>
-        </div>
-
-        <h2>Get In Touch</h2>
-
-        <ul id="form">
-          <li>
-            <input placeholder="name" />
-          </li>
-          <li>
-            <input placeholder="inquiry" />
-          </li>
-          <li>
-            <button type="submit" @click="submit()">Submit</button>
-          </li>
+        <h3 class="subtitle">I'm a full stack developer with an interest in great visual design and quality responsive user experiences. You can find me online or in the water (currently) in Huntington Beach most mornings. Contact me for inquiries. Cheers!</h3>
+        <ul class="services">
+          <li>Websites</li>
+          <li>Web Apps</li>
+          <li>UI/UX</li>
+          <li>Mobile Apps</li>
         </ul>
-
       </div>
     </section>
 
-    <section class="clients">
-      <ul>
-        <li>
-          Paramount Pictures
-        </li>
-        <li>
-          Fox Movies
-        </li>
-        <li>
-          Universal
-        </li>
-        <li>
-          Fathom Events
-        </li>
-      </ul>
+    <section class="get-in-touch">
+      <h2>Get In Touch</h2>
+
+      <form id="form" name="inquieries" method="POST" data-netlify="true">
+        <input placeholder="Name" type="text" name="name" />
+        <input placeholder="Email" type="email" name="email" />
+        <textarea placeholder="Inquiry" name="message"></textarea>
+        <div>
+          <button class="button submit" type="submit">Send</button>
+        </div>
+      </form>
     </section>
 
     <section class="footer">
-      <ul>
-        <li><span>Email:</span> <a href="mailto:19tt94@gmail.com">19tt94@gmail.com</a></li>
-        <li>
-          <span>Phone:</span> <a class="mobile" href="tel:805-434-7559">(805) 434-7559</a> <span class="desktop">(805) 434-7559</span>
-        </li>
-        <li>
-          <button><a class="button resume" :href="require('@/assets/TTResume.pdf')" download="resume.pdf">Resume</a></button>
-        </li>
-      </ul>
       <ul class="links">
         <li>
           <a href="https://github.com/19TT94"><font-awesome-icon :icon="['fab', 'github-square']" /></a>
@@ -76,6 +38,13 @@
           <a href="https://www.instagram.com/19tt94/"><font-awesome-icon :icon="['fab', 'instagram']" /></a>
         </li>
       </ul>
+      <div class="resources">
+        <ul>
+          <li><a href="mailto:19tt94@gmail.com">19tt94@gmail.com</a></li>
+          <li><a class="mobile" href="tel:805-434-7559">805.434.7559</a> <span class="desktop">805.434.7559</span></li>
+        </ul>
+        <button><a class="button resume" :href="require('@/assets/TTResume.pdf')" download="resume.pdf">Resume</a></button>
+      </div>
     </section>
 
   </div>
@@ -96,12 +65,6 @@ export default {
     setTimeout(()=> {
       this.show = true
     }, 500)
-  },
-
-  methods: {
-    submit() {
-      console.log("submit");
-    }
   }
 }
 </script>
@@ -115,18 +78,23 @@ export default {
 
   .section {
     width: 100%;
+    height: 100%;
     background: $black;
     z-index: $default;
     transform: translateY(-100%);
     box-shadow: 15px 15px 15px rgba(0,0,0,0.6);
 
     @media #{$small} {
+      position: absolute;
+      top: 0;
+      left: 0;
       transform: translateX(-100%);
       width: 50%;
       height: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
+      margin: 0;
     }
 
     .info {
@@ -146,15 +114,88 @@ export default {
           text-align: left;
         }
       }
+
+      .services {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        color: $gold;
+        padding: 20px 0 40px;
+      }
     }
   }
 
-  .clients {
+  .get-in-touch {
+    padding: 40px 0;
+    text-align: center;
 
+    @media #{$small} {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 50%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin: 0;
+    }
+
+    h2 {
+      padding: 0;
+    }
+
+    #form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 10px auto;
+      width: 90%;
+
+      input,
+      textarea {
+        width: 100%;
+        margin: 10px 0;
+      }
+
+      button {
+        margin: 20px 0 0;
+      }
+    }
   }
 
   .footer {
+    padding: 50px 0 20px;
     background: $black;
+
+    @media #{$small} {
+      background: transparent;
+      position: absolute;
+      left: auto;
+      right: 0;
+      bottom: 0;
+      width: 50%;
+      padding: 5px 0;
+      z-index: 2;
+    }
+
+    .links {
+      display: flex;
+      justify-content: space-between;
+      width: 50%;
+      margin: 10px auto 20px;
+    }
+  }
+
+  .resources {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
   }
 
   .move {

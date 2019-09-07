@@ -1,7 +1,9 @@
 /* Global Settings */
 
 // Tags
-body {
+body,
+input,
+textarea {
   font-size: 16px; // base font size
   font-family: $body-font;
   // overflow: hidden;
@@ -114,7 +116,18 @@ ul {
   font-family: $body-font;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  // overflow: hidden;
   width: 100vw;
   height: 100vh;
+
+  @media #{$small} {
+    overflow: hidden;
+  }
+}
+
+.contactpage {
+  height: auto !important;
+
+  @media #{$small} {
+    height: 100vh !important;
+  }
 }
