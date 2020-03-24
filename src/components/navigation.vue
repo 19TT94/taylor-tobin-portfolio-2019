@@ -4,10 +4,10 @@
 			<img class="home-button" src="@/assets/images/tobin.png">
 		</router-link>
 
-		<div class="toggle" @click="toggleNav">
+		<button class="toggle" id="toggle" @click="toggleNav">
 			<div class="bar" :class="{ 'rotate': unlock }"></div>
 			<div class="bar" :class="{ 'rotate': unlock }"></div>
-		</div>
+		</button>
 
 		<div class="menu-wrap" :class="{ 'visible': unlock, 'show': open }">
 			<router-link @click.native="pageChange" class="item" to="/">Home</router-link>
@@ -79,6 +79,10 @@ export default {
 		max-width: 35px;
 		margin: 2rem 2.4rem;
 		z-index: 99;
+
+    @media #{$small} {
+      max-width: 45px;
+    }
 	}
 
 	.toggle {

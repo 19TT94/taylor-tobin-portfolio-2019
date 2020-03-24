@@ -3,7 +3,7 @@
     <section class="section" :class="{ 'move': show }">
       <div class="info">
         <h2>What I can do for you</h2>
-        <h3 class="subtitle">I'm a full stack developer with an interest in great visual design and quality responsive user experiences. You can find me online or in the water (currently) in Huntington Beach most mornings. Contact me for inquiries. Cheers!</h3>
+        <h3 class="subtitle">I'm a full stack developer with an interest in great visual design and quality responsive user experiences. Reach out for inquiries. Cheers!</h3>
         <ul class="services">
           <li>Websites</li>
           <li>Web Apps</li>
@@ -16,17 +16,23 @@
     <section class="get-in-touch">
       <h2>Get In Touch</h2>
 
-      <form id="form" name="inquieries" method="POST" data-netlify="true">
-        <input placeholder="Name" type="text" name="name" />
-        <input placeholder="Email" type="email" name="email" />
-        <textarea placeholder="Inquiry" name="message"></textarea>
-        <div>
-          <button class="button submit" type="submit">Send</button>
-        </div>
+      <form
+        id="form"
+        name="inquieries"
+        method="POST"
+        data-netlify="true"
+        data-netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="inquiries" />
+          <input placeholder="Name" type="text" name="name" />
+          <input placeholder="Email" type="email" name="email" />
+          <textarea placeholder="Inquiry" name="message"></textarea>
+          <div>
+            <button class="button submit" type="submit">Send</button>
+          </div>
       </form>
     </section>
 
-    <section class="footer">
+    <section class="footer" :class="{ 'reveal': reveal }">
       <ul class="links">
         <li>
           <a href="https://github.com/19TT94"><font-awesome-icon :icon="['fab', 'github-square']" /></a>
@@ -57,13 +63,17 @@ export default {
 
   data() {
     return {
-      show: false
+      show: false,
+      reveal: false
     }
   },
 
   mounted() {
     setTimeout(()=> {
       this.show = true
+      setTimeout(()=> {
+        this.reveal = true;
+      }, 650);
     }, 500)
   }
 }
@@ -167,6 +177,8 @@ export default {
   }
 
   .footer {
+    opacity: 0;
+    visibility: hidden;
     padding: 50px 0 20px;
     background: $black;
 
@@ -174,7 +186,7 @@ export default {
       background: transparent;
       position: absolute;
       left: auto;
-      right: 0;
+      left: 0;
       bottom: 0;
       width: 50%;
       padding: 5px 0;
@@ -187,6 +199,12 @@ export default {
       width: 50%;
       margin: 10px auto 20px;
     }
+  }
+
+  .reveal {
+    opacity: 1;
+    visibility: visible;
+    transition: all ease 0.5s;
   }
 
   .resources {

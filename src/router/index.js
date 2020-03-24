@@ -17,27 +17,32 @@ export default new Router({
     {
       path: '/',
       name: 'home',
-      component: Home
+      component: Home,
+      meta: { transitionName: 'fade' }
     },
     {
       path: '/featured',
       name: 'featured',
-      component: Featured
+      component: Featured,
+      meta: { transitionName: 'zoom' }
     },
     {
       path: '/projects',
       name: 'projects',
-      component: Projects
+      component: Projects,
+      meta: { transitionName: 'fade' }
     },
     {
       path: '/about',
       name: 'about',
-      component: About
+      component: About,
+      meta: { transitionName: 'fade' }
     },
     {
       path: '/contact',
       name: 'contact',
-      component: Contact
+      component: Contact,
+      meta: { transitionName: 'fade' }
     },
     {
       // will match everything
