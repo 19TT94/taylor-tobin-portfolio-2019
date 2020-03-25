@@ -46,10 +46,18 @@
       </ul>
       <div class="resources">
         <ul>
-          <li><a href="mailto:19tt94@gmail.com">19tt94@gmail.com</a></li>
-          <li><a class="mobile" href="tel:805-434-7559">805.434.7559</a> <span class="desktop">805.434.7559</span></li>
+          <li>
+            <a class="email" href="mailto:19tt94@gmail.com">19tt94@gmail.com</a>
+          </li>
+          <li>
+            <a class="mobile" href="tel:805-434-7559">805.434.7559</a> <span class="desktop">805.434.7559</span>
+          </li>
         </ul>
-        <button><a class="button resume" :href="require('@/assets/TTResume2020.pdf')" download="resume.pdf">Resume</a></button>
+        <ul>
+          <li>
+            <button><a class="button resume" :href="require('@/assets/TTResume2020.pdf')" download="resume.pdf">Resume</a></button>
+          </li>
+        </ul>
       </div>
     </section>
 
@@ -88,7 +96,7 @@ export default {
 
   .section {
     width: 100%;
-    height: 48%;
+    height: 50%;
     background: $black;
     z-index: $default;
     transform: translateY(-100%);
@@ -119,6 +127,11 @@ export default {
 
       .subtitle {
         text-align: center;
+        font-size: .75rem;
+
+        @media #{$small} {
+          font-size: inherit;
+        }
       }
 
       .services {
@@ -127,13 +140,17 @@ export default {
         flex-direction: row;
         justify-content: space-between;
         color: $gold;
-        padding: 20px 0 40px;
+        font-size: .75rem;
+
+        @media #{$small} {
+          font-size: inherit;
+        }
       }
     }
   }
 
   .get-in-touch {
-    padding: 40px 0;
+    padding: 15px 0 0;
     text-align: center;
 
     @media #{$small} {
@@ -146,6 +163,7 @@ export default {
       flex-direction: column;
       justify-content: center;
       margin: 0;
+      padding: 40px 0;
     }
 
     h2 {
@@ -164,6 +182,11 @@ export default {
       textarea {
         width: 100%;
         margin: 10px 0;
+        font-size: .75rem;
+
+        @media #{$small} {
+          font-size: inherit;
+        }
       }
 
       button {
@@ -175,7 +198,7 @@ export default {
   .footer {
     opacity: 0;
     visibility: hidden;
-    padding: 50px 0 20px;
+    padding: 10px 0 20px;
     background: $black;
 
     @media #{$small} {
@@ -210,6 +233,7 @@ export default {
     align-items: center;
     justify-content: space-between;
     margin: 0 auto;
+    font-size: 0.75rem;
   }
 
   .move {
