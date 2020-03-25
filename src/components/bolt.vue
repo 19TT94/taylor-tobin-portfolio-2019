@@ -42,7 +42,7 @@ export default {
       // get all anchors and buttons
       this.selectors = document.querySelectorAll('a,button')
       // iterate over elements to hijack mouse events
-      for(var i=0; i < this.selectors.length; i++) {
+      for (var i = 0; i < this.selectors.length; i++) {
         // add classes on mouse enter
         this.selectors[i].onmouseenter = ()=> {
           dot.classList.add('grow')
@@ -141,7 +141,6 @@ export default {
 .hide {
   opacity: 0;
 }
-
 
 @keyframes spin {
   from { transform: translate(-50%, -50%) rotate(0); }

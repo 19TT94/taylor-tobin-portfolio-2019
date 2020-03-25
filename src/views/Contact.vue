@@ -49,7 +49,7 @@
           <li><a href="mailto:19tt94@gmail.com">19tt94@gmail.com</a></li>
           <li><a class="mobile" href="tel:805-434-7559">805.434.7559</a> <span class="desktop">805.434.7559</span></li>
         </ul>
-        <button><a class="button resume" :href="require('@/assets/TTResume.pdf')" download="resume.pdf">Resume</a></button>
+        <button><a class="button resume" :href="require('@/assets/TTResume2020.pdf')" download="resume.pdf">Resume</a></button>
       </div>
     </section>
 
@@ -72,8 +72,8 @@ export default {
     setTimeout(()=> {
       this.show = true
       setTimeout(()=> {
-        this.reveal = true;
-      }, 650);
+        this.reveal = true
+      }, 650)
     }, 500)
   }
 }
@@ -88,7 +88,7 @@ export default {
 
   .section {
     width: 100%;
-    height: 100%;
+    height: 48%;
     background: $black;
     z-index: $default;
     transform: translateY(-100%);
@@ -119,10 +119,6 @@ export default {
 
       .subtitle {
         text-align: center;
-
-        @media #{$small} {
-          text-align: left;
-        }
       }
 
       .services {
