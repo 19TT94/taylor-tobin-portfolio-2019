@@ -1,7 +1,9 @@
 <template>
   <div class="maintenance">
 
-    <section class="container info hide" :class="{ 'show': show }">
+    <card :class="{ 'show': show }" v-if="landscape" />
+
+    <section class="container info hide" :class="{ 'show': show }" v-else>
       <h1>Taylor Tobin</h1>
       <h3>Developer</h3>
 
@@ -35,20 +37,30 @@
 
     </section>
 
-    <p class="note special" :class="{ 'hide': !intro }">Down for maintenance! Here's the basics for now.</p>
+    <div class="overlay" :class="{ 'hide': !intro }">
+      <p class="note special">Down for maintenance! Here's the basics for now.</p>
+    </div>
 
   </div>
 </template>
 
 <script>
 
+import card from '@/components/card.vue'
+import Utils from '@/utils/index.js'
+
 export default {
   name: 'maintenance',
+
+  components: {
+    card
+  },
 
   data() {
     return {
       intro: true,
-      show: false
+      show: false,
+      landscape: false
     }
   },
 
@@ -59,6 +71,21 @@ export default {
         this.show = true
       }, 500)
     }, 2500)
+
+    // intial orientation check
+    if (Utils.isMobileDevice() && Utils.isMobileSize() && window.orientation === 90 || window.orientation === -90) {
+      this.landscape = true
+    }
+
+    // set landscape state on orientation change
+    let self = this
+    window.addEventListener('orientationchange', function() {
+      if (Utils.isMobileDevice() && Utils.isMobileSize() && window.orientation === 90 || window.orientation === -90) {
+        self.landscape = true
+      } else {
+        self.landscape = false
+      }
+    })
   }
 }
 </script>
@@ -73,7 +100,6 @@ export default {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: $black;
   color: $white;
   display: flex;
   align-items: center;
@@ -84,6 +110,8 @@ export default {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
+  background: $black;
+  box-shadow: 15px 15px 15px rgba(0,0,0,0.8);
 
   h1,
   h3 {
@@ -95,15 +123,23 @@ export default {
   }
 }
 
-.note {
+.overlay {
   position: absolute;
-  bottom: 50%;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  text-align: center;
-  color: $gold;
-  max-width: 75%;
+  width: 100vw;
+  height: 100vh;
+  background: $black;
+  z-index: $front;
+
+  .note {
+    position: absolute;
+    bottom: 50%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    text-align: center;
+    color: $gold;
+    max-width: 75%;
+  }
 }
 
 .amp {
