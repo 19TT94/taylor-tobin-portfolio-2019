@@ -1,9 +1,7 @@
 <template>
   <div class="maintenance">
 
-    <card :class="{ 'show': show }" v-if="landscape" />
-
-    <section class="container info hide" :class="{ 'show': show }" v-else>
+    <section class="container info hide" :class="{ 'show': show }" v-if="!landscape">
       <h1>Taylor Tobin</h1>
       <h3>Developer</h3>
 
@@ -46,15 +44,10 @@
 
 <script>
 
-import card from '@/components/card.vue'
 import Utils from '@/utils/index.js'
 
 export default {
   name: 'maintenance',
-
-  components: {
-    card
-  },
 
   data() {
     return {
