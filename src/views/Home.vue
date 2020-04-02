@@ -13,7 +13,7 @@ export default {
   data() {
     return {
       expand: false,
-      show: false,
+      show: false
     }
   },
 

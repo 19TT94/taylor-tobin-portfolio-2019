@@ -2,45 +2,64 @@
   <div class="page contact">
     <section class="section" :class="{ 'move': show }">
       <div class="info">
-        <h2>Get In Touch</h2>
-        <h3 class="subtitle">I'm a full stack developer with an interest in great visual design and quality responsive user experiences. You can find me online at the links below or in the water most mornings in Huntington Beach. Contact me for inquieries. Cheers!</h3>
-        <ul>
-          <li><span>Email:</span> <a href="mailto:19tt94@gmail.com">19tt94@gmail.com</a></li>
-          <li>
-            <span>Phone:</span> <a class="mobile" href="tel:805-434-7559">(805) 434-7559</a> <span class="desktop">(805) 434-7559</span>
-          </li>
+        <h2>What I can do for you</h2>
+        <h3 class="subtitle">I'm a full stack developer with an interest in great visual design and quality responsive user experiences. Reach out for inquiries. Cheers!</h3>
+        <ul class="services">
+          <li>Websites</li>
+          <li>Web Apps</li>
+          <li>UI/UX</li>
+          <li>Mobile Apps</li>
         </ul>
-
-        <ul class="links">
-          <li>
-            <a href="https://github.com/19TT94">
-              <font-awesome-icon :icon="['fab', 'github-square']" />
-              <span class="amp">@</span>19tt94
-            </a>
-          </li>
-          <li>
-            <a href="https://www.linkedin.com/in/taylor-tobin/">
-              <font-awesome-icon :icon="['fab', 'linkedin']" />
-              <span class="amp">@</span>taylor-tobin
-            </a>
-          </li>
-          <li>
-            <a href="https://www.instagram.com/19tt94/">
-              <font-awesome-icon :icon="['fab', 'instagram']" />
-              <span class="amp">@</span>19tt94
-            </a>
-          </li>
-        </ul>
-
-        <button><a class="button resume" :href="require('@/assets/TTResume.pdf')" download="resume.pdf">Resume</a></button>
       </div>
     </section>
 
-    <div class="map" :class="{ 'move': show }">
-      <div class="map-image" :style="{'background-image': 'url(' + require('@/assets/images/map.png') + ')'}">
-        <font-awesome-icon class="marker" icon="map-marker" />
+    <section class="get-in-touch">
+      <h2>Get In Touch</h2>
+
+      <form
+        id="form"
+        name="inquieries"
+        method="POST"
+        data-netlify="true"
+        data-netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="inquiries" />
+          <input placeholder="Name" type="text" name="name" />
+          <input placeholder="Email" type="email" name="email" />
+          <textarea placeholder="Inquiry" name="message"></textarea>
+          <div>
+            <button class="button submit" type="submit">Send</button>
+          </div>
+      </form>
+    </section>
+
+    <section class="footer" :class="{ 'reveal': reveal }">
+      <ul class="links">
+        <li>
+          <a href="https://github.com/19TT94"><font-awesome-icon :icon="['fab', 'github-square']" /></a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/taylor-tobin/"><font-awesome-icon :icon="['fab', 'linkedin']" />  </a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/19tt94/"><font-awesome-icon :icon="['fab', 'instagram']" /></a>
+        </li>
+      </ul>
+      <div class="resources">
+        <ul>
+          <li>
+            <a class="email" href="mailto:19tt94@gmail.com">19tt94@gmail.com</a>
+          </li>
+          <li>
+            <a class="mobile" href="tel:805-434-7559">805.434.7559</a> <span class="desktop">805.434.7559</span>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <button><a class="button resume" :href="require('@/assets/TTResume2020.pdf')" download="resume.pdf">Resume</a></button>
+          </li>
+        </ul>
       </div>
-    </div>
+    </section>
 
   </div>
 </template>
@@ -52,13 +71,17 @@ export default {
 
   data() {
     return {
-      show: false
+      show: false,
+      reveal: false
     }
   },
 
   mounted() {
     setTimeout(()=> {
       this.show = true
+      setTimeout(()=> {
+        this.reveal = true
+      }, 650)
     }, 500)
   }
 }
@@ -72,91 +95,145 @@ export default {
   color: $white;
 
   .section {
-    position: absolute;
     width: 100%;
-    height: 65%;
+    height: 50%;
     background: $black;
     z-index: $default;
     transform: translateY(-100%);
     box-shadow: 15px 15px 15px rgba(0,0,0,0.6);
 
     @media #{$small} {
+      position: absolute;
+      top: 0;
+      left: 0;
       transform: translateX(-100%);
       width: 50%;
       height: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
+      margin: 0;
     }
 
     .info {
+      text-align: center;
       padding: 25% 1rem 0;
 
       @media #{$small} {
+        text-align: center;
         padding: 0;
         width: 80%;
       }
 
       .subtitle {
-        display: none;
+        text-align: center;
+        font-size: .75rem;
 
         @media #{$small} {
-          display: block;
+          font-size: inherit;
+        }
+      }
+
+      .services {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        color: $gold;
+        font-size: .75rem;
+
+        @media #{$small} {
+          font-size: inherit;
         }
       }
     }
   }
 
-  .map {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 35%;
-    transform: translateY(100%);
-    transition: all ease 0.5s;
+  .get-in-touch {
+    padding: 15px 0 0;
+    text-align: center;
 
     @media #{$small} {
-      transform: translateX(100%);
-      width: 50%;
-      height: 110%;
-      left: auto;
-      right: 0;
-      top: 0;
-      bottom: auto;
-    }
-
-    .map-object {
       position: absolute;
-      top:0;
-      left: 0;
-      width: 100%;
+      top: 0;
+      right: 0;
+      width: 50%;
       height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin: 0;
+      padding: 40px 0;
     }
 
-    .map-image {
-      border-top: 1px solid $gold;
-      background-size: 200%;
-      background-position: center;
-      background-repeat: no-repeat;
+    h2 {
+      padding: 0;
+    }
+
+    #form {
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-      width: 100%;
-      height: 100%;
+      margin: 10px auto;
+      width: 90%;
 
-      @media #{$small} {
-        border-top: 0;
-        background-size: cover;
+      input,
+      textarea {
+        width: 100%;
+        margin: 10px 0;
+        font-size: .75rem;
+
+        @media #{$small} {
+          font-size: inherit;
+        }
+      }
+
+      button {
+        margin: 20px 0 0;
       }
     }
+  }
 
-    .fa-map-marker {
-      z-index: $default;
-      font-size: 2rem;
-      margin: -10px;
-      transform: translateY(-25px)
+  .footer {
+    opacity: 0;
+    visibility: hidden;
+    padding: 10px 0 20px;
+    background: $black;
+
+    @media #{$small} {
+      background: transparent;
+      position: absolute;
+      left: auto;
+      left: 0;
+      bottom: 0;
+      width: 50%;
+      padding: 5px 0;
+      z-index: 2;
     }
+
+    .links {
+      display: flex;
+      justify-content: space-between;
+      width: 50%;
+      margin: 10px auto 20px;
+    }
+  }
+
+  .reveal {
+    opacity: 1;
+    visibility: visible;
+    transition: all ease 0.5s;
+  }
+
+  .resources {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    font-size: 0.75rem;
   }
 
   .move {

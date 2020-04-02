@@ -93,6 +93,12 @@ export default {
       landscape: false,
       transitionName: DEFAULT_TRANSITION
     }
+  },
+
+  watch: {
+    $route (to, from) {
+      this.currentPage = to.name
+    }
   }
 }
 
