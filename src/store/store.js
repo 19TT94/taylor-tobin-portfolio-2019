@@ -5,7 +5,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    down: false,
+    down: true,
     preloaded: false
   }
 })

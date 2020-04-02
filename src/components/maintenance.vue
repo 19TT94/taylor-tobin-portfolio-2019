@@ -37,12 +37,6 @@
 
     <p class="note special" :class="{ 'hide': !intro }">Down for maintenance! Here's the basics for now.</p>
 
-    <div class="map" :class="{ 'move-up': show }">
-      <div class="map-image" :style="{'background-image': 'url(' + require('@/assets/images/map.png') + ')'}">
-        <font-awesome-icon class="marker" icon="map-marker" />
-      </div>
-    </div>
-
   </div>
 </template>
 
@@ -81,53 +75,23 @@ export default {
   height: 100vh;
   background: $black;
   color: $white;
+  display: flex;
+  align-items: center;
 }
 
-.map {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 35%;
-  transform: translateY(100%);
-  transition: all ease 0.5s;
+.info {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
 
-  @media #{$small} {
-    transform: translateX(100%);
-    width: 50%;
-    height: 100%;
-    left: auto;
-    right: 0;
+  h1,
+  h3 {
+    text-align: center;
   }
 
-  .map-object {
-    position: absolute;
-    top:0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+  button {
+    margin-top: 20px;
   }
-
-  .map-image {
-    border-top: 1px solid $gold;
-    background-size: 200%;
-    background-position: center;
-    background-repeat: no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-
-    @media #{$small} {
-      background-size: cover;
-    }
-  }
-}
-
-.move-up {
-  transform: translateY(0%);
-  transition: all 1s ease;
 }
 
 .note {
