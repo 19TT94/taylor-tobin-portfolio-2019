@@ -18,11 +18,11 @@
 
       <form
         id="form"
-        name="inquieries"
+        name="inquiries"
         method="POST"
         data-netlify="true"
         data-netlify-honeypot="bot-field">
-          <input type="hidden" name="form-name" value="inquiries" />
+          <input type="hidden" name="form-name" value="inquries" />
           <input placeholder="Name" type="text" name="name" />
           <input placeholder="Email" type="email" name="email" />
           <textarea placeholder="Inquiry" name="message"></textarea>

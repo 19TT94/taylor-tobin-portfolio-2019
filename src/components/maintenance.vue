@@ -77,6 +77,7 @@ export default {
   color: $white;
   display: flex;
   align-items: center;
+  z-index: $front;
 }
 
 .info {
