@@ -81,9 +81,11 @@ export default {
           'message': this.message
         }), axiosConfig)
         .then(()=> {
+          console.log('success')
           this.success = true
         })
         .catch((e)=> {
+          console.log('error')
           this.success = false
         })
     }
