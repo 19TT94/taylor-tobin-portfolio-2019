@@ -81,12 +81,10 @@ export default {
           'message': this.message
         }), axiosConfig)
         .then(()=> {
-          console.log('success')
           this.processed = true
           this.success = true
         })
         .catch((e)=> {
-          console.log('error')
           this.processed = true
           this.success = false
         })
