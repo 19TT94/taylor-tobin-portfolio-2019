@@ -14,22 +14,7 @@
     </section>
 
     <section class="get-in-touch">
-      <h2>Get In Touch</h2>
-
-      <form
-        id="form"
-        name="inquiries"
-        method="POST"
-        data-netlify="true"
-        data-netlify-honeypot="bot-field">
-          <input type="hidden" name="form-name" value="inquries" />
-          <input placeholder="Name" type="text" name="name" />
-          <input placeholder="Email" type="email" name="email" />
-          <textarea placeholder="Inquiry" name="message"></textarea>
-          <div>
-            <button class="button submit" type="submit">Send</button>
-          </div>
-      </form>
+      <NetlifyForm />
     </section>
 
     <section class="footer" :class="{ 'reveal': reveal }">
@@ -65,9 +50,14 @@
 </template>
 
 <script>
+import NetlifyForm from '@/components/form.vue'
 
 export default {
   name: 'Contact',
+
+  components: {
+    NetlifyForm
+  },
 
   data() {
     return {
@@ -168,30 +158,6 @@ export default {
 
     h2 {
       padding: 0;
-    }
-
-    #form {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      margin: 10px auto;
-      width: 90%;
-
-      input,
-      textarea {
-        width: 100%;
-        margin: 10px 0;
-        font-size: .75rem;
-
-        @media #{$small} {
-          font-size: inherit;
-        }
-      }
-
-      button {
-        margin: 20px 0 0;
-      }
     }
   }
 
